@@ -1,0 +1,78 @@
+/* 
+    Document   : pad
+    Created on : Mar 25, 2014, 1:11:17 PM
+    Author     : Alex
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+
+@font-face{
+    font-family: Bolonewt;
+    src: url(Fonts/BOLONEWT.ttf);
+}
+
+a{
+    font-family: Bolonewt;
+}
+
+.vraag{
+    margin:10px;
+    font-family: Bolonewt;
+}
+
+.body{
+    margin-left:150px;
+    margin-right:150px;
+}
+
+.test{
+    height:1080px;
+    width:1920px;
+    
+}
+
+.buttonList{
+    padding-left:500px;
+}
+.buttonNext{
+    position: absolute;
+    margin-top:-10px;
+}
+
+.feedbackAnswers{
+    padding:10px;
+}
+.feedbackForm{
+
+}
+.main{
+    margin-left:50px;
+}
+.header{
+    width:100%;
+    height:377px;
+    background-image:url('../Images/Background2.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.footer{
+
+}
+.border{
+    margin-left:50px;
+    margin-right:50px;
+}
+.mainContent {
+
+}
+root { 
+    display: block;
+}
+
+
+.text {
+
+}
