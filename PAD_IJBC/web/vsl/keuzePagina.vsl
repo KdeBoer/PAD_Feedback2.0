@@ -6,14 +6,14 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
-        <div class="header"></div>
+        <div class="header"><a> Logged in as: $username</a></div>
             <div class="buttonList">
                 <table>
                     <tr>
-                        <td> <a href="feedbackVragen.vsl"><img src="/PAD_IJBC/Images/Feedbackvragen.jpg"></a> </td>
-                        <td> <a href="uitnodigingen.vsl"><img src="/PAD_IJBC/Images/Uitnodigingen.jpg"></a> </td>
-                        <td> <a href="index.vsl"><img src="/PAD_IJBC/Images//Feedbackbekijken.jpg"></a> </td>
-                        <td> <a href="instellingenPagina.vsl"><img src="/PAD_IJBC/Images/Instellingen.jpg"></a> </td>
+                        <td> <a href="/PAD_IJBC/vsl/feedbackVragen.vsl"><img src="/PAD_IJBC/Images/Feedbackvragen.jpg"></a> </td>
+                        <td> <a href="/PAD_IJBC/vsl/uitnodigingen.vsl"><img src="/PAD_IJBC/Images/Uitnodigingen.jpg"></a> </td>
+                        <td> <a href="/PAD_IJBC/vsl/index.vsl"><img src="/PAD_IJBC/Images//Feedbackbekijken.jpg"></a> </td>
+                        <td> <a href="/PAD_IJBC/vsl/instellingenPagina.vsl"><img src="/PAD_IJBC/Images/Instellingen.jpg"></a> </td>
                     </tr>
                 </table>
 
