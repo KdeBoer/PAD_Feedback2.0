@@ -24,10 +24,15 @@ public class Login {
         this.password = password;
     }
     
-    public void login(String username, String password){
+    public boolean login(String username, String password){
         
         //if(rq.getMethod().equals("POST")){
-            Qm.login(username, password);
+            if(Qm.login(username, password) == true){
+                return true;
+            }
+            else{
+                return false;
+            }
         //}
     }
     

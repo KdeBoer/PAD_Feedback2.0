@@ -25,7 +25,7 @@ public class QueryManager {
     DbManager db;
     
     //Login query
-    public void login(String email, String password){
+    public boolean login(String email, String password){
         String login = "SELECT email, Wachtwoord FROM testaccount where email = '" +
                 email + "' AND wachtwoord = '" + password + "'";
         String loggedIn = "";
@@ -35,15 +35,19 @@ public class QueryManager {
                 loggedIn = "Logged in succesful";
                 System.out.println("Logged in succesful");
                 s_Template = "Login_OK.vsl";
+                return true;
             }
             else {
                 System.out.println("Invalid e-mail and/or password.");
+                return false;
             }
             
         }
         catch(SQLException E){
             System.out.println(E.getMessage());
+            return false;
         }
+        
     }
     
     

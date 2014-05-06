@@ -105,9 +105,14 @@ public class PAD_IJBC extends HttpServlet {
                     System.out.println("Please type in your password");
                     s_Template = "Login.vsl";
             }
-            else {
+            else if (username != null && password != null){
                 Login login = new Login(username, password);
-                //login.login(username, password);
+                if(login.login(username, password) == true){
+                    s_Template = "Login_OK.vsl";
+                }
+                else{
+                    s_Template = "Login.vsl";
+                }
                 /*
                  * Do here some exception or error catching
                  */
@@ -115,7 +120,9 @@ public class PAD_IJBC extends HttpServlet {
                  * If no error has occured, the login has been successful.
                  * In that case we return a new velocity template, like Login_OK.vsl
                  */
-                s_Template = "Login_OK.vsl";
+                
+            }else{
+                
             }
         }
         else if (s_Request.equals("/PAD_IJBC/NEW_ACTION")) {
