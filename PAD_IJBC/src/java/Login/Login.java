@@ -24,7 +24,7 @@ public class Login {
         this.password = password;
     }
     
-    public void login(String username, String password, HttpServletRequest rq){
+    public void login(String username, String password){
         
         //if(rq.getMethod().equals("POST")){
             Qm.login(username, password);

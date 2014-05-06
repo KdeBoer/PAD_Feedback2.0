@@ -15,6 +15,8 @@ import javax.swing.JOptionPane;
  * @author Kelly
  */
 public class QueryManager {
+    
+    String s_Template = "";
     public QueryManager(){
         this.db = new DbManager();
     }
@@ -32,6 +34,7 @@ public class QueryManager {
             if(rs.next()){
                 loggedIn = "Logged in succesful";
                 System.out.println("Logged in succesful");
+                s_Template = "Login_OK.vsl";
             }
             else {
                 System.out.println("Invalid e-mail and/or password.");

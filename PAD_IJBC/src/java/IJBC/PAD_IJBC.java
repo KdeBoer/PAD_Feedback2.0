@@ -23,8 +23,6 @@ import org.apache.velocity.exception.MethodInvocationException;
 import org.apache.velocity.exception.ParseErrorException;
 import org.apache.velocity.exception.ResourceNotFoundException;
 
-import static java.lang.System.out;
-
 /**
  *
  * @author Alex
@@ -76,41 +74,61 @@ public class PAD_IJBC extends HttpServlet {
         //out.println("<link rel='stylesheet' type='text/css' href='" + request.getContextPath() +  "/CSS/style.css' />");
         
        
-        
-        
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        System.out.println(username);
-        System.out.println(password);
-        if("".equals(username)){
-                System.out.println("Please type in your username");
-            }
-        if("".equals(password)){
-                System.out.println("Please type in your password");
-            }
-        else{
-            if(request.getMethod().equals("POST")){
-                Login login = new Login(username, password);
-                login.login(username, password, request);
-            }
+        String s_RequestURL = request.getRequestURL().toString();
+        String s_RequestURI = request.getRequestURI();
+        String s_ContextPath = request.getContextPath();
+
+        String s_Request_Prefix = s_ContextPath;
+        String s_Request = s_RequestURI.substring(s_Request_Prefix.length(), s_RequestURI.length());
+        if (!s_Request.startsWith("/")) {
+            s_Request = "/" + s_Request;
         }
         
-        
-        
-        
-        
+        System.out.println("Servlet Context: " + s_ContextPath + " request URL: " + s_RequestURL + " URI: " + s_RequestURI + " Request: " + s_Request);
+        vv1_Context.put("action", s_Request);
 
+        String s_Template = "";
         
-        
-        
+        if (s_Request.equals("/PAD_IJBC/REQ_LOGIN")) {
+            s_Template = "Login.vsl";
+        }        
+        else if (s_Request.equals("/PAD_IJBC/LOGIN")) {        
+            String username = request.getParameter("username");
+            String password = request.getParameter("password");
+            System.out.println(username);
+            System.out.println(password);
+            if (username == null || username.isEmpty()){
+                    System.out.println("Please type in your username");
+                    s_Template = "Login.vsl";
+            }
+            else if (password == null || password.isEmpty()){
+                    System.out.println("Please type in your password");
+                    s_Template = "Login.vsl";
+            }
+            else {
+                Login login = new Login(username, password);
+                //login.login(username, password);
+                /*
+                 * Do here some exception or error catching
+                 */
+                /*
+                 * If no error has occured, the login has been successful.
+                 * In that case we return a new velocity template, like Login_OK.vsl
+                 */
+                s_Template = "Login_OK.vsl";
+            }
+        }
+        else if (s_Request.equals("/PAD_IJBC/NEW_ACTION")) {
+            /*
+             * Implement here some code and get a new velocity template like NEW_ACTION.vsl
+             */
+                s_Template = "NEW_ACTION.vsl";
+        }
+
         Template template = null;
          //vv1_Context.put("errorCode", 1234);
          //vv1_Context.put("errorCode", "Dit wordt meegegeven aan velocity");
-          
-         
-         
-         
-         final String s_Template = "login.html";
+
         try {
 
             template = Velocity.getTemplate(s_Template);
