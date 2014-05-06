@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Instellingen</title>
+        <link rel="stylesheet" type="text/css" href="css/pad.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+    <div class="border">
+            <div class="header"></div>
+            <div class="mainContent">
+                <div style="float:right; width:175px; height:150px; margin-right:100px">
+                    <table>
+                        <tr>
+                            <td>
+                            </td>
+                            <td class="feedbackAnswers"> 
+                                <tr>
+                                    
+                                </tr>
+                                <tr>
+                                    
+                                </tr>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <table> 
+                    <tr><td><a>Naam:</a></td>  <td><input type="text"></td></tr>
+                    <tr><td><a>Email:</a></td>  <td><input type="text"></td> </tr>
+                    <tr><td><a>Wachtwoord:</a></td>  <td><input type="text"></td> </tr>
+                    <tr><td><a>Email Ouders/Verzorgers:</a></td>  <td><input type="text"></td> </tr>
+                    <tr><td><a>TEKSTFIELDOUDERS:</a></td> <td><input type="text"></td> </tr>
+                    <tr><td><a href="editWWServlet"><img class="buttonInvullen" src="Images/wachtwoordVeranderen.png"></a></td>
+                    <td><a href="editEmailServlet"><img class="buttonInvullen" src="Images/emailVeranderen.png"></a></td>
+                    </tr>
+                    <br>
+
+                </table>
+            </div>
+            <div class="footer">
+                <a href="keuzePagina.html"><img class="buttonInvullen" src="Images/homeKnop.png"></a><br>
+                <a>Hoofdpagina</a>
+            </div>
+        </div>
+    </body>
+</html>

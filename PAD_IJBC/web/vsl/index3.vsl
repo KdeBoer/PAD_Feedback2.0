@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" type="text/css" href="css/pad.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <div class="border">
+            <div class="header"></div>
+            <div class="mainContent">
+                <div style="float:right; width:175px; height:150px; margin-right:100px">
+                    <a>++ Klopt helemaal</a><br>
+                    <a>+  Klopt een beetje</a><br>
+                    <a>-  Klopt niet</a><br>
+                    <a>-- Klopt helemaal niet</a><br>
+                </div>
+                <table class="feedbackForm"> 
+                   <tr>
+                        <td><a style="margin:10px">Onderwerp 3:</a></td>
+                        <td>
+                            <a style="margin-left:10px">++</a>
+                            <a style="margin-left:13px">+</a>
+                            <a style="margin-left:13px">-</a>
+                            <a style="margin-left:13px">--</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="feedbackForm">
+                            <a class="vraag">Vraag 1</a>
+                        </td>
+                        <td class="feedbackAnswers">
+                            <input type="radio" name="group1" value="Slecht">
+                            <input type="radio" name="group1" value="Matig">
+                            <input type="radio" name="group1" value="Goed">
+                            <input type="radio" name="group1" value="Perfect">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="feedbackForm">
+                            <a class="vraag">Vraag 2</a>
+                        </td>
+                        <td class="feedbackAnswers">
+                            <input type="radio" name="group2" value="Slecht">
+                            <input type="radio" name="group2" value="Matig">
+                            <input type="radio" name="group2" value="Goed">
+                            <input type="radio" name="group2" value="Perfect">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="feedbackForm">
+                            <a class="vraag">Vraag 3</a>
+                        </td>
+                        <td class="feedbackAnswers">
+                            <input type="radio" name="group3" value="Slecht">
+                            <input type="radio" name="group3" value="Matig">
+                            <input type="radio" name="group3" value="Goed">
+                            <input type="radio" name="group3" value="Perfect">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="feedbackForm">
+                            <a class="vraag">Vraag 4</a>
+                        </td>
+                        <td class="feedbackAnswers">
+                            <input type="radio" name="group4" value="Slecht">
+                            <input type="radio" name="group4" value="Matig">
+                            <input type="radio" name="group4" value="Goed">
+                            <input type="radio" name="group4" value="Perfect">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                        </td>
+                        <td class="feedbackAnswers">
+                            <a>Volgende</a> <a href="index4.html"><img class="buttonNext" src="Images/Next.png"></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="footer"></div>
+        </div>
+    </body>
+</html>

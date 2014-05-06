@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Uitnodigingen</title>
+        <link rel="stylesheet" type="text/css" href="css/pad.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+    <div class="border">
+            <div class="header"></div>
+            <div class="mainContent">
+                
+                <table "feedbackForm"> 
+                    <tr>
+                        <select class="userSelectLeft" size="5" name="userSelect" multiple="no" > 
+                            <option value="user1" >Kees de Vries</option> 
+                            <option value="user2" >Aap de Blaap</option>
+                            <option value="user3" >Plukker des Bananen</option>
+                            <option value="user4" >Leerling 4</option>
+                            <option value="user5" >Leerling 5</option>
+                            <option value="user6" >Leerling 6</option>
+                            <option value="user7" >Leerling 7</option>
+                        </select>
+                    </tr>
+                    <tr>
+
+                    </tr>
+                    <tr>
+                            <select class="userSelectRight" size="5" name="userSelect" multiple="no" > 
+                            <option value="user1" >Kees de Vries</option> 
+                            <option value="user2" >Aap de Blaap</option>
+                            <option value="user3" >Plukker des Bananen</option>
+                            <option value="user4" >Leerling 4</option>
+                            <option value="user5" >Leerling 5</option>
+                            <option value="user6" >Leerling 6</option>
+                            <option value="user7" >Leerling 7</option>
+                        </select>
+
+                    </tr>
+                </table>
+
+            </div>
+            <div class="footer">
+                <td><img src="Images/Back.jpg"></td>
+                <td><img src="Images/Next.png"></td><br>
+                <a href="keuzePagina.html"><img class="buttonInvullen" src="Images/homeKnop.png"></a>
+                <a href="keuzePagina.html"><img class="buttonInvullen" src="Images/versturen.png"></a><br>
+                <a>Hoofdpagina</a><a style="margin-left:10px">Versturen</a>
+            </div>
+        </div>
+    </body>
+</html>

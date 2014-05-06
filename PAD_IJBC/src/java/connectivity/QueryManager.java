@@ -34,7 +34,6 @@ public class QueryManager {
             if(rs.next()){
                 loggedIn = "Logged in succesful";
                 System.out.println("Logged in succesful");
-                s_Template = "Login_OK.vsl";
                 return true;
             }
             else {

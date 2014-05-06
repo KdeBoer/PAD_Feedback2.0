@@ -108,7 +108,7 @@ public class PAD_IJBC extends HttpServlet {
             else if (username != null && password != null){
                 Login login = new Login(username, password);
                 if(login.login(username, password) == true){
-                    s_Template = "Login_OK.vsl";
+                    s_Template = "keuzePagina.vsl";
                 }
                 else{
                     s_Template = "Login.vsl";

@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Keuzepagina</title>
+        <link rel="stylesheet" type="text/css" href="css/pad.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+    <div class="header"></div>
+            <div class="buttonList">
+                <a style="font-size:30px">Aan wie wil je feedback vragen?</a>
+                <table>
+                    <tr>
+                        <td> <a href="invullenPagina.html"><img src="Images/Medeleerlingen.jpg"></a> </td>
+                        <td> <a href="invullenPagina.html"><img src="Images/Leraren.jpg"></a> </td>
+                        <td> <a href="invullenPagina.html"><img src="Images/Ouders.jpg"></a> </td>
+                        <td> <a href="invullenPagina.html"><img src="Images/Mezelf.jpg"></a> </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="footer">
+                <a href="keuzePagina.html"><img class="buttonInvullen" src="Images/homeKnop.png"></a><br>
+                <a>Hoofdpagina</a>
+            </div>
+    </body>
+</html>
