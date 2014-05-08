@@ -10,7 +10,7 @@
             <a href="/PAD_IJBC/PAD_IJBC/REQ_LOGIN" class="vraag" style="float:right">Uitloggen</a>
         </div>
             <div class="buttonList">
-                <table>
+                <table style="margin: auto;">
                     <tr>
                         <td> <a href="/PAD_IJBC/vsl/feedbackVragen.vsl"><img src="/PAD_IJBC/Images/Feedbackvragen.jpg"></a> </td>
                         <td> <a href="/PAD_IJBC/vsl/uitnodigingen.vsl"><img src="/PAD_IJBC/Images/Uitnodigingen.jpg"></a> </td>
