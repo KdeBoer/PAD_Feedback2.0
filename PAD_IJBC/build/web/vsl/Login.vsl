@@ -22,7 +22,7 @@
     
     <div class="header"></div>
     <div class = "loginbody">
-      <a style="font-size:35px">$loginFailed</a> 
+      <a style="font-size:20px; color: red">$loginFailed</a><br>
       <a style="font-size:35px">Inloggen</a>
       <form method="post" action="LOGIN">
         <a class = "vraag">Gebruikersnaam</a>

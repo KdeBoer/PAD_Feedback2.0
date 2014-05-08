@@ -99,17 +99,15 @@ public class PAD_IJBC extends HttpServlet {
         else if (s_Request.equals("/PAD_IJBC/LOGIN")) {        
             String username = request.getParameter("username");
             String password = request.getParameter("password");
-            System.out.println(username);
-            System.out.println(password);
             if (username == null || username.isEmpty()){
-                    loginFailed = "Geen gebruikersnaam ingevoerd!";
-                    vv1_Context.put("loginFailed", loginFailed);
-                    s_Template = "Login.vsl";
+                loginFailed = "Geen gebruikersnaam ingevoerd!";
+                s_Template = "Login.vsl";
+                vv1_Context.put("loginFailed", loginFailed);
             }
             else if (password == null || password.isEmpty()){
-                    loginFailed = "Geen wachtwoord ingevoerd!";
-                    vv1_Context.put("loginFailed", loginFailed);
-                    s_Template = "Login.vsl";
+                loginFailed = "Geen wachtwoord ingevoerd!";
+                vv1_Context.put("loginFailed", loginFailed);
+                s_Template = "Login.vsl";
             }
             else if (username != null && password != null){
                 Login login = new Login(username, password);
@@ -132,7 +130,9 @@ public class PAD_IJBC extends HttpServlet {
                  */
                 
             }else{
-                
+                s_Template = "Login.vsl";
+                loginFailed = "Ingevulde gegevens kloppen niet!";
+                vv1_Context.put("loginFailed", loginFailed);
             }
         }
         else if (s_Request.equals("/PAD_IJBC/NEW_ACTION")) {
