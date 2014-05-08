@@ -6,7 +6,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
-        <div class="header"><a> Logged in as: $username</a></div>
+        <div class="header"><a class = "vraag"> Logged in as: $username</a>
+            <a href="/PAD_IJBC/PAD_IJBC/REQ_LOGIN" class="vraag" style="float:right">Uitloggen</a>
+        </div>
             <div class="buttonList">
                 <table>
                     <tr>
@@ -16,7 +18,6 @@
                         <td> <a href="/PAD_IJBC/vsl/instellingenPagina.vsl"><img src="/PAD_IJBC/Images/Instellingen.jpg"></a> </td>
                     </tr>
                 </table>
-
             </div>
         <div>
     </body>

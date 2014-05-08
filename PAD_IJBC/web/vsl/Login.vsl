@@ -10,29 +10,40 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Login Form</title>
   <link rel="stylesheet" type="text/css" href="/PAD_IJBC/CSS/pad.css">
+  <link rel="stylesheet" type="text/css" href="/PAD_IJBC/CSS/logincss.css">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+
+
 </head>
 <body>
   <section class="container">
-    <div>
-      <h1>Login: Action = $action</h1>
+    
+    <div class="header"></div>
+    <div class = "loginbody">
+      <a style="font-size:35px">$loginFailed</a> 
+      <a style="font-size:35px">Inloggen</a>
       <form method="post" action="LOGIN">
-        <p><input type="text" name="username" value="" placeholder="Username or Email"></p>
-        <p><input type="password" name="password" value="" placeholder="Password"></p>
+        <a class = "vraag">Gebruikersnaam</a>
+        <p><input type="text" class="rounded" name="username" value="" placeholder="Username or Email"></p>
+        <a class = "vraag">Wachtwoord</a>
+        <p><input type="password" class="rounded" name="password" value="" placeholder="Password"></p>
         <p class="remember_me">
           <label>
             <input type="checkbox" name="remember_me" id="remember_me">
-            <a class="vraag">Remember me on this computer!</a>
+            <a class="vraag">Account onthouden!</a>
           </label>
         </p>
-        <p class="submit"><input type="submit" name="commit" value="Login"></p>
+        <input type="submit" value="&nbsp" name="commit" style="background:url(/PAD_IJBC/Images/Button_Login.png) no-repeat; height:78px; width:155px; border:none;">
       </form>
+      <div class="login-help">
+        <a class="vraag">Nog geen lid? Meld je hier aan!</a>
+        <input type="submit" value="&nbsp" name="commit" style="background:url(/PAD_IJBC/Images/Button_aanmelden.png) no-repeat; height:78px; width:155px; border:none;">
+      </div>
     </div>
 
-    <div class="login-help">
-      <p>Forgot your password? <a href="index.html">Click here to reset it</a>.</p>
-    </div>
+    
   </section>
 </body>
 </html>

@@ -88,6 +88,10 @@ public class PAD_IJBC extends HttpServlet {
         vv1_Context.put("action", s_Request);
 
         String s_Template = "";
+        String loginFailed = "";
+        
+        
+        
         
         if (s_Request.equals("/PAD_IJBC/REQ_LOGIN")) {
             s_Template = "Login.vsl";
@@ -98,11 +102,13 @@ public class PAD_IJBC extends HttpServlet {
             System.out.println(username);
             System.out.println(password);
             if (username == null || username.isEmpty()){
-                    System.out.println("Please type in your username");
+                    loginFailed = "Geen gebruikersnaam ingevoerd!";
+                    vv1_Context.put("loginFailed", loginFailed);
                     s_Template = "Login.vsl";
             }
             else if (password == null || password.isEmpty()){
-                    System.out.println("Please type in your password");
+                    loginFailed = "Geen wachtwoord ingevoerd!";
+                    vv1_Context.put("loginFailed", loginFailed);
                     s_Template = "Login.vsl";
             }
             else if (username != null && password != null){
@@ -113,6 +119,9 @@ public class PAD_IJBC extends HttpServlet {
                 }
                 else{
                     s_Template = "Login.vsl";
+                    loginFailed = "Ingevulde gegevens kloppen niet!";
+                    vv1_Context.put("loginFailed", loginFailed);
+                    //vv1_Context.put(username, out2);
                 }
                 /*
                  * Do here some exception or error catching
