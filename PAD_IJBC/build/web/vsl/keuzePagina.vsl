@@ -8,7 +8,7 @@
     <body>
         <div class="header"><a> Logged in as: $username</a></div>
             <div class="buttonList">
-                <table>
+                <table style="margin: auto;">
                     <tr>
                         <td> <a href="/PAD_IJBC/vsl/feedbackVragen.vsl"><img src="/PAD_IJBC/Images/Feedbackvragen.jpg"></a> </td>
                         <td> <a href="/PAD_IJBC/vsl/uitnodigingen.vsl"><img src="/PAD_IJBC/Images/Uitnodigingen.jpg"></a> </td>

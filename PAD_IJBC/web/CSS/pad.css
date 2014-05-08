@@ -76,3 +76,16 @@ root {
 .text {
 
 }
+
+@media only screen and (max-width: 1367px) {
+    
+    .header{
+    width:100%;
+    height:377px;
+    background-image:url('../Images/Background_1366x768.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
