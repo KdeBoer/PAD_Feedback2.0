@@ -7,7 +7,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
-        <div class="border">
+
             <div class="header"></div>
             <div class="mainContent">
                 <div style="float:right; width:175x; height:150px; margin-right:100px">
@@ -75,12 +75,12 @@
 
                         </td>
                         <td class="feedbackAnswers">
-                            <a>Feedback versturen!</a>  <a href="keuzePagina.html"><img class="buttonNext" src="Images/Versturen.png"></a>
+                            <a>Feedback versturen!</a>  <a href="keuzePagina.vsl"><img class="buttonNext" src="/PAD_IJBC/Images/Versturen.png"></a>
                         </td>
                     </tr>
                 </table>
             </div>
             <div class="footer"></div>
-        </div>
+
     </body>
 </html>

@@ -7,7 +7,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
-    <div class="border">
+
             <div class="header"></div>
             <div class="mainContent">
                 <div style="float:right; width:175px; height:150px; margin-right:100px">
@@ -75,12 +75,12 @@
 
                         </td>
                         <td class="feedbackAnswers">
-							<a>Volgende</a> <a href="index3.html"><img class="buttonNext" src="Images/Next.png"></a>
+                            <a>Volgende</a> <a href="index3.vsl"><img class="buttonNext" src="/PAD_IJBC/Images/Next.png"></a>
                         </td>
                     </tr>
                 </table>
             </div>
             <div class="footer"></div>
-        </div>
+
     </body>
 </html>
