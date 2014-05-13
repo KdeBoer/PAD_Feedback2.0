@@ -16,6 +16,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.Velocity;
@@ -92,7 +93,7 @@ public class PAD_IJBC extends HttpServlet {
         
         
         
-        
+        vv1_Context.put("loginFailed", "");
         if (s_Request.equals("/PAD_IJBC/REQ_LOGIN")) {
             s_Template = "Login.vsl";
         }        
@@ -113,7 +114,10 @@ public class PAD_IJBC extends HttpServlet {
                 Login login = new Login(username, password);
                 if(login.login(username, password) == true){
                     s_Template = "keuzePagina.vsl";
+                    
                     vv1_Context.put("username", username);
+                    HttpSession Session = request.getSession();
+                    Session.setAttribute("username", username);
                 }
                 else{
                     s_Template = "Login.vsl";
@@ -140,8 +144,16 @@ public class PAD_IJBC extends HttpServlet {
              * Implement here some code and get a new velocity template like NEW_ACTION.vsl
              */
                 s_Template = "NEW_ACTION.vsl";
+        } else if(s_Request.equals("/PAD_IJBC/RequestFeedback")) {
+            s_Template = "feedbackVragen.vsl";
+            HttpSession Session = request.getSession();
+            String username = (String) Session.getAttribute("username");
+            vv1_Context.put("username", username);
+            
+            
+            
         }
-
+        
         Template template = null;
          //vv1_Context.put("errorCode", 1234);
          //vv1_Context.put("errorCode", "Dit wordt meegegeven aan velocity");

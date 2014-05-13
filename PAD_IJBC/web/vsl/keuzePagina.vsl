@@ -12,7 +12,7 @@
         <div style="width:900px; height:300px; margin:auto">
             <table style="margin: auto;">
                 <tr>
-                    <td> <a href="/PAD_IJBC/vsl/feedbackVragen.vsl"><img src="/PAD_IJBC/Images/Feedbackvragen.jpg"></a> </td>
+                    <td> <a href="/PAD_IJBC/PAD_IJBC/RequestFeedback"><img src="/PAD_IJBC/Images/Feedbackvragen.jpg"></a> </td>
                     <td> <a href="/PAD_IJBC/vsl/uitnodigingen.vsl"><img src="/PAD_IJBC/Images/Uitnodigingen.jpg"></a> </td>
                     <td> <a href="/PAD_IJBC/vsl/index.vsl"><img src="/PAD_IJBC/Images//Feedbackbekijken.jpg"></a> </td>
                     <td> <a href="/PAD_IJBC/vsl/instellingenPagina.vsl"><img src="/PAD_IJBC/Images/Instellingen.jpg"></a> </td>

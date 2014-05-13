@@ -20,8 +20,7 @@
 <body>
   <section class="container">
     
-    <div class="header"><a class = "vraag"> Logged in as: $username</a>
-            <a href="/PAD_IJBC/PAD_IJBC/REQ_LOGIN" class="vraag" style="float:right">Uitloggen</a></div>
+    <div class="header"></div>
     <div class = "loginbody">
       <a style="font-size:20px; color: red">$loginFailed</a><br>
       <a style="font-size:35px">Inloggen</a>
