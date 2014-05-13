@@ -12,10 +12,10 @@
         <div style="width:900px; height:300px; margin:auto">
             <table style="margin: auto;">
                 <tr>
-                    <td> <a href="/PAD_IJBC/PAD_IJBC/RequestFeedback"><img src="/PAD_IJBC/Images/Feedbackvragen.jpg"></a> </td>
-                    <td> <a href="/PAD_IJBC/PAD_IJBC/RequestUitnodigingen"><img src="/PAD_IJBC/Images/Uitnodigingen.jpg"></a> </td>
-                    <td> <a href="/PAD_IJBC/PAD_IJBC/index.vsl"><img src="/PAD_IJBC/Images/Feedbackbekijken.jpg"></a> </td>
-                    <td> <a href="/PAD_IJBC/PAD_IJBC/RequestInstellingen"><img src="/PAD_IJBC/Images/Instellingen.jpg"></a> </td>
+                    <td> <a href="/PAD_IJBC/PAD_IJBC/RequestFeedback"><img src="/PAD_IJBC/Images/Feedbackvragen.jpg"><style="margin:5px></a> </td>
+                    <td> <a href="/PAD_IJBC/PAD_IJBC/RequestUitnodigingen"><img src="/PAD_IJBC/Images/Uitnodigingen.jpg"><style="margin:5px></a> </td>
+                    <td> <a href="/PAD_IJBC/PAD_IJBC/index.vsl"><img src="/PAD_IJBC/Images/Feedbackbekijken.jpg"><style="margin:5px></a> </td>
+                    <td> <a href="/PAD_IJBC/PAD_IJBC/RequestInstellingen"><img src="/PAD_IJBC/Images/Instellingen.jpg"><style="margin:5px></a> </td>
                 </tr>
             </table>
         </div>
