@@ -10,7 +10,10 @@
 
             <div class="header"></div>
             <div class="mainContent">
-                <div style="float:right; width:175px; height:150px; margin-right:100px">
+
+                <div style="width:450px; margin:auto"><a style="font-size:30px;" class="vraag">Feedback voor $username</a></div>
+                <a class="vraag">Verantwoording afleggen</a>
+                <div style="float:right; width:175px; height:150px;">
                     <a>++ Klopt helemaal</a><br>
                     <a>+  Klopt een beetje</a><br>
                     <a>-  Klopt niet</a><br>
@@ -18,7 +21,7 @@
                 </div>
                 <table class="feedbackForm"> 
                     <tr>
-                        <td><a style="margin:10px">Onderwerp 2:</a></td>
+                        <td><a style="margin:10px"></a></td>
                         <td>
                             <a style="margin-left:10px">++</a>
                             <a style="margin-left:13px">+</a>
@@ -28,7 +31,7 @@
                     </tr>
                     <tr>
                         <td class="feedbackForm">
-                            <a class="vraag">Vraag 1</a>
+                            <a class="vraag">Houdt leraren en mentoren goed op de hoogte</a>
                         </td>
                         <td class="feedbackAnswers">
                             <input type="radio" name="group1" value="Slecht">
@@ -39,7 +42,7 @@
                     </tr>
                     <tr>
                         <td class="feedbackForm">
-                            <a class="vraag">Vraag 2</a>
+                            <a class="vraag">Houdt ouders goed op de hoogte van bezigheden</a>
                         </td>
                         <td class="feedbackAnswers">
                             <input type="radio" name="group2" value="Slecht">
@@ -50,24 +53,13 @@
                     </tr>
                     <tr>
                         <td class="feedbackForm">
-                            <a class="vraag">Vraag 3</a>
+                            <a class="vraag">Komt afspraken altijd na</a>
                         </td>
                         <td class="feedbackAnswers">
                             <input type="radio" name="group3" value="Slecht">
                             <input type="radio" name="group3" value="Matig">
                             <input type="radio" name="group3" value="Goed">
                             <input type="radio" name="group3" value="Perfect">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="feedbackForm">
-                            <a class="vraag">Vraag 4</a>
-                        </td>
-                        <td class="feedbackAnswers">
-                            <input type="radio" name="group4" value="Slecht">
-                            <input type="radio" name="group4" value="Matig">
-                            <input type="radio" name="group4" value="Goed">
-                            <input type="radio" name="group4" value="Perfect">
                         </td>
                     </tr>
                     <tr>

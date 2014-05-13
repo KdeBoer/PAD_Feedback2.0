@@ -10,7 +10,10 @@
 
             <div class="header"></div>
             <div class="mainContent">
-                <div style="float:right; width:175x; height:150px; margin-right:100px">
+
+                <div style="width:450px; margin:auto"><a style="font-size:30px;" class="vraag">Feedback voor $username</a></div>
+                <a class="vraag">Initiatief nemen</a>
+                <div style="float:right; width:175px; height:150px;">
                     <a>++ Klopt helemaal</a><br>
                     <a>+  Klopt een beetje</a><br>
                     <a>-  Klopt niet</a><br>
@@ -18,7 +21,7 @@
                 </div>
                 <table class="feedbackForm"> 
                    <tr>
-                        <td><a style="margin:10px">Onderwerp 4:</a></td>
+                        <td><a style="margin:10px"></a></td>
                         <td>
                             <a style="margin-left:10px">++</a>
                             <a style="margin-left:13px">+</a>
