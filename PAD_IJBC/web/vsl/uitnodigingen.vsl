@@ -8,8 +8,9 @@
     </head>
     <body>
     <div class="border">
-            <div class="header"></div>
-            <div class="mainContent">
+            <div class="header"><a class = "vraag"> Logged in as: $username</a>
+            <a href="/PAD_IJBC/PAD_IJBC/REQ_LOGIN" class="vraag" style="float:right">Uitloggen</a></div>
+            <div>
                 
                 <table "feedbackForm"> 
                     <tr>
@@ -24,7 +25,8 @@
                         </select>
                     </tr>
                     <tr>
-
+                        <td><img src="/PAD_IJBC/Images/back.jpg"></td>
+                        <td><img src="/PAD_IJBC/Images/Next.png"></td><br>
                     </tr>
                     <tr>
                             <select class="userSelectRight" size="5" name="userSelect" multiple="no" > 
@@ -42,10 +44,9 @@
 
             </div>
             <div class="footer">
-                <td><img src="Images/Back.jpg"></td>
-                <td><img src="Images/Next.png"></td><br>
-                <a href="keuzePagina.html"><img class="buttonInvullen" src="Images/homeKnop.png"></a>
-                <a href="keuzePagina.html"><img class="buttonInvullen" src="Images/versturen.png"></a><br>
+
+                <a href="keuzePagina.html"><img class="buttonInvullen" src="/PAD_IJBC/Images/homeKnop.png"></a>
+                <a href="keuzePagina.html"><img class="buttonInvullen" src="/PAD_IJBC/Images/Versturen.png"></a><br>
                 <a>Hoofdpagina</a><a style="margin-left:10px">Versturen</a>
             </div>
         </div>
