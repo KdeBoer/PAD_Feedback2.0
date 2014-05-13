@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" type="text/css" href="/PAD_IJBC/CSS/pad.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+    <div>
+        <div class="header"><a class = "vraag"> Logged in as: $username</a>
+            <a href="/PAD_IJBC/PAD_IJBC/REQ_LOGIN" class="vraag" style="float:right">Uitloggen</a></div>
+        <div style="width:350px; height:300px; margin:auto;">
+            <img style="text-align:center" src="/PAD_IJBC/Images/Succes300x300.png"><br>            
+        </div>
+        <div style="width:500px; height:40px; margin:auto;">
+            <a style="font-size:30px">Feedback succesvol verzonden!</a>
+        </div>
+        
+    </div>
+    <div>
+        <div style="height:120px; width:100px; margin:auto">
+            <a href="/PAD_IJBC/PAD_IJBC/requestHomepage"><img class="buttonInvullen" src="/PAD_IJBC/Images/homeKnop.png"></a><br>
+            <a>Hoofdpagina</a>
+        </div>
+    </div>
+    </body>
+</html>

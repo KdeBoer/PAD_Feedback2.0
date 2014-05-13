@@ -6,7 +6,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
-    <div class="border">
+    <div>
             <div class="header"><a class = "vraag"> Logged in as: $username</a>
             <a href="/PAD_IJBC/PAD_IJBC/REQ_LOGIN" class="vraag" style="float:right">Uitloggen</a></div>
             <div class="mainContent">
@@ -41,7 +41,7 @@
             </div>
             <div>
                 <div style="height:120px; width:100px; margin:auto">
-                    <a href="keuzePagina.html"><img class="buttonInvullen" src="/PAD_IJBC/Images/homeKnop.png"></a><br>
+                    <a href="/PAD_IJBC/PAD_IJBC/requestHomepage"><img class="buttonInvullen" src="/PAD_IJBC/Images/homeKnop.png"></a><br>
                     <a>Hoofdpagina</a>
                 </div>
             </div>

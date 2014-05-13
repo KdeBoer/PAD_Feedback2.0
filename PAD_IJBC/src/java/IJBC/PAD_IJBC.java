@@ -104,12 +104,11 @@ public class PAD_IJBC extends HttpServlet {
                 loginFailed = "Geen gebruikersnaam ingevoerd!";
                 s_Template = "Login.vsl";
                 vv1_Context.put("loginFailed", loginFailed);
-            }
-            else if (password == null || password.isEmpty()){
+            } else if (password == null || password.isEmpty()){
                 loginFailed = "Geen wachtwoord ingevoerd!";
                 vv1_Context.put("loginFailed", loginFailed);
                 s_Template = "Login.vsl";
-            }
+            } 
             else if (username != null && password != null){
                 Login login = new Login(username, password);
                 if(login.login(username, password) == true){
@@ -126,7 +125,7 @@ public class PAD_IJBC extends HttpServlet {
                     //vv1_Context.put(username, out2);
                 }
                 /*
-                 * Do here some exception or error catching
+                 * Do some exception here or error catching
                  */
                 /*
                  * If no error has occured, the login has been successful.
@@ -139,19 +138,73 @@ public class PAD_IJBC extends HttpServlet {
                 vv1_Context.put("loginFailed", loginFailed);
             }
         }
-        else if (s_Request.equals("/PAD_IJBC/NEW_ACTION")) {
-            /*
-             * Implement here some code and get a new velocity template like NEW_ACTION.vsl
-             */
-                s_Template = "NEW_ACTION.vsl";
-        } else if(s_Request.equals("/PAD_IJBC/RequestFeedback")) {
+        //standard checks if other pages are called
+        else if(s_Request.equals("/PAD_IJBC/RequestFeedback")) {
             s_Template = "feedbackVragen.vsl";
             HttpSession Session = request.getSession();
             String username = (String) Session.getAttribute("username");
             vv1_Context.put("username", username);
+        } else if(s_Request.equals("/PAD_IJBC/RequestUitnodigingen")){
+            s_Template = "uitnodigingen.vsl";
+            HttpSession Session = request.getSession();
+            String username = (String) Session.getAttribute("username");
+            vv1_Context.put("username", username);
+        } else if(s_Request.equals("/PAD_IJBC/RequestInstellingen")){
+            s_Template = "instellingenPagina.vsl";
+            HttpSession Session = request.getSession();
+            String username = (String) Session.getAttribute("username");
+            vv1_Context.put("username", username);
+        }  
+        //requests feedback page 1
+        else if(s_Request.equals("/PAD_IJBC/requestFeedbackpage")){
+            s_Template = "index.vsl";
+            HttpSession Session = request.getSession();
+            String username = (String) Session.getAttribute("username");
+            vv1_Context.put("username", username);
+        } 
+        //requests feedback page 2 
+        else if(s_Request.equals("/PAD_IJBC/requestFeedbackpage2")){
+            s_Template = "index2.vsl";
+            HttpSession Session = request.getSession();
+            String username = (String) Session.getAttribute("username");
+            vv1_Context.put("username", username);
+        } 
+        //requests feedback page 3
+        else if(s_Request.equals("/PAD_IJBC/requestFeedbackpage3")){
+            s_Template = "index3.vsl";
+            HttpSession Session = request.getSession();
+            String username = (String) Session.getAttribute("username");
+            vv1_Context.put("username", username);
+        } 
+        //requests feedback validating
+        else if(s_Request.equals("/PAD_IJBC/requestSendFeedback")){
+            //insert feedback check here!
+            //if succesfull
+            s_Template = "feedbackSuccesfull.vsl";
+            HttpSession Session = request.getSession();
+            String username = (String) Session.getAttribute("username");
+            vv1_Context.put("username", username);
             
+            //insert error message if not succesfull
             
+        }
+        //request to return to the home page
+        else if(s_Request.equals("/PAD_IJBC/requestHomepage")){
+            s_Template = "keuzePagina.vsl";
+            HttpSession Session = request.getSession();
+            String username = (String) Session.getAttribute("username");
+            vv1_Context.put("username", username);            
+        }
+        
+        //request to return to the home page
+        else if(s_Request.equals("/PAD_IJBC/requestInvite")){
+            //if the invite has been sent
+            s_Template = "";
+            HttpSession Session = request.getSession();
+            String username = (String) Session.getAttribute("username");
+            vv1_Context.put("username", username);            
             
+            //error if the invite has not been send
         }
         
         Template template = null;

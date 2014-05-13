@@ -58,24 +58,12 @@ a{
     -o-background-size: cover;
     background-size: cover;
 }
-.footer{
 
-}
-.border{
-    margin-left:50px;
-    margin-right:50px;
-}
-.mainContent {
-
-}
 root { 
     display: block;
 }
 
 
-.text {
-
-}
 
 @media only screen and (max-width: 1367px) {
     

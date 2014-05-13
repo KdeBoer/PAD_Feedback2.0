@@ -7,7 +7,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
-    <div class="border">
+    <div>
             <div class="header"><a class = "vraag"> Logged in as: $username</a>
             <a href="/PAD_IJBC/PAD_IJBC/REQ_LOGIN" class="vraag" style="float:right">Uitloggen</a></div>
             <div>
@@ -45,8 +45,8 @@
             </div>
             <div class="footer">
 
-                <a href="keuzePagina.html"><img class="buttonInvullen" src="/PAD_IJBC/Images/homeKnop.png"></a>
-                <a href="keuzePagina.html"><img class="buttonInvullen" src="/PAD_IJBC/Images/Versturen.png"></a><br>
+                <a href="/PAD_IJBC/PAD_IJBC/requestHomepage"><img class="buttonInvullen" src="/PAD_IJBC/Images/homeKnop.png"></a>
+                <a href="/PAD_IJBC/PAD_IJBC/requestInvite"><img class="buttonInvullen" src="/PAD_IJBC/Images/Versturen.png"></a><br>
                 <a>Hoofdpagina</a><a style="margin-left:10px">Versturen</a>
             </div>
         </div>
