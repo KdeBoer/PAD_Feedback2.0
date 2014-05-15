@@ -8,7 +8,7 @@
     </head>
     <body>
 
-            <div class="header"><a class = "vraag"> Logged in as: $username</a>
+            <div class="header"><a class = "vraag"> Logged in as: $username</a><!--hier komt de leerling waarvan de feedback wordt ingevuld-->
             <a href="/PAD_IJBC/PAD_IJBC/REQ_LOGIN" class="vraag" style="float:right">Uitloggen</a></div>
             <div class="mainContent">
 
@@ -63,17 +63,15 @@
                             <input type="radio" name="group3" value="1">
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-
-                        </td>
-                        <td class="feedbackAnswers">
-                            <a>Volgende</a> <a href="requestFeedbackpage3"><img class="buttonNext" src="/PAD_IJBC/Images/Next.png"></a>
-                        </td>
-                    </tr>
                 </table>
             </div>
-            <div class="footer"></div>
+            <div class="footer">
+                <div style="width:150px; height:40px; margin:auto">
+                    <a>Volgende</a> <a href="requestFeedbackpage3"><img class="buttonNext" src="/PAD_IJBC/Images/Next.png"></a><br>
+                    <a href="/PAD_IJBC/PAD_IJBC/requestHomepage"><img class="buttonInvullen" src="/PAD_IJBC/Images/homeKnop.png"></a><br>
+                    <a>Hoofdpagina</a>
+                </div>
+            </div>
 
     </body>
 </html>
