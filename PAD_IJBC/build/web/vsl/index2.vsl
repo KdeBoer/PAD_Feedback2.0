@@ -11,7 +11,6 @@
             <div class="header"><a class = "vraag"> Logged in as: $username</a><!--hier komt de leerling waarvan de feedback wordt ingevuld-->
             <a href="/PAD_IJBC/PAD_IJBC/REQ_LOGIN" class="vraag" style="float:right">Uitloggen</a></div>
             <div class="mainContent">
-
                 <div style="width:450px; margin:auto"><a style="font-size:30px;" class="vraag">Feedback voor $username</a></div>
                 <a class="vraag">Verantwoording afleggen</a>
                 <div style="float:right; width:175px; height:150px;">

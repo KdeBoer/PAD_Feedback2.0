@@ -4,6 +4,7 @@
  */
 package IJBC;
 
+import Leerling.Leerling;
 import Login.Login;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -90,16 +91,16 @@ public class PAD_IJBC extends HttpServlet {
 
         String s_Template = "";
         String loginFailed = "";
+        String registerFailed = "";
         
-        
-        
+        vv1_Context.put("errorRegister", "");
         vv1_Context.put("loginFailed", "");
         if (s_Request.equals("/PAD_IJBC/REQ_LOGIN")) {
             s_Template = "Login.vsl";
         }        
         else if (s_Request.equals("/PAD_IJBC/LOGIN")) {        
-            String username = request.getParameter("username");
-            String password = request.getParameter("password");
+            String username = request.getParameter("gebruikersnaam");
+            String password = request.getParameter("wachtwoord");
             if (username == null || username.isEmpty()){
                 loginFailed = "Geen gebruikersnaam ingevoerd!";
                 s_Template = "Login.vsl";
@@ -206,6 +207,46 @@ public class PAD_IJBC extends HttpServlet {
             
             //error if the invite has not been send
         }
+        //request to go to the register page
+        else if(s_Request.equals("/PAD_IJBC/REGISTER")){
+            s_Template = "register.vsl";
+        }
+        else if(s_Request.equals("/PAD_IJBC/registerLeerling")){
+            
+            String naam = request.getParameter("naam");
+            String tussenvoegsel = request.getParameter("tussenvoegsel");
+            String achternaam = request.getParameter("achternaam");
+            String leerlingnummer = request.getParameter("leerlingnummer");
+            String klas = request.getParameter("klas");
+            String email = request.getParameter("email");
+            String wachtwoord = request.getParameter("wachtwoord");
+            String herhaalWachtwoord = request.getParameter("herhaalwachtwoord");
+            System.out.println(naam);
+            System.out.println(wachtwoord);
+            System.out.println(herhaalWachtwoord);
+            if(wachtwoord != herhaalWachtwoord){
+                vv1_Context.put("errorRegister", "Wachtwoorden komen niet overeen!");
+                s_Template = "register.vsl";
+            } else{
+                vv1_Context.put("errorRegister", "");
+                s_Template = "register.vsl";
+            }
+            Leerling leerling = new Leerling(naam, tussenvoegsel, achternaam, leerlingnummer, klas, email, wachtwoord);
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         Template template = null;
          //vv1_Context.put("errorCode", 1234);

@@ -26,9 +26,9 @@
       <a style="font-size:35px">Inloggen</a>
       <form method="post" action="LOGIN">
         <a class = "vraag">Gebruikersnaam</a>
-        <p><input type="text" class="rounded" name="username" value="" placeholder="Username or Email"></p>
+        <p><input type="text" class="rounded" name="gebruikersnaam" value="" placeholder="Username of Email"></p>
         <a class = "vraag">Wachtwoord</a>
-        <p><input type="password" class="rounded" name="password" value="" placeholder="Password"></p>
+        <p><input type="password" class="rounded" name="wachtwoord" value="" placeholder="password"></p>
         <p class="remember_me">
           <label>
             <input type="checkbox" name="remember_me" id="remember_me">
@@ -37,10 +37,12 @@
         </p>
         <input type="submit" value="&nbsp" name="commit" style="background:url(/PAD_IJBC/Images/Button_Login.png) no-repeat; height:78px; width:155px; border:none;">
       </form>
-      <div class="login-help">
-        <a class="vraag">Nog geen lid? Meld je hier aan!</a>
-        <input type="submit" value="&nbsp" name="commit" style="background:url(/PAD_IJBC/Images/Button_aanmelden.png) no-repeat; height:78px; width:155px; border:none;">
-      </div>
+      <form method="post" action="REGISTER">
+        <div class="login-help">
+          <a class="vraag">Nog geen lid? Meld je hier aan!</a>
+          <input type="submit" value="&nbsp" name="commit" style="background:url(/PAD_IJBC/Images/Button_aanmelden.png) no-repeat; height:78px; width:155px; border:none;">
+        </div>
+      </form>
     </div>
 
     
