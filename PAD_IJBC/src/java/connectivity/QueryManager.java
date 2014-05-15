@@ -27,17 +27,25 @@ public class QueryManager {
     DbManager db;
     
     
-    /**
-     *
-     * @param Naam
-     * @param Tussenvoegsel
-     * @param Achternaam
-     * @param Leerlingnummer
-     * @param Klas
-     * @param Email
-     * @param Wachtwoord
-     * @return
-     */
+    //initial query before registering
+    public boolean registerCheck(String Naam, String Tussenvoegsel, String Achternaam, String Leerlingnummer, String Klas, String Email, String Wachtwoord){
+        String registerCheck = "SELECT Leerlingnr from leerling where Leerlingnr = '" + Leerlingnummer + "'";
+        try{
+            rs = db.doQuery(registerCheck);
+            if(rs.next()){
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+        catch(SQLException E){
+            System.out.println(E.getMessage());
+            return true;
+        }
+    }
+    
+    //register query
     public int register(String Naam, String Tussenvoegsel, String Achternaam, String Leerlingnummer, String Klas, String Email, String Wachtwoord){
 
         int result = 0;
@@ -59,7 +67,7 @@ public class QueryManager {
     
     //Login query
     public boolean login(String email, String password){
-        String login = "SELECT email, Wachtwoord FROM testaccount where email = '" +
+        String login = "SELECT email, Wachtwoord FROM leerling where email = '" +
                 email + "' AND wachtwoord = '" + password + "'";
         String loggedIn = "";
         try{

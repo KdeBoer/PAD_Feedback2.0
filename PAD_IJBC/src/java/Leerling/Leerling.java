@@ -44,6 +44,15 @@ public class Leerling {
         }
     }
     
+    public String registerCheck(String Naam, String Tussenvoegsel, String Achternaam, String Leerlingnummer, String Klas, String Email, String Wachtwoord){
+        String registerCheck = "";
+        
+        if(Qm.registerCheck(Naam, Tussenvoegsel, Achternaam, Leerlingnummer, Klas, Email, Wachtwoord) == false){
+            registerCheck = "Emailadres wordt al gebruikt!";
+        } 
+        return registerCheck;
+    }
+    
     
     
     

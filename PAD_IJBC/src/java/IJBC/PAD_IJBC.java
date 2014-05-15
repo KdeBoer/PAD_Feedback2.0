@@ -93,8 +93,12 @@ public class PAD_IJBC extends HttpServlet {
         String loginFailed = "";
         String registerFailed = "";
         
+        //sets the initial error messages to 0
         vv1_Context.put("errorRegister", "");
         vv1_Context.put("loginFailed", "");
+        vv1_Context.put("errorEmail", "");
+        
+        vv1_Context.put("errorWachtwoord", "");
         if (s_Request.equals("/PAD_IJBC/REQ_LOGIN")) {
             s_Template = "Login.vsl";
         }        
@@ -125,13 +129,6 @@ public class PAD_IJBC extends HttpServlet {
                     vv1_Context.put("loginFailed", loginFailed);
                     //vv1_Context.put(username, out2);
                 }
-                /*
-                 * Do some exception here or error catching
-                 */
-                /*
-                 * If no error has occured, the login has been successful.
-                 * In that case we return a new velocity template, like Login_OK.vsl
-                 */
                 
             }else{
                 s_Template = "Login.vsl";
@@ -224,14 +221,24 @@ public class PAD_IJBC extends HttpServlet {
                 if(wachtwoord.equals(herhaalWachtwoord)){
                     s_Template = "register.vsl";
                     Leerling leerling = new Leerling(naam, tussenvoegsel, achternaam, leerlingnummer, klas, email, wachtwoord);
-                    if(leerling.register(naam, tussenvoegsel, achternaam, leerlingnummer, klas, email, wachtwoord) == true){
-                        s_Template = "keuzePagina.vsl";
+                    
+                    //if the method returns no values, continue
+                    if(leerling.registerCheck(naam, tussenvoegsel, achternaam, leerlingnummer, klas, email, wachtwoord).equals("")){
+                        if(leerling.register(naam, tussenvoegsel, achternaam, leerlingnummer, klas, email, wachtwoord) == true)
+                        {    
+                            s_Template = "Login.vsl";
+                            vv1_Context.put("loginFailed", "Account succesvol aangemaakt!");
+                        } else {
+                            vv1_Context.put("loginFailed", "Account niet aangemaakt!");
+                        }
                     } else {
-                        vv1_Context.put("errorRegister", "error");
+                        vv1_Context.put("errorRegister", "Dit leerlingnummer bestaat al!");
                         s_Template = "register.vsl";
                     }
-                } else{
-                    vv1_Context.put("errorRegister", "Wachtwoorden komen niet overeen!");
+                } 
+                //if the passwords don't match
+                else{
+                    vv1_Context.put("errorWachtwoord", "Wachtwoorden komen niet overeen!</br>");
                     s_Template = "register.vsl";
                 }
             

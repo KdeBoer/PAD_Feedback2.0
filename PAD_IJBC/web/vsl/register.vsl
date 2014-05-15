@@ -21,8 +21,9 @@
     
     <div class="header"></div>
     
-    <a style="color:red">$errorRegister</a>
+    
     <div>
+        <a style="color:red">$errorRegister</a>
         <form method="post" action="registerLeerling">
         <table>
             <tr>
@@ -67,6 +68,7 @@
             </tr>
             <tr>
                 <td>
+                    <a style="color:red">$errorEmail</a>
                     <a>E-mailadres:</a>
                 </td>
                 <td>
@@ -75,6 +77,7 @@
             </tr>
             <tr>
                 <td>
+                    <a style="color:red">$errorWachtwoord</a>
                     <a>Wachtwoord:</a>
                 </td>
                 <td>
