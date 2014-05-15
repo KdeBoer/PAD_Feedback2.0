@@ -26,14 +26,12 @@ public class Login {
     
     public boolean login(String username, String password){
         
-        //if(rq.getMethod().equals("POST")){
-            if(Qm.login(username, password) == true){
-                return true;
-            }
-            else{
-                return false;
-            }
-        //}
+        if(Qm.login(username, password) == true){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     
     
