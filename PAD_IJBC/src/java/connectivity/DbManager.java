@@ -78,6 +78,23 @@ public class DbManager {
         return result;
     }
     
+    public int doInsert(String query) {
+        int result = 0;
+        if(connection == null){
+            openConnection();
+        }
+        try {
+            Statement statement = connection.createStatement();
+            result = statement.executeUpdate(query);
+            
+        } catch (java.sql.SQLException e) {
+            System.err.println(SQL_EXCEPTION + e);
+        }
+        return result;
+    }
+    
+    
+    
     /**
      * Executes a query with result.
      * @param query, the SQL query

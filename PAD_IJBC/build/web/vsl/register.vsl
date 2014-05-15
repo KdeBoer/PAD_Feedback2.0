@@ -20,8 +20,10 @@
 <body>
     
     <div class="header"></div>
-    $errorRegister
+    
+    <a style="color:red">$errorRegister</a>
     <div>
+        <form method="post" action="registerLeerling">
         <table>
             <tr>
                 <td>
@@ -89,9 +91,11 @@
             </tr>
 
         </table>
+        
         <div style="margin-top:15px;">
-            <a>Registreer!</a>  <a style="padding-left:30px;" href="/PAD_IJBC/PAD_IJBC/registerLeerling"><img class="buttonNext" src="/PAD_IJBC/Images/Versturen.png"></a>
+            <a>Registreer!</a> <input type="submit" value="&nbsp" name="commit" style="background:url(/PAD_IJBC/Images/Versturen.png) no-repeat; height:78px; width:155px; border:none;">
         </div>
+        </form>
     </div>
 </body>
 </html>

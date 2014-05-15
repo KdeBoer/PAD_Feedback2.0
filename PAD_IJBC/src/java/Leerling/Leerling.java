@@ -4,6 +4,9 @@
  */
 package Leerling;
 
+import connectivity.DbManager;
+import connectivity.QueryManager;
+
 /**
  *
  * @author Alex
@@ -16,6 +19,8 @@ public class Leerling {
     private String Klas;
     private String Email;
     private String Wachtwoord;
+    QueryManager Qm;
+    DbManager db;
 
     public Leerling(String Naam, String Tussenvoegsel, String Achternaam, String Leerlingnummer, String Klas, String Email, String Wachtwoord) {
         this.Naam = Naam;
@@ -25,8 +30,19 @@ public class Leerling {
         this.Klas = Klas;
         this.Email = Email;
         this.Wachtwoord = Wachtwoord;
+        db = new DbManager();
+        Qm = new QueryManager();
     }
-
+    
+    
+    public boolean register(String Naam, String Tussenvoegsel, String Achternaam, String Leerlingnummer, String Klas, String Email, String Wachtwoord){
+        if(Qm.register(Naam, Tussenvoegsel, Achternaam, Leerlingnummer, Klas, Email, Wachtwoord) == 1){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
     
     
     

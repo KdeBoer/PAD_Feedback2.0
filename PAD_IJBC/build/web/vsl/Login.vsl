@@ -37,6 +37,9 @@
         </p>
         <input type="submit" value="&nbsp" name="commit" style="background:url(/PAD_IJBC/Images/Button_Login.png) no-repeat; height:78px; width:155px; border:none;">
       </form>
+
+
+
       <form method="post" action="REGISTER">
         <div class="login-help">
           <a class="vraag">Nog geen lid? Meld je hier aan!</a>
