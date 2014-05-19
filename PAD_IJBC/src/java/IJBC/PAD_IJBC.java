@@ -97,6 +97,21 @@ public class PAD_IJBC extends HttpServlet {
         vv1_Context.put("errorRegister", "");
         vv1_Context.put("loginFailed", "");
         vv1_Context.put("errorEmail", "");
+        vv1_Context.put("errorKlas", "");
+        vv1_Context.put("errorVoornaam", "");
+        vv1_Context.put("errorAchternaam", "");
+        vv1_Context.put("errorLeerlingnummer", "");
+        
+        
+        //sets the initial register values to 0
+        vv1_Context.put("voornaam", "");
+        vv1_Context.put("tussenvoegsel", "");
+        vv1_Context.put("achternaam", "");
+        vv1_Context.put("klas", "");
+        vv1_Context.put("leerlingnummer", "");
+        vv1_Context.put("email", "");
+        
+        
         
         vv1_Context.put("errorWachtwoord", "");
         if (s_Request.equals("/PAD_IJBC/REQ_LOGIN")) {
@@ -218,27 +233,72 @@ public class PAD_IJBC extends HttpServlet {
                 String email = request.getParameter("email");
                 String wachtwoord = request.getParameter("wachtwoord");
                 String herhaalWachtwoord = request.getParameter("herhaalwachtwoord");
-                if(wachtwoord.equals(herhaalWachtwoord)){
+                
+                //register input checks
+                if(naam.length() == 0){
+                    vv1_Context.put("errorVoornaam", "Naam niet ingevoerd!</br>");
+                    saveValues(vv1_Context, naam, tussenvoegsel, achternaam, leerlingnummer, klas, email);
+                    
                     s_Template = "register.vsl";
+                }
+                else if(achternaam.length() == 0){
+                    vv1_Context.put("errorAchternaam", "Achternaam niet ingevoerd!</br>");
+                    saveValues(vv1_Context, naam, tussenvoegsel, achternaam, leerlingnummer, klas, email);
+                    s_Template = "register.vsl";
+                }
+                else if(leerlingnummer.length() == 0){
+                    vv1_Context.put("errorLeerlingnummer", "Leerlingnummer niet ingevoerd!</br>");
+                    saveValues(vv1_Context, naam, tussenvoegsel, achternaam, leerlingnummer, klas, email);
+                    s_Template = "register.vsl";
+                }
+                else if(klas.length() == 0){
+                    vv1_Context.put("errorKlas", "Klas niet ingevoerd!!</br>");
+                    saveValues(vv1_Context, naam, tussenvoegsel, achternaam, leerlingnummer, klas, email);
+                    s_Template = "register.vsl";
+                }
+                else if(email.length() == 0){
+                    vv1_Context.put("errorEmail", "E-mailadres niet ingevoerd!</br>");
+                    saveValues(vv1_Context, naam, tussenvoegsel, achternaam, leerlingnummer, klas, email);
+                    s_Template = "register.vsl";
+                }
+                                                                                                
+                //password length requirements check
+                else if(wachtwoord.length() < 6 || herhaalWachtwoord.length() < 6){
+                    vv1_Context.put("errorWachtwoord", "Wachtwoord moet minimaal 6 tekens bevatten!</br>");
+                    saveValues(vv1_Context, naam, tussenvoegsel, achternaam, leerlingnummer, klas, email);
+                    s_Template = "register.vsl";
+                }
+                else if(wachtwoord.length() > 20 || herhaalWachtwoord.length() > 20){
+                    vv1_Context.put("errorWachtwoord", "Wachtwoord mag maximaal 20 tekens bevatten!</br>");
+                    saveValues(vv1_Context, naam, tussenvoegsel, achternaam, leerlingnummer, klas, email);                    
+                    s_Template = "register.vsl";
+                }
+                else if(wachtwoord.equals(herhaalWachtwoord)){
+                    s_Template = "register.vsl";
+                    //creates a new "leerling" object 
                     Leerling leerling = new Leerling(naam, tussenvoegsel, achternaam, leerlingnummer, klas, email, wachtwoord);
                     
-                    //if the method returns no values, continue
+                    //checks if the filled in studentnumber already exists
                     if(leerling.registerCheck(naam, tussenvoegsel, achternaam, leerlingnummer, klas, email, wachtwoord).equals("")){
+                        //if the boolean returns true, the student has been added
                         if(leerling.register(naam, tussenvoegsel, achternaam, leerlingnummer, klas, email, wachtwoord) == true)
                         {    
                             s_Template = "Login.vsl";
                             vv1_Context.put("loginFailed", "Account succesvol aangemaakt!");
                         } else {
-                            vv1_Context.put("loginFailed", "Account niet aangemaakt!");
+                            vv1_Context.put("errorRegister", "Account niet aangemaakt!");
+                            s_Template = "register.vsl";
                         }
                     } else {
-                        vv1_Context.put("errorRegister", "Dit leerlingnummer bestaat al!");
+                        vv1_Context.put("errorLeerlingnummer", "Dit leerlingnummer bestaat al!<br>");
+                        saveValues(vv1_Context, naam, tussenvoegsel, achternaam, leerlingnummer, klas, email);
                         s_Template = "register.vsl";
                     }
                 } 
                 //if the passwords don't match
                 else{
                     vv1_Context.put("errorWachtwoord", "Wachtwoorden komen niet overeen!</br>");
+                    saveValues(vv1_Context, naam, tussenvoegsel, achternaam, leerlingnummer, klas, email);
                     s_Template = "register.vsl";
                 }
             
@@ -246,7 +306,7 @@ public class PAD_IJBC extends HttpServlet {
         }
         
         
-        
+
         
         
         
@@ -286,7 +346,14 @@ public class PAD_IJBC extends HttpServlet {
         }
         out2.close();
     }
-    
+    public void saveValues(VelocityContext vv1_Context, String voornaam, String tussenvoegsel, String achternaam, String nummer, String klas, String email){
+        vv1_Context.put("voornaam",voornaam);
+        vv1_Context.put("tussenvoegsel",tussenvoegsel);
+        vv1_Context.put("achternaam",achternaam);
+        vv1_Context.put("leerlingnummer",nummer);
+        vv1_Context.put("klas",klas);
+        vv1_Context.put("email",email);
+    }
     
    
 

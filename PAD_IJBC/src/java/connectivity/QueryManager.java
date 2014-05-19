@@ -67,7 +67,7 @@ public class QueryManager {
     
     //Login query
     public boolean login(String email, String password){
-        String login = "SELECT email, Wachtwoord FROM leerling where email = '" +
+        String login = "SELECT email, Wachtwoord FROM testaccount WHERE email = '" +
                 email + "' AND wachtwoord = '" + password + "'";
         String loggedIn = "";
         try{

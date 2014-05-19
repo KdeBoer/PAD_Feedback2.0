@@ -28,10 +28,11 @@
         <table>
             <tr>
                 <td>
-                    <a>Naam:</a>
+                    <a style="color:red">$errorVoornaam</a>
+                    <a>Voornaam:</a>
                 </td>
                 <td>
-                    <input type="text" class="rounded" name="voornaam" value="" placeholder="voornaam">
+                    <input type="text" class="rounded" name="voornaam" value="$voornaam" placeholder="Voornaam">
                 </td>
             </tr>
             <tr>
@@ -39,31 +40,34 @@
                     <a>Tussenvoegsel:</a>
                 </td>
                 <td>
-                    <input type="text" class="rounded" name="tussenvoegsel" value="" placeholder="tussenvoegsel">
+                    <input type="text" class="rounded" name="tussenvoegsel" value="$tussenvoegsel" placeholder="Tussenvoegsel">
                 </td>
             </tr>
             <tr>
                 <td>
+                    <a style="color:red">$errorAchternaam</a>
                     <a>Achternaam:</a>
                 </td>
                 <td>
-                    <input type="text" class="rounded" name="achternaam" value="" placeholder="achternaam">
+                    <input type="text" class="rounded" name="achternaam" value="$achternaam" placeholder="Achternaam">
                 </td>
             </tr>
             <tr>
                 <td>
+                    <a style="color:red">$errorLeerlingnummer</a>
                     <a>Leerlingnummer:</a>
                 </td>
                 <td>
-                    <input type="text" class="rounded" name="leerlingnummer" value="" placeholder="leerlingnummer">
+                    <input type="text" class="rounded" name="leerlingnummer" value="$leerlingnummer" placeholder="Leerlingnummer">
                 </td>
             </tr>
             <tr>
                 <td>
+                    <a style="color:red">$errorKlas</a>
                     <a>Klas:</a>
                 </td>
                 <td>
-                    <input type="text" class="rounded" name="klas" value="" placeholder="klas">
+                    <input type="text" class="rounded" name="klas" value="$klas" placeholder="Klas">
                 </td>
             </tr>
             <tr>
@@ -72,7 +76,7 @@
                     <a>E-mailadres:</a>
                 </td>
                 <td>
-                   <input type="text" class="rounded" name="email" value="" placeholder="emailadres"> 
+                   <input type="text" class="rounded" name="email" value="$email" placeholder="E-mailadres"> 
                 </td>
             </tr>
             <tr>
@@ -81,7 +85,7 @@
                     <a>Wachtwoord:</a>
                 </td>
                 <td>
-                    <input type="text" class="rounded" name="wachtwoord" value="" placeholder="wachtwoord">
+                    <input type="password" class="rounded" name="wachtwoord" value="" placeholder="Wachtwoord">
                 </td>
             </tr>
             <tr>
@@ -89,7 +93,7 @@
                     <a>Herhaal wachtwoord:</a>
                 </td>
                 <td>
-                    <input type="text" class="rounded" name="herhaalwachtwoord" value="" placeholder="herhaal wachtwoord">
+                    <input type="password" class="rounded" name="herhaalwachtwoord" value="" placeholder="Herhaal wachtwoord">
                 </td>
             </tr>
 
