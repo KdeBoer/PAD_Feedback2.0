@@ -6,6 +6,7 @@ package IJBC;
 
 import Leerling.Leerling;
 import Login.Login;
+import connectivity.QueryManager;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -117,6 +118,10 @@ public class PAD_IJBC extends HttpServlet {
         vv1_Context.put("email", "");
         
         
+        //sets the initial values 
+        vv1_Context.put("targettedLeerling","");
+        
+        
         
         vv1_Context.put("errorWachtwoord", "");
         if (s_Request.equals("/PAD_IJBC/REQ_LOGIN")) {
@@ -163,18 +168,31 @@ public class PAD_IJBC extends HttpServlet {
             vv1_Context.put("username", username);
         } else if(s_Request.equals("/PAD_IJBC/RequestUitnodigingen")){
             s_Template = "uitnodigingen.vsl";
+            
+           
+            
             HttpSession Session = request.getSession();
             String username = (String) Session.getAttribute("username");
             vv1_Context.put("username", username);
-        } else if(s_Request.equals("/PAD_IJBC/RequestInstellingen")){
-            s_Template = "instellingenPagina.vsl";
-            HttpSession Session = request.getSession();
-            String username = (String) Session.getAttribute("username");
-            vv1_Context.put("username", username);
+        }  else if(s_Request.equals("/PAD_IJBC/searchKlas")){
+                //QueryManager qm = new QueryManager();
+                //qm.studentList(klas);
+                
+                System.out.println(request.getParameter("selecteerKlas"));
+                s_Template = "uitnodigingen.vsl";
+                HttpSession Session = request.getSession();
+                String username = (String) Session.getAttribute("username");
+                vv1_Context.put("username", username);
+                
+            }else if(s_Request.equals("/PAD_IJBC/RequestInstellingen")){
+                s_Template = "instellingenPagina.vsl";
+                HttpSession Session = request.getSession();
+                String username = (String) Session.getAttribute("username");
+                vv1_Context.put("username", username);
         }  
-        //requests feedback page 1
+       
         else if(s_Request.equals("/PAD_IJBC/requestFeedbackpage")){
-            s_Template = "index.vsl";
+            s_Template = "uitnodigingen.vsl";
             HttpSession Session = request.getSession();
             String username = (String) Session.getAttribute("username");
             vv1_Context.put("username", username);
@@ -308,7 +326,7 @@ public class PAD_IJBC extends HttpServlet {
                 }
             
             
-        }
+        } 
         
         
 
@@ -361,6 +379,9 @@ public class PAD_IJBC extends HttpServlet {
         vv1_Context.put("email",email);
     }
     
+    
+    
+
    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

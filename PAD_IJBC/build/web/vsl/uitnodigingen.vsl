@@ -10,41 +10,59 @@
     <div>
             <div class="header"><a class = "vraag"> Logged in as: $username</a>
             <a href="/PAD_IJBC/PAD_IJBC/REQ_LOGIN" class="vraag" style="float:right">Uitloggen</a></div>
-            <div>
-                
-                <table "feedbackForm"> 
-                    <tr>
-                        <select class="userSelectLeft" size="5" name="userSelect" multiple="no" > 
-                            <option value="user1" >Kees de Vries</option> 
-                            <option value="user2" >Aap de Blaap</option>
-                            <option value="user3" >Plukker des Bananen</option>
-                            <option value="user4" >Leerling 4</option>
-                            <option value="user5" >Leerling 5</option>
-                            <option value="user6" >Leerling 6</option>
-                            <option value="user7" >Leerling 7</option>
-                        </select>
-                    </tr>
-                    <tr>
+            <div style="width:900px; height:300px; margin:auto">       
+                <table style="margin:auto;"> 
+                    <tr style="float:left">
+                        <td>
+                            <a>Selecteer een klas: </a><br>
+                            <select name="selecteerKlas">
+                                <option value="Mavo 1">Mavo 1</option>
+                                <option value="Mavo 2">Mavo 2</option>
+                                <option value="Mavo 3">Mavo 3</option>
+                                <option value="Mavo 4">Mavo 4</option>
+                                <option value="Havo 1">Havo 1</option>
+                                <option value="Havo 2">Havo 2</option>
+                                <option value="Havo 3">Havo 3</option>
+                                <option value="Havo 4">Havo 4</option>
+                                <option value="Havo 5">Havo 5</option>
+                                <option value="VWO 1">VWO 1</option>
+                                <option value="VWO 2">VWO 2</option>
+                                <option value="VWO 3">VWO 3</option>
+                                <option value="VWO 4">VWO 4</option>
+                                <option value="VWO 5">VWO 5</option>
+                                <option value="VWO 6">VWO 6</option>
+                            </select><br>
+                            <a href = "/PAD_IJBC/PAD_IJBC/searchKlas">Zoek</a>
+                        </td>
+                        <td>
+                            <a>Leerlingen in jouw school</a><br>
+                            <select style="width:250px" class="userSelectLeft" size="15" name="userSelect" multiple="no" > 
+                                <option value="user1">Kees de Vries</option> 
+                                <option value="user2">Aap de Blaap</option>
+                                <option value="user3">Plukker des Bananen</option>
+                                <option value="user4">Leerling 4</option>
+                                <option value="user5">Leerling 5</option>
+                                <option value="user6">Leerling 6</option>
+                                <option value="user7">Leerling 7</option>
+                            </select>
+                        <td>
                         <td><img src="/PAD_IJBC/Images/back.jpg"></td>
                         <td><img src="/PAD_IJBC/Images/Next.png"></td><br>
-                    </tr>
-                    <tr>
-                            <select class="userSelectRight" size="5" name="userSelect" multiple="no" > 
-                            <option value="user1" >Kees de Vries</option> 
-                            <option value="user2" >Aap de Blaap</option>
-                            <option value="user3" >Plukker des Bananen</option>
-                            <option value="user4" >Leerling 4</option>
-                            <option value="user5" >Leerling 5</option>
-                            <option value="user6" >Leerling 6</option>
-                            <option value="user7" >Leerling 7</option>
-                        </select>
-
-                    </tr>
+                        <td>
+                            <a>Geselecteerde leerlingen</a><br>
+                            <select style="width:250px" class="userSelectRight" size="15" name="userSelect" multiple="no" > 
+                                <option value="user1">Kees de Vries</option> 
+                                <option value="user2">Aap de Blaap</option>
+                                <option value="user3">Plukker des Bananen</option>
+                                <option value="user4">Leerling 4</option>
+                                <option value="user5">Leerling 5</option>
+                                <option value="user6">Leerling 6</option>
+                                <option value="user7">Leerling 7</option>
+                            </select>
+                        </td>
                 </table>
-
             </div>
-            <div class="footer">
-
+            <div style="height:120px; width:250px; margin:auto">
                 <a href="/PAD_IJBC/PAD_IJBC/requestHomepage"><img class="buttonInvullen" src="/PAD_IJBC/Images/homeKnop.png"></a>
                 <a href="/PAD_IJBC/PAD_IJBC/requestInvite"><img class="buttonInvullen" src="/PAD_IJBC/Images/Versturen.png"></a><br>
                 <a>Hoofdpagina</a><a style="margin-left:10px">Versturen</a>

@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -26,7 +27,12 @@ public class QueryManager {
     Statement st;
     DbManager db;
     
-    
+    //creates a list of students
+    public void studentList(String klas){
+        //String searchStudents = "SELECT voornaam, klas FROM leerling WHERE klas = '" + klas + "'";
+        System.out.println(klas);
+        //return studentList;
+    }
     //initial query before registering
     public boolean registerCheck(String Naam, String Tussenvoegsel, String Achternaam, String Leerlingnummer, String Klas, String Email, String Wachtwoord){
         String registerCheck = "SELECT Leerlingnr from leerling where Leerlingnr = '" + Leerlingnummer + "'";
