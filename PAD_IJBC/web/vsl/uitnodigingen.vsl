@@ -35,7 +35,7 @@
                                 <input type ="submit" value=" " name ="/PAD_IJBC/PAD_IJBC/searchKlas" style="background:url(/PAD_IJBC/Images/Zoek.png) no-repeat; height:85px; width:155px; border:none;">
                             </td>
                             <td>
-                                <!--<a>Leerlingen in jouw school</a><br>
+                                <!--<a>Leerlingen op jouw school</a><br>
                                 <select style="width:250px" class="userSelectLeft" size="15" name="userSelect" multiple="no" > 
                                     <option value="user1">Kees de Vries</option> 
                                     <option value="user2">Aap de Blaap</option>
@@ -79,7 +79,7 @@
             </div>
             <div style="height:120px; width:250px; margin:auto">
                 <a href="/PAD_IJBC/PAD_IJBC/requestHomepage"><img class="buttonInvullen" src="/PAD_IJBC/Images/homeKnop.png"></a>
-                <a href="/PAD_IJBC/PAD_IJBC/requestInvite"><img class="buttonInvullen" src="/PAD_IJBC/Images/Versturen.png"></a><br>
+                <a href="/PAD_IJBC/PAD_IJBC/requestInvite"><img class="buttonInvullen" src="/PAD_IJBC/Images/Versturen.jpg"></a><br>
                 <a>Hoofdpagina</a><a style="margin-left:10px">Versturen</a>
             </div>
         </div>
