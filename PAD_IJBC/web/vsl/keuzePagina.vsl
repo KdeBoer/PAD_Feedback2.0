@@ -14,7 +14,7 @@
                 <tr>
                     <td> <a href="/PAD_IJBC/PAD_IJBC/RequestFeedback"><img src="/PAD_IJBC/Images/Feedbackvragen.jpg"><style="margin:5px></a> </td>
                     <td> <a href="/PAD_IJBC/PAD_IJBC/RequestUitnodigingen"><img src="/PAD_IJBC/Images/Uitnodigingen.jpg"><style="margin:5px></a> </td>
-                    <td> <a href="/PAD_IJBC/PAD_IJBC/index.vsl"><img src="/PAD_IJBC/Images/Feedbackbekijken.jpg"><style="margin:5px></a> </td>
+                    <td> <a href="/PAD_IJBC/PAD_IJBC/RequestResultaat"><img src="/PAD_IJBC/Images/Feedbackbekijken.jpg"><style="margin:5px></a> </td>
                     <td> <a href="/PAD_IJBC/PAD_IJBC/RequestInstellingen"><img src="/PAD_IJBC/Images/Instellingen.jpg"><style="margin:5px></a> </td>
                 </tr>
             </table>
