@@ -36,7 +36,7 @@
                                 <input type ="submit" name ="/PAD_IJBC/PAD_IJBC/searchKlas">
                             </td>
                             <td>
-                                <!--<a>Leerlingen in jouw school</a><br>
+                                <!--<a>Leerlingen op jouw school</a><br>
                                 <select style="width:250px" class="userSelectLeft" size="15" name="userSelect" multiple="no" > 
                                     <option value="user1">Kees de Vries</option> 
                                     <option value="user2">Aap de Blaap</option>

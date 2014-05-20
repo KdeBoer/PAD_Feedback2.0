@@ -252,7 +252,7 @@ public class PAD_IJBC extends HttpServlet {
                 String tussenvoegsel = request.getParameter("tussenvoegsel");
                 String achternaam = request.getParameter("achternaam");
                 String leerlingnummer = request.getParameter("leerlingnummer");
-                String klas = request.getParameter("klas");
+                String klas = request.getParameter("selecteerNiveau");
                 String email = request.getParameter("email");
                 String wachtwoord = request.getParameter("wachtwoord");
                 String herhaalWachtwoord = request.getParameter("herhaalwachtwoord");
