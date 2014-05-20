@@ -51,12 +51,12 @@ public class QueryManager {
         int result = 0;
         
         String register = "INSERT INTO leerling VALUES('" 
-        + Leerlingnummer + "', '" 
-        + Email + "', '" 
+        + Leerlingnummer + "','" 
+        + Email + "','" 
         + Naam + "', '" 
-        + Achternaam + "', '" 
-        + Wachtwoord + "', '"
-        + Klas + "', '"
+        + Achternaam + "','" 
+        + Wachtwoord + "','"
+        + Klas + "','"
         + Tussenvoegsel + "')";
         result = db.doInsert(register);
         return result;
@@ -67,7 +67,9 @@ public class QueryManager {
     
     //Login query
     public boolean login(String email, String password){
-        String login = "SELECT * FROM leerling WHERE email = '" +
+        System.out.println(email);
+        System.out.println(password);
+        String login = "SELECT * FROM leerling WHERE Emailadres = '" +
                 email + "' AND wachtwoord = '" + password + "'";
         String loggedIn = "";
         try{
@@ -77,7 +79,7 @@ public class QueryManager {
                 System.out.println("Logged in succesful");
                 return true;
             }
-            else {
+            else  {
                 System.out.println("Invalid e-mail and/or password.");
                 return false;
             }
