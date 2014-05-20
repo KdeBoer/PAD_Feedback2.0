@@ -53,7 +53,7 @@ public class QueryManager {
         String register = "INSERT INTO leerling VALUES('" 
         + Leerlingnummer + "','" 
         + Email + "','" 
-        + Naam + "', '" 
+        + Naam + "','" 
         + Achternaam + "','" 
         + Wachtwoord + "','"
         + Klas + "','"
@@ -83,13 +83,11 @@ public class QueryManager {
                 System.out.println("Invalid e-mail and/or password.");
                 return false;
             }
-            
         }
         catch(SQLException E){
             System.out.println(E.getMessage());
             return false;
         }
-        
     }
     
     
