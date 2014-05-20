@@ -28,19 +28,11 @@ public class QueryManager {
     DbManager db;
     
     //creates a list of students
-    public ArrayList<String> studentList(String klas) throws SQLException{
-        String searchStudents = "SELECT voornaam, klas FROM leerling WHERE klas = '" + klas + "'";
-        ArrayList<String> studentList = new ArrayList<>();
-        rs = db.doQuery(searchStudents);
-        String leerling = "";
-        while(rs.next()){
-            leerling += rs.getString("voornaam");
-            studentList.add(leerling);
-        }
-        return studentList;
+    public void studentList(String klas){
+        //String searchStudents = "SELECT voornaam, klas FROM leerling WHERE klas = '" + klas + "'";
+        System.out.println(klas);
+        //return studentList;
     }
-    
-    
     //initial query before registering
     public boolean registerCheck(String Naam, String Tussenvoegsel, String Achternaam, String Leerlingnummer, String Klas, String Email, String Wachtwoord){
         String registerCheck = "SELECT Leerlingnr from leerling where Leerlingnr = '" + Leerlingnummer + "'";
