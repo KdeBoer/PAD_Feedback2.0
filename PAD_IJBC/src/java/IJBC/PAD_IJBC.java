@@ -32,7 +32,7 @@ import org.apache.velocity.exception.ResourceNotFoundException;
 public class PAD_IJBC extends HttpServlet {
 
     private static final String VELOCITY_TEMPLATES_PREFIX = "/vsl";
-    private Object out2;
+    private Object out;
     
     @Override
     public void init() throws ServletException {
@@ -67,13 +67,18 @@ public class PAD_IJBC extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            
+            
+            
+            
+            
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
         VelocityContext vv1_Context = new VelocityContext();
         
         
-        //out.println("<link rel='stylesheet' type='text/css' href='" + request.getContextPath() +  "/CSS/style.css' />");
+        
         
        
         String s_RequestURL = request.getRequestURL().toString();
@@ -142,7 +147,6 @@ public class PAD_IJBC extends HttpServlet {
                     s_Template = "Login.vsl";
                     loginFailed = "Ingevulde gegevens kloppen niet!";
                     vv1_Context.put("loginFailed", loginFailed);
-                    //vv1_Context.put(username, out2);
                 }
                 
             }else{
@@ -224,6 +228,7 @@ public class PAD_IJBC extends HttpServlet {
             s_Template = "register.vsl";
         }
         else if(s_Request.equals("/PAD_IJBC/registerLeerling")){
+            
             
                 String naam = request.getParameter("voornaam");
                 String tussenvoegsel = request.getParameter("tussenvoegsel");
@@ -338,14 +343,15 @@ public class PAD_IJBC extends HttpServlet {
             Logger.getLogger(PAD_IJBC.class.getName()).log(Level.SEVERE, null, e);
         }
         
-        PrintWriter out2 = response.getWriter();
+        PrintWriter out = response.getWriter();
         
         
         if(template != null){
-            template.merge(vv1_Context, out2);
+            template.merge(vv1_Context, out);
         }
-        out2.close();
+        out.close();
     }
+    //resets the register values after an error
     public void saveValues(VelocityContext vv1_Context, String voornaam, String tussenvoegsel, String achternaam, String nummer, String klas, String email){
         vv1_Context.put("voornaam",voornaam);
         vv1_Context.put("tussenvoegsel",tussenvoegsel);

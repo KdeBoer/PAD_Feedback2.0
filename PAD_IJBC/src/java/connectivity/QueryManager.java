@@ -51,7 +51,7 @@ public class QueryManager {
         int result = 0;
         
         String register = "INSERT INTO leerling VALUES('" 
-        + Leerlingnummer + "',' " 
+        + Leerlingnummer + "', '" 
         + Email + "', '" 
         + Naam + "', '" 
         + Achternaam + "', '" 
@@ -67,7 +67,7 @@ public class QueryManager {
     
     //Login query
     public boolean login(String email, String password){
-        String login = "SELECT email, Wachtwoord FROM testaccount WHERE email = '" +
+        String login = "SELECT * FROM leerling WHERE email = '" +
                 email + "' AND wachtwoord = '" + password + "'";
         String loggedIn = "";
         try{
