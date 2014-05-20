@@ -32,8 +32,7 @@
                                     <option value="VWO 5">VWO 5</option>
                                     <option value="VWO 6">VWO 6</option>
                                 </select><br>
-                                <!--<a href = "/PAD_IJBC/PAD_IJBC/searchKlas">Zoek</a>-->
-                                <input type ="submit" name ="/PAD_IJBC/PAD_IJBC/searchKlas">
+                                <input type ="submit" value=" " name ="/PAD_IJBC/PAD_IJBC/searchKlas" style="background:url(/PAD_IJBC/Images/Zoek.png) no-repeat; height:85px; width:155px; border:none;">
                             </td>
                             <td>
                                 <!--<a>Leerlingen in jouw school</a><br>
@@ -50,13 +49,15 @@
 
 
                                 <select style="width:250px" class="userSelectLeft" size="15" name="userSelect" multiple="no" > 
-                                    <option value="user1">Kees de Vries</option> 
-                                    <option value="user2">Aap de Blaap</option>
-                                    <option value="user3">Plukker des Bananen</option>
-                                    <option value="user4">Leerling 4</option>
-                                    <option value="user5">Leerling 5</option>
-                                    <option value="user6">Leerling 6</option>
-                                    <option value="user7">Leerling 7</option>
+                                    <%
+                                        if($leerlingLijst!=null){   
+                                        for (String a : $leerlinglijst) { 
+                                               <option value="">a</option>;
+                                           }
+                                         }else{
+                                             System.out.print("states is null");
+                                         }
+                                    }%>
                                 </select>
                             <td>
                             <td><img src="/PAD_IJBC/Images/back.jpg"></td>

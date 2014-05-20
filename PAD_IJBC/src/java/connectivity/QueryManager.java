@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import org.apache.velocity.VelocityContext;
 
 /**
  *
@@ -28,10 +29,34 @@ public class QueryManager {
     DbManager db;
     
     //creates a list of students
-    public void studentList(String klas){
+    /*public void studentList(String klas){
         //String searchStudents = "SELECT voornaam, klas FROM leerling WHERE klas = '" + klas + "'";
         System.out.println(klas);
         //return studentList;
+    }*/
+    
+    
+    
+    public ArrayList<String> studentList(String klas, VelocityContext vv1_Context) {
+        String searchStudents = "SELECT voornaam, achternaam, klas FROM leerling WHERE klas = '" + klas + "'";
+        ArrayList<String> studentList = new ArrayList<>();
+        
+        rs = db.doQuery(searchStudents);
+        
+        String leerling = "";
+        try{
+            while(rs.next()){
+                
+                leerling += rs.getString("voornaam");
+                leerling += " ";
+                leerling += rs.getString("achternaam");
+            } 
+        } catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+        studentList.add(leerling);
+        vv1_Context.put("leerlingLijst", studentList);
+        return studentList;
     }
     //initial query before registering
     public boolean registerCheck(String Naam, String Tussenvoegsel, String Achternaam, String Leerlingnummer, String Klas, String Email, String Wachtwoord){

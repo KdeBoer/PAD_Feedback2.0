@@ -168,17 +168,16 @@ public class PAD_IJBC extends HttpServlet {
             vv1_Context.put("username", username);
         } else if(s_Request.equals("/PAD_IJBC/RequestUitnodigingen")){
             s_Template = "uitnodigingen.vsl";
-            
-           
-            
             HttpSession Session = request.getSession();
             String username = (String) Session.getAttribute("username");
             vv1_Context.put("username", username);
         }  else if(s_Request.equals("/PAD_IJBC/searchKlas")){
-                //QueryManager qm = new QueryManager();
-                //qm.studentList(klas);
-                
-                System.out.println(request.getParameter("selecteerKlas"));
+                QueryManager qm = new QueryManager();
+                String klas = request.getParameter("selecteerKlas");
+                try{qm.studentList(klas, vv1_Context);
+                } catch(Exception e){
+                    System.out.println(e.getMessage());
+                }
                 s_Template = "uitnodigingen.vsl";
                 HttpSession Session = request.getSession();
                 String username = (String) Session.getAttribute("username");
