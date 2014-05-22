@@ -97,7 +97,6 @@ public class QueryManager {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
         
         String targettedLeerlingnr = request.getParameter("userSelect");
-        String test = request.getParameter("userSelect");
         String sendInvite = "INSERT INTO uitnodiging VALUES('" + Leerlingnummer + "','" + targettedLeerlingnr + "','" + sdf.format(date).toString() + "')";
         
         return db.doInsert(sendInvite);
