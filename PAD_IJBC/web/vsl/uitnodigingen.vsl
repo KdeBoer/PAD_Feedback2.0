@@ -7,11 +7,11 @@
     </head>
     <body>
     <div>
-        <div class="header"><a class = "vraag"> Logged in as: $username</a> $leerlingnummer
+        <div class="header"><a class = "vraag"> Logged in as: $username</a>
             <a href="/PAD_IJBC/PAD_IJBC/REQ_LOGIN" class="vraag" style="float:right">Uitloggen</a></div>
-            <div style="width:900px; height:300px; margin:auto">    
+            <div style="width:900px; margin:auto">    
                 <table style="margin:auto;"> 
-                    <tr style="float:left">
+                    <tr style="float:left;">
                             <td>
                                 <form action="/PAD_IJBC/PAD_IJBC/searchKlas">
                                     <a>Selecteer een klas: </a><br>
@@ -35,27 +35,38 @@
                                     <input type ="submit" value=" " name ="/PAD_IJBC/PAD_IJBC/searchKlas" style="background:url(/PAD_IJBC/Images/Zoek.png) no-repeat; height:85px; width:155px; border:none;">
                                 </form>
                             </td>
-                        </tr>
-
-
-                        <tr>
                             <td>
                                 <form method="POST" action="requestInvite">
+                                    <a>Leerlingen in jouw klas:</a><br>
                                     <select style="width:250px" class="userSelectLeft" size="15" name="userSelect" multiple="no" > 
                                         #foreach( $leerling in $leerlingList )
                                             <option value="$leerling.getLeerlingnummer()">${leerling.getNaam()} ${leerling.getTussenvoegsel()} ${leerling.getAchternaam()}</option>
                                         #end
-                                    </select>
-                                    <input value="Versturen!" type="submit">
-                                    <a>Hoofdpagina</a><a style="margin-left:10px">Versturen</a>
+                                    </select><br>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <input value=" " type="submit" style="background:url(/PAD_IJBC/Images/Versturen.jpg) no-repeat; height:85px; width:100px; border:none;">
+                                            </td>
+                                            <td>
+                                                <a href="/PAD_IJBC/PAD_IJBC/requestHomepage"><img class="buttonInvullen" src="/PAD_IJBC/Images/homeKnop.png"></a><br>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a>Versturen</a>
+                                            </td>
+                                            <td>
+                                                <a style="margin-left:10px">Hoofdpagina</a>
+                                            </td>
+                                        </tr>
                                 </form>
                             </td>
                         </tr>
                 </table>
             </div>
             <div style="height:120px; width:250px; margin:auto">
-                <a style="margin-left:20px" href="/PAD_IJBC/PAD_IJBC/requestHomepage"><img class="buttonInvullen" src="/PAD_IJBC/Images/homeKnop.png"></a>
-                <!--<a style="margin-left:10px" href="/PAD_IJBC/PAD_IJBC/requestInvite"><img class="buttonInvullen" src="/PAD_IJBC/Images/Versturen.jpg"></a><br>-->
+                
             </div>
         </div>
     </body>

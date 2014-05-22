@@ -102,6 +102,7 @@ public class QueryManager {
         return db.doInsert(sendInvite);
     }
     
+    
     public List<Leerling> getLeerlingList(String klas, VelocityContext vv1_Context) {
         List<Leerling> leerlingList = new ArrayList<Leerling>();
         try {
