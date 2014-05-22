@@ -33,7 +33,15 @@ public class Leerling {
         db = new DbManager();
         Qm = new QueryManager();
     }
-    
+    public Leerling(String Naam, String Tussenvoegsel, String Achternaam, String Leerlingnummer) {
+        this.Naam = Naam;
+        this.Tussenvoegsel = Tussenvoegsel;
+        this.Achternaam = Achternaam;
+        this.Leerlingnummer = Leerlingnummer;
+    }
+
+    public Leerling() {
+    }
     
     public boolean register(String Naam, String Tussenvoegsel, String Achternaam, String Leerlingnummer, String Klas, String Email, String Wachtwoord){
         if(Qm.register(Naam, Tussenvoegsel, Achternaam, Leerlingnummer, Klas, Email, Wachtwoord) == 1){

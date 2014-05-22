@@ -4,14 +4,19 @@
  */
 package connectivity;
 
+import Leerling.Leerling;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.swing.JOptionPane;
 import org.apache.velocity.VelocityContext;
 
@@ -51,10 +56,10 @@ public class QueryManager {
             while(rs.next()){
                 
                 leerling += rs.getString("Leerlingnr"); 
-                leerling += (" ");
+                /*leerling += (" ");
                 leerling += rs.getString("voornaam");
                 leerling += (" ");
-                leerling += rs.getString("achternaam");
+                leerling += rs.getString("achternaam");*/
             
                 studentList.add(leerling);
                 leerling = "";
@@ -86,38 +91,38 @@ public class QueryManager {
     
     
     
-    /*sends the invitation
-    public List<String> invitationList(String Leerlingnummer, String voornaam, String achternaam, VelocityContext vv1_Context) {
-        String searchStudents = "SELECT Voornaam, Achternaam, Leerlingnr, Klas FROM leerling WHERE klas = '" + klas + "'";
-        List<String> studentList = new ArrayList<String>();
+    //sends the invitation
+    public int invitationList(String Leerlingnummer, HttpServletRequest request) {
+        Date date = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
         
-        rs = db.doQuery(searchStudents);
+        String targettedLeerlingnr = request.getParameter("userSelect");
+        String test = request.getParameter("userSelect");
+        String sendInvite = "INSERT INTO uitnodiging VALUES('" + Leerlingnummer + "','" + targettedLeerlingnr + "','" + sdf.format(date).toString() + "')";
         
-        String leerling = "";
-        try{
-            while(rs.next()){
-                
-                leerling += rs.getString("voornaam");
-                leerling += (" ");
-                leerling += rs.getString("achternaam");
-                studentList.add(leerling);
-                System.out.println(leerling);
-                leerling = "";
-                
-            } 
-        } catch (SQLException e){
-            System.out.println(e.getMessage());
+        return db.doInsert(sendInvite);
+    }
+    
+    public List<Leerling> getLeerlingList(String klas, VelocityContext vv1_Context) {
+        List<Leerling> leerlingList = new ArrayList<Leerling>();
+        try {
+            String sql = "SELECT Voornaam, tussenvoegsel, Achternaam, Leerlingnr, Klas FROM leerling WHERE klas = '" + klas + "'";
+            rs = db.doQuery(sql);
+            while (rs.next()) {
+                leerlingList.add(new Leerling(rs.getString("voornaam"),
+                        rs.getString("tussenvoegsel"),
+                        rs.getString("achternaam"),
+                        rs.getString("leerlingnr")));
+            }
+        } catch (SQLException e) {
+            System.out.println(DbManager.SQL_EXCEPTION + e.getMessage());
         }
-        
-        for(String e : studentList){
+        for(Leerling e: leerlingList){
             System.out.println(e);
         }
-        
-        vv1_Context.put("leerlingLijst", studentList);
-        return studentList;
-    }*/
-    
-    
+        vv1_Context.put("leerlingList", leerlingList);
+        return leerlingList;
+    }
     
     //initial query before registering
     public boolean registerCheck(String Naam, String Tussenvoegsel, String Achternaam, String Leerlingnummer, String Klas, String Email, String Wachtwoord){
@@ -140,7 +145,6 @@ public class QueryManager {
     //register query
     public int register(String Naam, String Tussenvoegsel, String Achternaam, String Leerlingnummer, String Klas, String Email, String Wachtwoord){
 
-        int result = 0;
         
         String register = "INSERT INTO leerling VALUES('" 
         + Leerlingnummer + "','" 
@@ -150,8 +154,8 @@ public class QueryManager {
         + Wachtwoord + "','"
         + Klas + "','"
         + Tussenvoegsel + "')";
-        result = db.doInsert(register);
-        return result;
+        return db.doInsert(register);
+        
     }
     
     
@@ -169,6 +173,9 @@ public class QueryManager {
             if(rs.next()){
                 loggedIn = "Logged in succesful";
                 System.out.println("Logged in succesful");
+                
+                
+                
                 return true;
             }
             else  {
@@ -179,6 +186,25 @@ public class QueryManager {
         catch(SQLException E){
             System.out.println(E.getMessage());
             return false;
+        }
+    }
+    
+    //Login query
+    public String leerlingNummer(String email, String password){
+        String login = "SELECT Leerlingnr FROM leerling WHERE Emailadres = '" +
+                email + "' AND wachtwoord = '" + password + "'";
+        try{
+            rs = db.doQuery(login);
+            if(rs.next()){
+                return rs.getString("Leerlingnr");
+            }
+            else  {
+                return "";
+            }
+        }
+        catch(SQLException E){
+            System.out.println(E.getMessage());
+            return "";
         }
     }
     
