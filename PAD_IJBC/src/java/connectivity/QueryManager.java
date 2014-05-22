@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -37,9 +38,58 @@ public class QueryManager {
     
     
     
-    public ArrayList<String> studentList(String klas, VelocityContext vv1_Context) {
-        String searchStudents = "SELECT voornaam, achternaam, klas FROM leerling WHERE klas = '" + klas + "'";
-        ArrayList<String> studentList = new ArrayList<>();
+    public List<String> studentList(String klas, VelocityContext vv1_Context) {
+        String searchStudents = "SELECT Voornaam, Achternaam, Leerlingnr, Klas FROM leerling WHERE klas = '" + klas + "'";
+        List<String> studentList = new ArrayList<String>();
+        List<String> leerlingLijst = new ArrayList<String>();
+        
+        rs = db.doQuery(searchStudents);
+        
+        String leerling = "";
+        String leerlingNummers = "";
+        try{
+            while(rs.next()){
+                
+                leerling += rs.getString("Leerlingnr"); 
+                leerling += (" ");
+                leerling += rs.getString("voornaam");
+                leerling += (" ");
+                leerling += rs.getString("achternaam");
+            
+                studentList.add(leerling);
+                leerling = "";
+                
+                /*leerlingNummers += rs.getString("voornaam");
+                leerlingNummers += (" ");
+                leerlingNummers += rs.getString("achternaam");
+                leerlingNummers += (" ");
+                leerlingNummers += rs.getString("Leerlingnr");                
+                leerlingLijst.add(leerlingNummers);
+                leerlingNummers = "";
+                
+                leerling += rs.getString("Leerlingnr");
+                studentList.add(leerling);
+                leerling = "";*/
+                
+            } 
+        } catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+        
+        for(String e : studentList){
+            System.out.println(e);
+        }
+        
+        vv1_Context.put("leerlingLijst", studentList);
+        return studentList;
+    }
+    
+    
+    
+    /*sends the invitation
+    public List<String> invitationList(String Leerlingnummer, String voornaam, String achternaam, VelocityContext vv1_Context) {
+        String searchStudents = "SELECT Voornaam, Achternaam, Leerlingnr, Klas FROM leerling WHERE klas = '" + klas + "'";
+        List<String> studentList = new ArrayList<String>();
         
         rs = db.doQuery(searchStudents);
         
@@ -48,16 +98,27 @@ public class QueryManager {
             while(rs.next()){
                 
                 leerling += rs.getString("voornaam");
-                leerling += " ";
+                leerling += (" ");
                 leerling += rs.getString("achternaam");
+                studentList.add(leerling);
+                System.out.println(leerling);
+                leerling = "";
+                
             } 
         } catch (SQLException e){
             System.out.println(e.getMessage());
         }
-        studentList.add(leerling);
+        
+        for(String e : studentList){
+            System.out.println(e);
+        }
+        
         vv1_Context.put("leerlingLijst", studentList);
         return studentList;
-    }
+    }*/
+    
+    
+    
     //initial query before registering
     public boolean registerCheck(String Naam, String Tussenvoegsel, String Achternaam, String Leerlingnummer, String Klas, String Email, String Wachtwoord){
         String registerCheck = "SELECT Leerlingnr from leerling where Leerlingnr = '" + Leerlingnummer + "'";

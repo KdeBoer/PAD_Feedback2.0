@@ -49,15 +49,13 @@
 
 
                                 <select style="width:250px" class="userSelectLeft" size="15" name="userSelect" multiple="no" > 
-                                    <%
-                                        if($leerlingLijst!=null){   
-                                        for (String a : $leerlinglijst) { 
-                                               <option value="">a</option>;
-                                           }
-                                         }else{
-                                             System.out.print("states is null");
-                                         }
-                                    }%>
+                                    
+                                        
+                                        #foreach( $leerling in $leerlingLijst )
+                                            <option value="$leerling">$leerling</option>
+                                        #end
+                                        
+                                    
                                 </select>
                             <td>
                             <td><img src="/PAD_IJBC/Images/back.jpg"></td>
@@ -78,8 +76,8 @@
                 </form>
             </div>
             <div style="height:120px; width:250px; margin:auto">
-                <a href="/PAD_IJBC/PAD_IJBC/requestHomepage"><img class="buttonInvullen" src="/PAD_IJBC/Images/homeKnop.png"></a>
-                <a href="/PAD_IJBC/PAD_IJBC/requestInvite"><img class="buttonInvullen" src="/PAD_IJBC/Images/Versturen.jpg"></a><br>
+                <a style="margin-left:20px" href="/PAD_IJBC/PAD_IJBC/requestHomepage"><img class="buttonInvullen" src="/PAD_IJBC/Images/homeKnop.png"></a>
+                <a style="margin-left:10px" href="/PAD_IJBC/PAD_IJBC/requestInvite"><img class="buttonInvullen" src="/PAD_IJBC/Images/Versturen.jpg"></a><br>
                 <a>Hoofdpagina</a><a style="margin-left:10px">Versturen</a>
             </div>
         </div>
