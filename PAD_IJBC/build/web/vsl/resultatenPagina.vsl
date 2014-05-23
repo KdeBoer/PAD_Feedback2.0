@@ -13,9 +13,9 @@
                 <a style="font-size:30px">Een samenvatting van al je feedback resultaten</a>
                 <table>
                     <tr>
-                        <td> <a href="categorie01"><img src="/PAD_IJBC/Images/1p.jpg"></a> </td>
-                        <td> <a href="categorie02"><img src="/PAD_IJBC/Images/2p.jpg"></a> </td>
-                        <td> <a href="categorie03"><img src="/PAD_IJBC/Images/4p.jpg"></a> </td>
+                        <td> <a href="categorie01"><img src="/PAD_IJBC/Images/1p.png"></a> </td>
+                        <td> <a href="categorie02"><img src="/PAD_IJBC/Images/2p.png"></a> </td>
+                        <td> <a href="categorie03"><img src="/PAD_IJBC/Images/4p.png"></a> </td>
                     </tr>
                 </table>
             </div>

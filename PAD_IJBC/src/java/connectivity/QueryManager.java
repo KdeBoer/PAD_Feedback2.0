@@ -117,8 +117,8 @@ public class QueryManager {
         } catch (SQLException e) {
             System.out.println(DbManager.SQL_EXCEPTION + e.getMessage());
         }
-        for(Leerling e: leerlingList){
-            System.out.println(e);
+        for(Leerling e: leerlingList){            
+                System.out.println(e);          
         }
         vv1_Context.put("leerlingList", leerlingList);
         return leerlingList;

@@ -296,6 +296,13 @@ public class PAD_IJBC extends HttpServlet {
             vv1_Context.put("username", username);  
         }
         
+        else if(s_Request.equals("/PAD_IJBC/RequestResultaat")){
+            s_Template = "resultatenPagina.vsl";
+            HttpSession Session = request.getSession();
+            String username = (String) Session.getAttribute("username");
+            vv1_Context.put("username", username);              
+        }
+        
         //request to return to the home page
         else if(s_Request.equals("/PAD_IJBC/requestInvite")){
             //if the invite has been sent
