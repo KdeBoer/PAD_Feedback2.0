@@ -16,7 +16,7 @@
                                 <form action="/PAD_IJBC/PAD_IJBC/searchKlas">
                                     <a>Selecteer een klas: </a><br>
                                     <select name="selecteerKlas">
-                                        <option value="Mavo 1">Mavo 1337</option>
+                                        <option value="Mavo 1">Mavo 1</option>
                                         <option value="Mavo 2">Mavo 2</option>
                                         <option value="Mavo 3">Mavo 3</option>
                                         <option value="Mavo 4">Mavo 4</option>
