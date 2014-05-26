@@ -16,7 +16,7 @@
                         <td> <a href="requestFeedbackpage"><img src="/PAD_IJBC/Images/Medeleerlingen.jpg"></a> </td>
                         <td> <a href="requestFeedbackpage"><img src="/PAD_IJBC/Images/Leraren.jpg"></a> </td>
                         <td> <a href="requestFeedbackpage"><img src="/PAD_IJBC/Images/Ouders.jpg"></a> </td>
-                        <td> <a href="requestFeedbackpage"><img src="/PAD_IJBC/Images/Mezelf.jpg"></a> </td>
+                        <td> <a href="requestFeedbackpageSelf"><img src="/PAD_IJBC/Images/Mezelf.jpg"></a> </td>
                     </tr>
                 </table>
             </div>

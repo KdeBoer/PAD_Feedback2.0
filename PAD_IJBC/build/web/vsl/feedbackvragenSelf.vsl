@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Keuzepagina</title>
+        <title>Feedback aan jezelf</title>
         <link rel="stylesheet" type="text/css" href="/PAD_IJBC/CSS/pad.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
@@ -10,13 +10,16 @@
     <div class="header"><a class = "vraag"> Logged in as: $username</a>
             <a href="/PAD_IJBC/PAD_IJBC/REQ_LOGIN" class="vraag" style="float:right">Uitloggen</a></div>
             <div class="buttonList">
-                <a style="font-size:30px">Aan wie wil je feedback vragen?</a>
+                <a style="font-size:30px">Vul hier de vragenlijst voor jezelf in.</a>
+            </br>
+            </br>
+            </br>
                 <table>
                     <tr>
-                        <td> <a href="requestFeedbackpage"><img src="/PAD_IJBC/Images/Medeleerlingen.jpg"></a> </td>
-                        <td> <a href="requestFeedbackpage"><img src="/PAD_IJBC/Images/Leraren.jpg"></a> </td>
-                        <td> <a href="requestFeedbackpage"><img src="/PAD_IJBC/Images/Ouders.jpg"></a> </td>
-                        <td> <a href="requestFeedbackpageSelf"><img src="/PAD_IJBC/Images/Mezelf.jpg"></a> </td>
+                        <td> 
+                            <a href="index.html"><img class="buttonInvullen" src="Images/Invullen.png"></a><br>
+                            <a>Naar Formulier</a>  
+                        </td>
                     </tr>
                 </table>
             </div>

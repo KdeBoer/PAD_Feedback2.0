@@ -174,9 +174,23 @@ public class PAD_IJBC extends HttpServlet {
             
             HttpSession leerlingNummer = request.getSession();
             String leerlingnr = (String) leerlingNummer.getAttribute("leerlingnummer");
-            vv1_Context.put("leerlingnummer", leerlingnr);           
+            vv1_Context.put("leerlingnummer", leerlingnr);  
             
-        } else if(s_Request.equals("/PAD_IJBC/requestInvite")){
+            
+            
+        } 
+        else if(s_Request.equals("/PAD_IJBC/requestFeedbackpageSelf")) {
+            s_Template = "feedbackVragenSelf.vsl";
+            HttpSession Session = request.getSession();
+            String username = (String) Session.getAttribute("username");
+            vv1_Context.put("username", username);
+            
+            HttpSession leerlingNummer = request.getSession();
+            String leerlingnr = (String) leerlingNummer.getAttribute("leerlingnummer");
+            vv1_Context.put("leerlingnummer", leerlingnr);  
+        }
+        
+        else if(s_Request.equals("/PAD_IJBC/requestInvite")){
                 s_Template = "uitnodigingen.vsl";
                 HttpSession Session = request.getSession();
                 String username = (String) Session.getAttribute("username");
@@ -194,7 +208,7 @@ public class PAD_IJBC extends HttpServlet {
                 
                 
         } else if(s_Request.equals("/PAD_IJBC/RequestUitnodigingen")){
-            s_Template = "uitnodigingen.vsl";
+            s_Template = "uitnodigingenBekijken.vsl";
             HttpSession Session = request.getSession();
             String username = (String) Session.getAttribute("username");
             vv1_Context.put("username", username);

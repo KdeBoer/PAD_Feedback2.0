@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Uitnodigingen Bekijken</title>
+        <link rel="stylesheet" type="text/css" href="/PAD_IJBC/CSS/pad.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+    <div>
+        <div class="header"><a class = "vraag"> Logged in as: $username</a>
+            <a href="/PAD_IJBC/PAD_IJBC/REQ_LOGIN" class="vraag" style="float:right">Uitloggen</a></div>
+            <div style="width:900px; margin:auto">  
+            <a style="font-size:30px; margin-left:30px;">Uitnodigingen</a> 
+            </br> 
+            <div style="float: left; margin-left:25px;">
+                <table> 
+                    <tr>
+                            <td>
+                                <form method="POST" action="TODO-NOGINVULLEN-TODO">
+                                    
+                                    <select style="width:250px" class="userSelectLeft" size="15" name="userSelect" multiple="no" > 
+                                        #foreach( $leerling in $leerlingList )
+                                            <option value="$leerling.getLeerlingnummer()">${leerling.getNaam()} ${leerling.getTussenvoegsel()} ${leerling.getAchternaam()}</option>
+                                        #end
+                                    </select><br>
+
+                                    <table>
+                                        <tr>
+                                            
+                                            <td>
+                                                <a href="/PAD_IJBC/PAD_IJBC/requestHomepage" style="margin-left:65px"><img class="buttonInvullen" src="/PAD_IJBC/Images/homeKnop.png"></a><br>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            
+                                            <td>
+                                                <a style="margin-left:60px">Hoofdpagina</a>
+                                            </td>
+                                        </tr>
+
+                                </form>
+                            </td>
+                        </tr>
+                </table>
+            </table>
+        </div>
+        <div style="float: left">
+                <table>
+                <tr>                         
+                    <td>
+                    <td>
+                    <td> 
+                        <input value=" " type="submit" style="background:url(/PAD_IJBC/Images/Versturen.jpg) no-repeat; height:85px; width:100px; border:none; margin-left:20px; margin-top:50px">
+                    </td>
+                    <tr>
+                        <td>
+                        <td>
+                        <td>
+                            <a>Feedback Invullen</a>
+                        </td>
+                    </tr>
+                </tr>
+            </table>
+        </div>
+            </div>
+            <div style="height:120px; width:250px; margin:auto">
+                
+            </div>
+        </div>
+    </body>
+</html>
