@@ -216,9 +216,24 @@ public class PAD_IJBC extends HttpServlet {
             HttpSession leerlingNummer = request.getSession();
             String leerlingnr = (String) leerlingNummer.getAttribute("leerlingnummer");
             vv1_Context.put("leerlingnummer", leerlingnr);
-            qm.getInviteList(vv1_Context, leerlingnr); 
+            qm.getInviteList(vv1_Context, leerlingnr, request); 
             
-        }  else if(s_Request.equals("/PAD_IJBC/searchKlas")){
+        }  else if(s_Request.equals("/PAD_IJBC/processInvite")){
+            //checks if something is selected
+            String leerlingnummer = request.getParameter("userSelect").toString();
+            s_Template = "vDragen.vsl";
+            
+            HttpSession Session = request.getSession();
+            String username = (String) Session.getAttribute("username");
+            vv1_Context.put("username", username);
+            
+            HttpSession leerlingNummer = request.getSession();
+            leerlingNummer.setAttribute("feedbackVoor", request.getParameter("userSelect"));
+            
+            
+            vv1_Context.put("feedbackVoor", qm.getFeedbackVoornaam(request.getParameter("userSelect")));
+            
+        } else if(s_Request.equals("/PAD_IJBC/searchKlas")){
                 
                 String klas = request.getParameter("selecteerKlas");
                 try{qm.getLeerlingList(klas, vv1_Context);

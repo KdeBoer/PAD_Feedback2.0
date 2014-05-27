@@ -124,13 +124,35 @@ public class QueryManager {
         }
     }
     
+    public String getFeedbackVoornaam(String leerlingnummer){
+        String getNaam = "SELECT voornaam, tussenvoegsel, achternaam FROM leerling where Leerlingnr = '" + leerlingnummer + "'";
+        rs = db.doQuery(getNaam);
+        try {
+            if(rs.next()){
+                String naam = rs.getString("voornaam") +
+                        rs.getString("tussenvoegsel") +
+                        rs.getString("achternaam");
+                return naam;
+                
+            } else {
+                return "ROT OP";
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(QueryManager.class.getName()).log(Level.SEVERE, null, ex);
+            return "ROT OP";
+        }
+    }
     
-    public List<Leerling> getInviteList(VelocityContext vv1_Context, String leerlingnummer){
+    
+    public List<Leerling> getInviteList(VelocityContext vv1_Context, String leerlingnummer, HttpServletRequest request){
         List<Leerling> uitnodigingList = new ArrayList<Leerling>();
         try {
             String sql = "Select Leerling_Leerlingnr, Targetted_Leerlingnr, tussenvoegsel, voornaam, Achternaam FROM leerling, uitnodiging WHERE uitnodiging.Leerling_Leerlingnr = Leerling.Leerlingnr AND uitnodiging.Targetted_Leerlingnr = '" + leerlingnummer + "'";
             
             rs = db.doQuery(sql);
+            
+            
+            
             while (rs.next()) {
                 uitnodigingList.add(new Leerling(rs.getString("voornaam"),
                         rs.getString("tussenvoegsel"),

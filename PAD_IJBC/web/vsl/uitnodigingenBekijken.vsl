@@ -10,61 +10,35 @@
         <div class="header"><a class = "vraag"> Logged in as: $username</a>
             <a href="/PAD_IJBC/PAD_IJBC/REQ_LOGIN" class="vraag" style="float:right">Uitloggen</a></div>
             <div style="width:900px; margin:auto">  
-            <a style="margin-left:30px;">Uitnodigingen</a> 
-            </br> 
-            <div style="float: left; margin-left:25px;">
+            <form method="POST" action="RequestUitnodigingen"></form>
+            <div style="margin-right:auto; margin-left:auto; width:400px">
                 <table> 
                     <tr>
+                        <form method="POST" action="processInvite">
                             <td>
-                                <form method="POST" action="RequestUitnodigingen">
-                                     
+                                <a>Uitnodigingen</a>
+
+
                                     <select style="width:250px" class="userSelectLeft" size="15" name="userSelect" multiple="no" > 
                                         #foreach( $leerling in $uitnodigingList )
                                             <option value="$leerling.getLeerlingnummer()">${leerling.getNaam()} ${leerling.getTussenvoegsel()} ${leerling.getAchternaam()}</option>
                                         #end
                                     </select><br>
 
-                                    <table>
-                                        <tr>
-                                            
-                                            <td>
-                                                <a href="/PAD_IJBC/PAD_IJBC/requestHomepage" style="margin-left:65px"><img class="buttonInvullen" src="/PAD_IJBC/Images/homeKnop.png"></a><br>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            
-                                            <td>
-                                                <a style="margin-left:60px">Hoofdpagina</a>
-                                            </td>
-                                        </tr>
-
-                                </form>
-                            </td>
-                        </tr>
-                </table>
-            </table>
-        </div>
-        <div style="float: left">
-                <table>
-                <tr>                         
-                    <td>
-                    <td>
-                    <td> 
-                        <input value=" " type="submit" style="background:url(/PAD_IJBC/Images/Versturen.jpg) no-repeat; height:85px; width:100px; border:none; margin-left:20px; margin-top:50px">
-                    </td>
-                    <tr>
-                        <td>
-                        <td>
-                        <td>
-                            <a>Feedback Invullen</a>
-                        </td>
+                             </td>
+                             <td style="padding-left:20px">
+                                <input value=" " type="submit" style="background:url(/PAD_IJBC/Images/Versturen.jpg) no-repeat; height:85px; width:100px; border:none; margin-top:50px"><br>
+                                <a>Feedback Invullen</a>
+                             </td>
+                        </form>
                     </tr>
-                </tr>
             </table>
         </div>
+
             </div>
             <div style="height:120px; width:250px; margin:auto">
-                
+                <a href="/PAD_IJBC/PAD_IJBC/requestHomepage" style="margin-left:65px"><img class="buttonInvullen" src="/PAD_IJBC/Images/homeKnop.png"></a><br>
+                <a style="margin-left:60px">Hoofdpagina</a>
             </div>
         </div>
     </body>
