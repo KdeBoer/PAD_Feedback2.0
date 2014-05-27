@@ -107,7 +107,8 @@ public class PAD_IJBC extends HttpServlet {
         vv1_Context.put("errorVoornaam", "");
         vv1_Context.put("errorAchternaam", "");
         vv1_Context.put("errorLeerlingnummer", "");
-        
+        vv1_Context.put("errorSendInvite","");
+        vv1_Context.put("sendInviteSuccess","");
         
         //sets the initial register values to 0
         vv1_Context.put("voornaam", "");
@@ -199,7 +200,8 @@ public class PAD_IJBC extends HttpServlet {
                 HttpSession leerlingNummer = request.getSession();
                 String leerlingnr = (String) leerlingNummer.getAttribute("leerlingnummer");
                 vv1_Context.put("leerlingnummer", leerlingnr);
-                qm.invitationList(leerlingnr, request);
+                qm.invitationList(leerlingnr, request, vv1_Context);
+                
              
                 
                 

@@ -22,7 +22,7 @@
     <div class="header"></div>
     
     
-    <div>
+    <div style="margin-left:auto; margin-right:auto; width:400px">
         <a style="color:red">$errorRegister</a>
         <form method="post" action="registerLeerling">
         <table>
@@ -118,7 +118,7 @@
         </table>
         
         <div style="margin-top:15px;">
-            <a>Registreer!</a> <input type="submit" value="&nbsp" name="commit" style="background:url(/PAD_IJBC/Images/Versturen.jpg) no-repeat; height:78px; width:90px; border:none;">
+            <a>Registreer!</a> <input type="submit" value="&nbsp" name="commit" style="background:url(/PAD_IJBC/Images/Versturen.jpg) no-repeat; height:85px; width:90px; border:none;">
         </div>
         </form>
     </div>

@@ -92,14 +92,35 @@ public class QueryManager {
     
     
     //sends the invitation
-    public int invitationList(String Leerlingnummer, HttpServletRequest request) {
+    public int invitationList(String Leerlingnummer, HttpServletRequest request, VelocityContext vv1_Context) {
         Date date = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-        
         String targettedLeerlingnr = request.getParameter("userSelect");
-        String sendInvite = "INSERT INTO uitnodiging VALUES('" + Leerlingnummer + "','" + targettedLeerlingnr + "','" + sdf.format(date).toString() + "')";
-        
-        return db.doInsert(sendInvite);
+        //checks if the invitation already exists
+        String inviteCheck = "SELECT * FROM uitnodiging WHERE Leerling_Leerlingnr = '" + Leerlingnummer + "' AND Targetted_Leerlingnr = '" + targettedLeerlingnr + "'";
+        rs = db.doQuery(inviteCheck);
+        try {
+            //if the invitation does not exist, add it to the database
+            if(!rs.next()){
+                String sendInvite = "INSERT INTO uitnodiging VALUES('" + Leerlingnummer + "','" + targettedLeerlingnr + "','" + sdf.format(date).toString() + "')";
+                //record added
+                int result = db.doInsert(sendInvite);
+                if(result ==1){
+                    vv1_Context.put("sendInviteSuccess", "Uitnodiging succesvol verstuurd!");
+                    return result;
+                } else {
+                    vv1_Context.put("errorSendInvite", "Uitnodiging niet verstuurd!");
+                    return result;
+                }
+            } else {
+                vv1_Context.put("errorSendInvite", "Je hebt al een uitnodiging naar deze leerling verstuurd!");
+                return 0;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(QueryManager.class.getName()).log(Level.SEVERE, null, ex);
+            vv1_Context.put("errorSendInvite", "Uitnodiging niet verstuurd!");
+            return 0;
+        }
     }
     
     

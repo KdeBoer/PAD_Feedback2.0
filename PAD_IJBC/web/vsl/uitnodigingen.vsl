@@ -37,6 +37,8 @@
                             </td>
                             <td>
                                 <form method="POST" action="requestInvite">
+                                    <a style="color:red">$errorSendInvite</a>
+                                    <a>$sendInviteSuccess</a><br>
                                     <a>Leerlingen in jouw klas:</a><br>
                                     <select style="width:250px" class="userSelectLeft" size="15" name="userSelect" multiple="no" > 
                                         #foreach( $leerling in $leerlingList )
