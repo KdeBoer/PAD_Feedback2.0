@@ -105,14 +105,15 @@ public class QueryManager {
                 String sendInvite = "INSERT INTO uitnodiging VALUES('" + Leerlingnummer + "','" + targettedLeerlingnr + "','" + sdf.format(date).toString() + "')";
                 //record added
                 int result = db.doInsert(sendInvite);
-                if(result ==1){
+                System.out.println(result);
+                if(result == 1){
                     vv1_Context.put("sendInviteSuccess", "Uitnodiging succesvol verstuurd!");
                     return result;
                 } else {
                     vv1_Context.put("errorSendInvite", "Uitnodiging niet verstuurd!");
                     return result;
                 }
-            } else {
+            }  else {
                 vv1_Context.put("errorSendInvite", "Je hebt al een uitnodiging naar deze leerling verstuurd!");
                 return 0;
             }
@@ -123,6 +124,29 @@ public class QueryManager {
         }
     }
     
+    
+    public List<Leerling> getInviteList(VelocityContext vv1_Context){
+        List<Leerling> uitnodigingList = new ArrayList<Leerling>();
+        try {
+            String sql = "SELECT * FROM uitnodiging";
+            rs = db.doQuery(sql);
+            while (rs.next()) {
+                uitnodigingList.add(new Leerling(rs.getString("voornaam"),
+                        rs.getString("tussenvoegsel"),
+                        rs.getString("achternaam"),
+                        rs.getString("leerlingnr")));
+            }
+        } catch (SQLException e) {
+            System.out.println(DbManager.SQL_EXCEPTION + e.getMessage());
+        }
+        for(Leerling e: uitnodigingList){            
+                System.out.println(e);          
+        }
+        vv1_Context.put("inviteList", uitnodigingList);
+        
+        
+        return uitnodigingList;
+    }
     
     public List<Leerling> getLeerlingList(String klas, VelocityContext vv1_Context) {
         List<Leerling> leerlingList = new ArrayList<Leerling>();
@@ -137,9 +161,6 @@ public class QueryManager {
             }
         } catch (SQLException e) {
             System.out.println(DbManager.SQL_EXCEPTION + e.getMessage());
-        }
-        for(Leerling e: leerlingList){            
-                System.out.println(e);          
         }
         vv1_Context.put("leerlingList", leerlingList);
         return leerlingList;

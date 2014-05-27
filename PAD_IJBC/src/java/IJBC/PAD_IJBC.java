@@ -214,6 +214,13 @@ public class PAD_IJBC extends HttpServlet {
             HttpSession Session = request.getSession();
             String username = (String) Session.getAttribute("username");
             vv1_Context.put("username", username);
+            
+            
+            
+            
+            
+            
+            
         }  else if(s_Request.equals("/PAD_IJBC/searchKlas")){
                 
                 String klas = request.getParameter("selecteerKlas");
