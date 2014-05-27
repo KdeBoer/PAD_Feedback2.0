@@ -7,17 +7,18 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
-    <div class="header"><a class = "vraag"> Logged in as: $username</a>
+        <div class="header"><a class = "vraag"> Logged in as: $username</a>
             <a href="/PAD_IJBC/PAD_IJBC/REQ_LOGIN" class="vraag" style="float:right">Uitloggen</a></div>
-            <div class="buttonList">
-                <a style="font-size:30px">Een samenvatting van al je feedback resultaten</a>
-                <table>
-                    <tr>
-                        <td> <a href="categorie01"><img src="/PAD_IJBC/Images/1p.png"></a> </td>
-                        <td> <a href="categorie02"><img src="/PAD_IJBC/Images/2p.png"></a> </td>
-                        <td> <a href="categorie03"><img src="/PAD_IJBC/Images/4p.png"></a> </td>
-                    </tr>
-                </table>
+                <div class="bodyFirstpage">
+                    <a style="font-size:30px">Een overzicht van je feedback resultaten</a>
+                    <table class="center">
+                        <tr>
+                            <td> <a style="margin-right:60px" href="categorie01"><img src="/PAD_IJBC/Images/1p.png"></a> </td>
+                            <td> <a style="margin-right:60px" href="categorie02"><img src="/PAD_IJBC/Images/2p.png"></a> </td>
+                            <td> <a style="margin-right:60px" href="categorie03"><img src="/PAD_IJBC/Images/4p.png"></a> </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
             <div>
                 <div style="height:120px; width:100px; margin:auto">
