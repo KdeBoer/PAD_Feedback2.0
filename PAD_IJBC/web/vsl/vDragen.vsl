@@ -13,19 +13,19 @@
             <div style="width:450px; margin:auto"><a style="font-size:30px;" class="vraag">Feedback voor $feedbackVoor</a></div>
             <a class="vraag">Verantwoordelijkheid dragen</a>
             <div style="float:right; width:175px; height:150px;">
-                <a>++ Klopt helemaal</a><br>
-                <a>+  Klopt een beetje</a><br>
-                <a>-  Klopt niet</a><br>
                 <a>-- Klopt helemaal niet</a><br>
+                <a>-  Klopt niet</a><br>
+                <a>+  Klopt een beetje</a><br>
+                <a>++ Klopt helemaal</a><br>
             </div>
             <table class="feedbackForm"> 
                 <tr>
                     <td><a style="margin:10px"></a></td>
                     <td>
-                        <a style="margin-left:10px">++</a>
-                        <a style="margin-left:13px">+</a>
+                        <a style="margin-left:10px">--</a>
                         <a style="margin-left:13px">-</a>
-                        <a style="margin-left:13px">--</a>
+                        <a style="margin-left:13px">+</a>
+                        <a style="margin-left:13px">++</a>
                     </td>
                 </tr>
                 <tr>
@@ -33,10 +33,10 @@
                         <a class="vraag">Levert het werk altijd op tijd in</a>
                     </td>
                     <td class="feedbackAnswers">
-                        <input type="radio" name="group1" value="4">
-                        <input type="radio" name="group1" value="3">
-                        <input type="radio" name="group1" value="2">
                         <input type="radio" name="group1" value="1">
+                        <input type="radio" name="group1" value="2">
+                        <input type="radio" name="group1" value="3">
+                        <input type="radio" name="group1" value="4">
                     </td>
                 </tr>
                 <tr>
@@ -44,10 +44,10 @@
                         <a class="vraag">Komt altijd op tijd</a>
                     </td>
                     <td class="feedbackAnswers">
-                        <input type="radio" name="group2" value="4">
-                        <input type="radio" name="group2" value="3">
-                        <input type="radio" name="group2" value="2">
                         <input type="radio" name="group2" value="1">
+                        <input type="radio" name="group2" value="2">
+                        <input type="radio" name="group2" value="3">
+                        <input type="radio" name="group2" value="4">
                     </td>
                 </tr>
                 <tr>
@@ -55,10 +55,10 @@
                         <a class="vraag">Neemt verantwoordelijkheid voor eigen gedrag</a>
                     </td>
                     <td class="feedbackAnswers">
-                        <input type="radio" name="group3" value="4">
-                        <input type="radio" name="group3" value="3">
-                        <input type="radio" name="group3" value="2">
                         <input type="radio" name="group3" value="1">
+                        <input type="radio" name="group3" value="2">
+                        <input type="radio" name="group3" value="3">
+                        <input type="radio" name="group3" value="4">
                     </td>
                 </tr>
                 <tr>
@@ -66,10 +66,10 @@
                         <a class="vraag">Neemt verantwoordelijkheid voor de groep</a>
                     </td>
                     <td class="feedbackAnswers">
-                        <input type="radio" name="group4" value="4">
-                        <input type="radio" name="group4" value="3">
-                        <input type="radio" name="group4" value="2">
                         <input type="radio" name="group4" value="1">
+                        <input type="radio" name="group4" value="2">
+                        <input type="radio" name="group4" value="3">
+                        <input type="radio" name="group4" value="4">
                     </td>
                 </tr>
                 <tr>
@@ -77,10 +77,10 @@
                         <a class="vraag">Werkt aan actiepunten op eigen initiatief</a>
                     </td>
                     <td class="feedbackAnswers">
-                        <input type="radio" name="group5" value="4">
-                        <input type="radio" name="group5" value="3">
-                        <input type="radio" name="group5" value="2">
                         <input type="radio" name="group5" value="1">
+                        <input type="radio" name="group5" value="2">
+                        <input type="radio" name="group5" value="3">
+                        <input type="radio" name="group5" value="4">
                     </td>
                 </tr>
             </table>

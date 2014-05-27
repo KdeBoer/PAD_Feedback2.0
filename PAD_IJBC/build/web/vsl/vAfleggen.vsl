@@ -14,10 +14,10 @@
                 <div style="width:450px; margin:auto"><a style="font-size:30px;" class="vraag">Feedback voor $username</a></div>
                 <a class="vraag">Verantwoording afleggen</a>
                 <div style="float:right; width:175px; height:150px;">
-                    <a>++ Klopt helemaal</a><br>
-                    <a>+  Klopt een beetje</a><br>
-                    <a>-  Klopt niet</a><br>
                     <a>-- Klopt helemaal niet</a><br>
+                    <a>-  Klopt niet</a><br>
+                    <a>+  Klopt een beetje</a><br>
+                    <a>++ Klopt helemaal</a><br>
                 </div>
                 <table class="feedbackForm"> 
                     <tr>
