@@ -16,10 +16,10 @@
                 <table> 
                     <tr>
                             <td>
-                                <form method="POST" action="TODO-NOGINVULLEN-TODO">
-                                    
+                                <form method="POST" action="RequestUitnodigingen">
+                                     
                                     <select style="width:250px" class="userSelectLeft" size="15" name="userSelect" multiple="no" > 
-                                        #foreach( $leerling in $leerlingList )
+                                        #foreach( $leerling in $uitnodigingList )
                                             <option value="$leerling.getLeerlingnummer()">${leerling.getNaam()} ${leerling.getTussenvoegsel()} ${leerling.getAchternaam()}</option>
                                         #end
                                     </select><br>

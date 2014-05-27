@@ -189,6 +189,10 @@ public class PAD_IJBC extends HttpServlet {
             HttpSession leerlingNummer = request.getSession();
             String leerlingnr = (String) leerlingNummer.getAttribute("leerlingnummer");
             vv1_Context.put("leerlingnummer", leerlingnr);  
+            
+            
+            
+            
         }
         
         else if(s_Request.equals("/PAD_IJBC/requestInvite")){
@@ -202,13 +206,6 @@ public class PAD_IJBC extends HttpServlet {
                 vv1_Context.put("leerlingnummer", leerlingnr);
                 qm.invitationList(leerlingnr, request, vv1_Context);
                 
-             
-                
-                
-                
-                
-                
-                
         } else if(s_Request.equals("/PAD_IJBC/RequestUitnodigingen")){
             s_Template = "uitnodigingenBekijken.vsl";
             HttpSession Session = request.getSession();
@@ -216,10 +213,10 @@ public class PAD_IJBC extends HttpServlet {
             vv1_Context.put("username", username);
             
             
-            
-            
-            
-            
+            HttpSession leerlingNummer = request.getSession();
+            String leerlingnr = (String) leerlingNummer.getAttribute("leerlingnummer");
+            vv1_Context.put("leerlingnummer", leerlingnr);
+            qm.getInviteList(vv1_Context, leerlingnr); 
             
         }  else if(s_Request.equals("/PAD_IJBC/searchKlas")){
                 

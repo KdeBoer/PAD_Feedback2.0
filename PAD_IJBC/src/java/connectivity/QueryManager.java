@@ -125,16 +125,17 @@ public class QueryManager {
     }
     
     
-    public List<Leerling> getInviteList(VelocityContext vv1_Context){
+    public List<Leerling> getInviteList(VelocityContext vv1_Context, String leerlingnummer){
         List<Leerling> uitnodigingList = new ArrayList<Leerling>();
         try {
-            String sql = "SELECT * FROM uitnodiging";
+            String sql = "Select Leerling_Leerlingnr, Targetted_Leerlingnr, tussenvoegsel, voornaam, Achternaam FROM leerling, uitnodiging WHERE uitnodiging.Leerling_Leerlingnr = Leerling.Leerlingnr AND uitnodiging.Targetted_Leerlingnr = '" + leerlingnummer + "'";
+            
             rs = db.doQuery(sql);
             while (rs.next()) {
                 uitnodigingList.add(new Leerling(rs.getString("voornaam"),
                         rs.getString("tussenvoegsel"),
                         rs.getString("achternaam"),
-                        rs.getString("leerlingnr")));
+                        rs.getString("Leerling_Leerlingnr")));
             }
         } catch (SQLException e) {
             System.out.println(DbManager.SQL_EXCEPTION + e.getMessage());
@@ -142,12 +143,16 @@ public class QueryManager {
         for(Leerling e: uitnodigingList){            
                 System.out.println(e);          
         }
-        vv1_Context.put("inviteList", uitnodigingList);
+        vv1_Context.put("uitnodigingList", uitnodigingList);
         
         
         return uitnodigingList;
     }
     
+    
+    
+    
+    //
     public List<Leerling> getLeerlingList(String klas, VelocityContext vv1_Context) {
         List<Leerling> leerlingList = new ArrayList<Leerling>();
         try {
