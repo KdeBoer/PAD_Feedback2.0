@@ -233,6 +233,29 @@ public class PAD_IJBC extends HttpServlet {
             
             vv1_Context.put("feedbackVoor", qm.getFeedbackVoornaam(request.getParameter("userSelect")));
             
+        } else if(s_Request.equals("/PAD_IJBC/vDragen1")){
+            
+            String vraagSelectie1 = request.getParameter("vraag1");
+            System.out.println(vraagSelectie1);
+            switch (vraagSelectie1) {
+                case "1":
+                    s_Template = "vDragen.vsl";
+                    System.out.println("1");
+                    break;
+                case "2":
+                    System.out.println("2");
+                    s_Template = "vDragen.vsl";
+                    break;
+                case "3":
+                    System.out.println("3");
+                    s_Template = "vDragen.vsl";
+                    break;
+                case "4":
+                    System.out.println("4");
+                    s_Template = "vDragen.vsl";
+                    break;
+            }
+            
         } else if(s_Request.equals("/PAD_IJBC/searchKlas")){
                 
                 String klas = request.getParameter("selecteerKlas");

@@ -19,76 +19,79 @@
                 <a>++ Klopt helemaal</a><br>
             </div>
             <table class="feedbackForm"> 
-                <tr>
-                    <td><a style="margin:10px"></a></td>
-                    <td>
-                        <a style="margin-left:10px">--</a>
-                        <a style="margin-left:13px">-</a>
-                        <a style="margin-left:13px">+</a>
-                        <a style="margin-left:13px">++</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="feedbackForm">
-                        <a class="vraag">Levert het werk altijd op tijd in</a>
-                    </td>
-                    <td class="feedbackAnswers">
-                        <input type="radio" name="group1" value="1">
-                        <input type="radio" name="group1" value="2">
-                        <input type="radio" name="group1" value="3">
-                        <input type="radio" name="group1" value="4">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="feedbackForm">
-                        <a class="vraag">Komt altijd op tijd</a>
-                    </td>
-                    <td class="feedbackAnswers">
-                        <input type="radio" name="group2" value="1">
-                        <input type="radio" name="group2" value="2">
-                        <input type="radio" name="group2" value="3">
-                        <input type="radio" name="group2" value="4">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="feedbackForm">
-                        <a class="vraag">Neemt verantwoordelijkheid voor eigen gedrag</a>
-                    </td>
-                    <td class="feedbackAnswers">
-                        <input type="radio" name="group3" value="1">
-                        <input type="radio" name="group3" value="2">
-                        <input type="radio" name="group3" value="3">
-                        <input type="radio" name="group3" value="4">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="feedbackForm">
-                        <a class="vraag">Neemt verantwoordelijkheid voor de groep</a>
-                    </td>
-                    <td class="feedbackAnswers">
-                        <input type="radio" name="group4" value="1">
-                        <input type="radio" name="group4" value="2">
-                        <input type="radio" name="group4" value="3">
-                        <input type="radio" name="group4" value="4">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="feedbackForm">
-                        <a class="vraag">Werkt aan actiepunten op eigen initiatief</a>
-                    </td>
-                    <td class="feedbackAnswers">
-                        <input type="radio" name="group5" value="1">
-                        <input type="radio" name="group5" value="2">
-                        <input type="radio" name="group5" value="3">
-                        <input type="radio" name="group5" value="4">
-                    </td>
-                </tr>
+                <form method="post" action="vDragen1">
+                    <tr>
+                        <td><a style="margin:10px"></a></td>
+                        <td>
+                            <a style="margin-left:10px">--</a>
+                            <a style="margin-left:13px">-</a>
+                            <a style="margin-left:13px">+</a>
+                            <a style="margin-left:13px">++</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="feedbackForm">
+                            <a class="vraag">Levert het werk altijd op tijd in</a>
+                        </td>
+                        <td class="feedbackAnswers">
+                            <input type="radio" name="vraag1" onclick \"getAnswer('1')" value="1">
+                            <input type="radio" name="vraag1" onclick \"getAnswer('2')" value="2">
+                            <input type="radio" name="vraag1" onclick \"getAnswer('3')" value="3">
+                            <input type="radio" name="vraag1" onclick \"getAnswer('4')" value="4">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="feedbackForm">
+                            <a class="vraag">Komt altijd op tijd</a>
+                        </td>
+                        <td class="feedbackAnswers">
+                            <input type="radio" name="group2" value="1">
+                            <input type="radio" name="group2" value="2">
+                            <input type="radio" name="group2" value="3">
+                            <input type="radio" name="group2" value="4">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="feedbackForm">
+                            <a class="vraag">Neemt verantwoordelijkheid voor eigen gedrag</a>
+                        </td>
+                        <td class="feedbackAnswers">
+                            <input type="radio" name="group3" value="1">
+                            <input type="radio" name="group3" value="2">
+                            <input type="radio" name="group3" value="3">
+                            <input type="radio" name="group3" value="4">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="feedbackForm">
+                            <a class="vraag">Neemt verantwoordelijkheid voor de groep</a>
+                        </td>
+                        <td class="feedbackAnswers">
+                            <input type="radio" name="group4" value="1">
+                            <input type="radio" name="group4" value="2">
+                            <input type="radio" name="group4" value="3">
+                            <input type="radio" name="group4" value="4">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="feedbackForm">
+                            <a class="vraag">Werkt aan actiepunten op eigen initiatief</a>
+                        </td>
+                        <td class="feedbackAnswers">
+                            <input type="radio" name="group5" value="1">
+                            <input type="radio" name="group5" value="2">
+                            <input type="radio" name="group5" value="3">
+                            <input type="radio" name="group5" value="4">
+                        </td>
+                    </tr>
+                    <a>Volgende</a> <a href="vDragen1"><img class="buttonNext" src="/PAD_IJBC/Images/Next.png"></a><br>
+                </form>
             </table>
         </div>
         <div class="footer">
             <div style="width:150px; height:40px; margin:auto">
                 <a>Volgende</a> <a href="requestFeedbackpage2"><img class="buttonNext" src="/PAD_IJBC/Images/Next.png"></a><br>
-                <a href="/PAD_IJBC/PAD_IJBC/requestHomepage"><img class="buttonInvullen" src="/PAD_IJBC/Images/homeKnop.png"></a><br>
+                <!--<a href="/PAD_IJBC/PAD_IJBC/requestHomepage"><img class="buttonInvullen" src="/PAD_IJBC/Images/homeKnop.png"></a>-->
                 <a>Hoofdpagina</a>
             </div>
         </div>
