@@ -41,7 +41,15 @@ public class QueryManager {
         //return studentList;
     }*/
     
-    
+    public int insertResultaat(String eigenNummer, String targetNummer, int onderdeel1, int onderdeel2, int onderdeel3, VelocityContext context){
+        System.out.println(eigenNummer);
+        Date date = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+        String insert = "INSERT INTO pad.vraag VALUES('" + eigenNummer + "','" + targetNummer + "','" + sdf.format(date).toString() + "','" + onderdeel1 + "','" + onderdeel2 + "','" + onderdeel3 + "')";
+        return db.doInsert(insert);
+
+        
+    }
     
     public List<String> studentList(String klas, VelocityContext vv1_Context) {
         String searchStudents = "SELECT Voornaam, Achternaam, Leerlingnr, Klas FROM leerling WHERE klas = '" + klas + "'";
@@ -96,6 +104,8 @@ public class QueryManager {
         Date date = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
         String targettedLeerlingnr = request.getParameter("userSelect");
+        
+        
         //checks if the invitation already exists
         String inviteCheck = "SELECT * FROM uitnodiging WHERE Leerling_Leerlingnr = '" + Leerlingnummer + "' AND Targetted_Leerlingnr = '" + targettedLeerlingnr + "'";
         rs = db.doQuery(inviteCheck);
@@ -123,7 +133,7 @@ public class QueryManager {
             return 0;
         }
     }
-    
+    //first name 
     public String getFeedbackVoornaam(String leerlingnummer){
         String getNaam = "SELECT voornaam, tussenvoegsel, achternaam FROM leerling where Leerlingnr = '" + leerlingnummer + "'";
         rs = db.doQuery(getNaam);
