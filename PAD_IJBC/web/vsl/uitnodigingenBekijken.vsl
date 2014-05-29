@@ -14,32 +14,44 @@
             <div style="margin-right:auto; margin-left:auto; width:400px">
                 <table> 
                     <tr>
-                        <form method="POST" action="processInvite">
-                            <td>
-                                <a>Uitnodigingen</a>
-
-
-                                    <select style="width:250px" class="userSelectLeft" size="15" name="userSelect" multiple="no" > 
-                                        #foreach( $leerling in $uitnodigingList )
-                                            <option value="$leerling.getLeerlingnummer()">${leerling.getNaam()} ${leerling.getTussenvoegsel()} ${leerling.getAchternaam()}</option>
-                                        #end
-                                    </select><br>
-
-                             </td>
-                             <td style="padding-left:20px">
-                                <input value=" " type="submit" style="background:url(/PAD_IJBC/Images/Versturen.jpg) no-repeat; height:85px; width:100px; border:none; margin-top:50px"><br>
-                                <a>Feedback Invullen</a>
-                             </td>
-                        </form>
+                        <td>
+                            <form method="POST" action="processInvite">
+                            <a>Uitnodigingen</a>
+                            <select style="width:250px" class="userSelectLeft" size="15" name="userSelect" multiple="no" > 
+                                #foreach( $leerling in $uitnodigingList )
+                                    <option value="$leerling.getLeerlingnummer()">${leerling.getNaam()} ${leerling.getTussenvoegsel()} ${leerling.getAchternaam()}</option>
+                                #end
+                            </select>
+                         </td>
                     </tr>
-            </table>
+                    <tr>
+                        <td>
+                            <input value=" " type="submit" style="background:url(/PAD_IJBC/Images/Versturen.jpg) no-repeat; height:85px; width:100px; border:none;">
+                            </form> 
+                        </td>
+                        <td>
+                            <form method="post" action="requestHomepage">
+                                <input value=" " type="submit" style="background:url(/PAD_IJBC/Images/homeKnop.png) no-repeat; height:85px; width:100px; border:none;">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a>Feedback Invullen</a>
+                        </td>
+                        <td>
+                            <a>Hoofdpagina</a>
+                        </td>
+                    </tr>
+                    
+                </table>
+            </div>
         </div>
+    </div>
+    <div style="height:120px; width:250px; margin:auto">
+        
+        
+    </div>
 
-            </div>
-            <div style="height:120px; width:250px; margin:auto">
-                <a href="/PAD_IJBC/PAD_IJBC/requestHomepage" style="margin-left:65px"><img class="buttonInvullen" src="/PAD_IJBC/Images/homeKnop.png"></a><br>
-                <a style="margin-left:60px">Hoofdpagina</a>
-            </div>
-        </div>
     </body>
 </html>

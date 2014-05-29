@@ -18,10 +18,7 @@
 
 </head>
 <body>
-    
     <div class="header"></div>
-    
-    
     <div style="margin-left:auto; margin-right:auto; width:400px">
         <a style="color:red">$errorRegister</a>
         <form method="post" action="registerLeerling">
@@ -67,25 +64,23 @@
                     <a>Klas:</a>
                 </td>
                 <td>
-                    <!--<input type="text" class="rounded" name="klas" value="$klas" placeholder="Klas">-->
-                        <select style="width:240px; height:40px" name="selecteerNiveau">
-                                    <option value="Mavo 1">Mavo 1</option>
-                                    <option value="Mavo 2">Mavo 2</option>
-                                    <option value="Mavo 3">Mavo 3</option>
-                                    <option value="Mavo 4">Mavo 4</option>
-                                    <option value="Havo 1">Havo 1</option>
-                                    <option value="Havo 2">Havo 2</option>
-                                    <option value="Havo 3">Havo 3</option>
-                                    <option value="Havo 4">Havo 4</option>
-                                    <option value="Havo 5">Havo 5</option>
-                                    <option value="VWO 1">VWO 1</option>
-                                    <option value="VWO 2">VWO 2</option>
-                                    <option value="VWO 3">VWO 3</option>
-                                    <option value="VWO 4">VWO 4</option>
-                                    <option value="VWO 5">VWO 5</option>
-                                    <option value="VWO 6">VWO 6</option>
-                                </select>
-                    <br>
+                    <select style="width:240px; height:40px" name="selecteerNiveau">
+                        <option value="Mavo 1">Mavo 1</option>
+                        <option value="Mavo 2">Mavo 2</option>
+                        <option value="Mavo 3">Mavo 3</option>
+                        <option value="Mavo 4">Mavo 4</option>
+                        <option value="Havo 1">Havo 1</option>
+                        <option value="Havo 2">Havo 2</option>
+                        <option value="Havo 3">Havo 3</option>
+                        <option value="Havo 4">Havo 4</option>
+                        <option value="Havo 5">Havo 5</option>
+                        <option value="VWO 1">VWO 1</option>
+                        <option value="VWO 2">VWO 2</option>
+                        <option value="VWO 3">VWO 3</option>
+                        <option value="VWO 4">VWO 4</option>
+                        <option value="VWO 5">VWO 5</option>
+                        <option value="VWO 6">VWO 6</option>
+                    </select>
                 </td>
             </tr>
             <tr>
@@ -118,7 +113,18 @@
         </table>
         
         <div style="margin-top:15px;">
-            <a>Registreer!</a> <input type="submit" value="&nbsp" name="commit" style="background:url(/PAD_IJBC/Images/Versturen.jpg) no-repeat; height:85px; width:90px; border:none;">
+            <table>
+                <tr>
+                    <td>
+                        <input type="submit" value="&nbsp" name="commit" style="background:url(/PAD_IJBC/Images/Versturen.jpg) no-repeat; height:85px; width:90px; border:none;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a>Registreer!</a>
+                    </td>
+                </tr>
+             </table>
         </div>
         </form>
     </div>
