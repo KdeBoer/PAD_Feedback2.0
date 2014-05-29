@@ -7,69 +7,75 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
+    <form method="post" action="iNemen">
         <div class="header"><a class = "vraag"> Logged in as: $targettedLeerling</a>
             <a href="/PAD_IJBC/PAD_IJBC/REQ_LOGIN" class="vraag" style="float:right">Uitloggen</a></div>
-        <div class="mainContent">
-            <div style="width:450px; margin:auto"><a style="font-size:30px;" class="vraag">Feedback voor $username</a></div>
-            <a class="vraag">Initiatief nemen</a>
-            <div style="float:right; width:175px; height:150px;">
-                <a>-- Klopt helemaal niet</a><br>
-                <a>-  Klopt niet</a><br>
-                <a>+  Klopt een beetje</a><br>
-                <a>++ Klopt helemaal</a><br>
-            </div>
-            <table class="feedbackForm"> 
-               <tr>
-                    <td><a style="margin:10px"></a></td>
-                    <td>
-                        <a style="margin-left:10px">++</a>
-                        <a style="margin-left:13px">+</a>
-                        <a style="margin-left:13px">-</a>
-                        <a style="margin-left:13px">--</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="feedbackForm">
-                        <a class="vraag">Ziet wat er nodig is om een taak af te ronden</a>
-                    </td>
-                    <td class="feedbackAnswers">
-                        <input type="radio" name="group1" value="4">
-                        <input type="radio" name="group1" value="3">
-                        <input type="radio" name="group1" value="2">
-                        <input type="radio" name="group1" value="1">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="feedbackForm">
-                        <a class="vraag">Uit zichzelf een taak op zich nemen</a>
-                    </td>
-                    <td class="feedbackAnswers">
-                        <input type="radio" name="group2" value="4">
-                        <input type="radio" name="group2" value="3">
-                        <input type="radio" name="group2" value="2">
-                        <input type="radio" name="group2" value="1">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="feedbackForm">
-                        <a class="vraag">Gaat uit zichzelf aan het werk</a>
-                    </td>
-                    <td class="feedbackAnswers">
-                        <input type="radio" name="group3" value="4">
-                        <input type="radio" name="group3" value="3">
-                        <input type="radio" name="group3" value="2">
-                        <input type="radio" name="group3" value="1">
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="footer">
-            <div style="width:150px; height:40px; margin:auto">
-                <a>Volgende</a> <a href="requestSendFeedback"><img class="buttonNext" src="/PAD_IJBC/Images/Next.png"></a><br>
-                <a href="/PAD_IJBC/PAD_IJBC/requestHomepage"><img class="buttonInvullen" src="/PAD_IJBC/Images/homeKnop.png"></a><br>
-                <a>Hoofdpagina</a>
-            </div>
-        </div>
+            <div class="mainContent">
+                <div style="width:450px; margin:auto"><a style="font-size:30px;" class="vraag">Feedback voor $username</a></div>
+                <a class="vraag">Initiatief nemen</a>
+                <div style="float:right; width:175px; height:150px;">
+                    <a>-- Klopt helemaal niet</a><br>
+                    <a>-  Klopt niet</a><br>
+                    <a>+  Klopt een beetje</a><br>
+                    <a>++ Klopt helemaal</a><br>
+                </div>
+                <table class="feedbackForm"> 
 
+                <br><a style="color:red; margin-left: 10px">$vraag3Error</a>
+                   <tr>
+                        <td><a style="margin:10px"></a></td>
+                        <td>
+                            <a style="margin-left:10px">--</a>
+                            <a style="margin-left:13px">-</a>
+                            <a style="margin-left:13px">+</a>
+                            <a style="margin-left:13px">++</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="feedbackForm">
+                            <a class="vraag">Ziet wat er nodig is om een taak af te ronden</a>
+                        </td>
+                        <td class="feedbackAnswers">
+                            <input type="radio" name="vraag1" onclick \"getAnswer('1')" value="1">
+                            <input type="radio" name="vraag1" onclick \"getAnswer('2')" value="2">
+                            <input type="radio" name="vraag1" onclick \"getAnswer('3')" value="3">
+                            <input type="radio" name="vraag1" onclick \"getAnswer('4')" value="4">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="feedbackForm">
+                            <a class="vraag">Uit zichzelf een taak op zich nemen</a>
+                        </td>
+                        <td class="feedbackAnswers">
+                            <input type="radio" name="vraag2" onclick \"getAnswer('1')" value="1">
+                            <input type="radio" name="vraag2" onclick \"getAnswer('2')" value="2">
+                            <input type="radio" name="vraag2" onclick \"getAnswer('3')" value="3">
+                            <input type="radio" name="vraag2" onclick \"getAnswer('4')" value="4">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="feedbackForm">
+                            <a class="vraag">Gaat uit zichzelf aan het werk</a>
+                        </td>
+                        <td class="feedbackAnswers">
+                            <input type="radio" name="vraag3" onclick \"getAnswer('1')" value="1">
+                            <input type="radio" name="vraag3" onclick \"getAnswer('2')" value="2">
+                            <input type="radio" name="vraag3" onclick \"getAnswer('3')" value="3">
+                            <input type="radio" name="vraag3" onclick \"getAnswer('4')" value="4">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="footer">
+                <div style="width:150px; height:40px; margin:auto">
+                    <input type="submit" value = "submit"> 
+                    <input type="submit" value="&nbsp" name="commit" style="background:url(/PAD_IJBC/Images/Next.png) no-repeat; height:85px; width:90px; border:none;">
+                    <a>Volgende</a>
+
+
+                    <a>Hoofdpagina</a>
+                </div>
+            </div>
+        </form>
     </body>
 </html>

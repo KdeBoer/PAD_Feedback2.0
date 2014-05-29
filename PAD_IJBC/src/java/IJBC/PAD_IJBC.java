@@ -6,6 +6,7 @@ package IJBC;
 
 import Leerling.Leerling;
 import Login.Login;
+import Vragen.Vragen;
 import connectivity.QueryManager;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -117,6 +118,9 @@ public class PAD_IJBC extends HttpServlet {
         vv1_Context.put("klas", "");
         vv1_Context.put("leerlingnummer", "");
         vv1_Context.put("email", "");
+        vv1_Context.put("vraag1Error", "");
+        vv1_Context.put("vraag2Error", "");
+        vv1_Context.put("vraag3Error", "");
         
         
         //sets the initial values 
@@ -218,6 +222,7 @@ public class PAD_IJBC extends HttpServlet {
             vv1_Context.put("leerlingnummer", leerlingnr);
             qm.getInviteList(vv1_Context, leerlingnr, request); 
             
+            
         }  else if(s_Request.equals("/PAD_IJBC/processInvite")){
             //checks if something is selected
             String leerlingnummer = request.getParameter("userSelect").toString();
@@ -228,34 +233,101 @@ public class PAD_IJBC extends HttpServlet {
             vv1_Context.put("username", username);
             
             HttpSession leerlingNummer = request.getSession();
-            leerlingNummer.setAttribute("feedbackVoor", request.getParameter("userSelect"));
+            String leerlingnr = (String) leerlingNummer.getAttribute("leerlingnummer");
+            vv1_Context.put("leerlingnummer", leerlingnr);
+            
+
             
             
-            vv1_Context.put("feedbackVoor", qm.getFeedbackVoornaam(request.getParameter("userSelect")));
+            String feedbackVoor = qm.getFeedbackVoornaam(request.getParameter("userSelect"));
+            vv1_Context.put("feedbackVoor", feedbackVoor);
             
+            HttpSession feedbackVoorSession = request.getSession();
+            feedbackVoorSession.setAttribute("feedbackVoor", feedbackVoor);
+
+            
+            
+            
+        //resultaat onderdeel 1
         } else if(s_Request.equals("/PAD_IJBC/vDragen1")){
             
-            String vraagSelectie1 = request.getParameter("vraag1");
-            System.out.println(vraagSelectie1);
-            switch (vraagSelectie1) {
-                case "1":
-                    s_Template = "vDragen.vsl";
-                    System.out.println("1");
-                    break;
-                case "2":
-                    System.out.println("2");
-                    s_Template = "vDragen.vsl";
-                    break;
-                case "3":
-                    System.out.println("3");
-                    s_Template = "vDragen.vsl";
-                    break;
-                case "4":
-                    System.out.println("4");
-                    s_Template = "vDragen.vsl";
-                    break;
-            }
+            HttpSession Session = request.getSession();
+            String username = (String) Session.getAttribute("username");
+            vv1_Context.put("username", username);
             
+
+            HttpSession feedbackVoorSession = request.getSession();
+            String feedbackVoorLeerling = (String) feedbackVoorSession.getAttribute("feedbackVoor");
+            vv1_Context.put("feedbackVoor", feedbackVoorLeerling);           
+                        
+            if(request.getParameter("vraag1") == null || request.getParameter("vraag2") == null || request.getParameter("vraag3") == null || request.getParameter("vraag4") == null || request.getParameter("vraag5") == null){
+                s_Template = "vDragen.vsl";    
+                vv1_Context.put("vraag1Error", "Niet alle antwoorden zijn ingevuld!");
+            } else {
+                int vraag1Antwoord = Integer.parseInt(request.getParameter("vraag1"));
+                int vraag2Antwoord = Integer.parseInt(request.getParameter("vraag2"));
+                int vraag3Antwoord = Integer.parseInt(request.getParameter("vraag3"));
+                int vraag4Antwoord = Integer.parseInt(request.getParameter("vraag4"));
+                int vraag5Antwoord = Integer.parseInt(request.getParameter("vraag5"));
+                int resultaatOnderdeel1 = vraag1Antwoord + vraag2Antwoord + vraag3Antwoord + vraag4Antwoord + vraag5Antwoord;
+                
+                s_Template = "vAfleggen.vsl";
+                HttpSession resultaatOnderdeel1Session = request.getSession();
+                resultaatOnderdeel1Session.setAttribute("resultaat1", resultaatOnderdeel1);
+            }
+        } 
+        //resultaat onderdeel 2
+        else if(s_Request.equals("/PAD_IJBC/vAfleggen1")){
+            
+            HttpSession Session = request.getSession();
+            String username = (String) Session.getAttribute("username");
+            vv1_Context.put("username", username);
+            
+            HttpSession feedbackVoorSession = request.getSession();
+            String feedbackVoorLeerling = (String) feedbackVoorSession.getAttribute("feedbackVoor");
+            vv1_Context.put("feedbackVoor", feedbackVoorLeerling);           
+                        
+            if(request.getParameter("vraag1") == null || request.getParameter("vraag2") == null || request.getParameter("vraag3") == null){
+                s_Template = "vAfleggen.vsl";    
+                vv1_Context.put("vraag2Error", "Niet alle antwoorden zijn ingevuld!");
+            } else {
+                int vraag1Antwoord = Integer.parseInt(request.getParameter("vraag1"));
+                int vraag2Antwoord = Integer.parseInt(request.getParameter("vraag2"));
+                int vraag3Antwoord = Integer.parseInt(request.getParameter("vraag3"));
+                int resultaatOnderdeel2 = vraag1Antwoord + vraag2Antwoord + vraag3Antwoord;
+                System.out.println(resultaatOnderdeel2);
+                s_Template = "iNemen.vsl";
+                HttpSession resultaatOnderdeel2Session = request.getSession();
+                resultaatOnderdeel2Session.setAttribute("resultaat2", resultaatOnderdeel2);
+
+                
+            }
+        } 
+        //resultaat onderdeel 3
+        else if(s_Request.equals("/PAD_IJBC/iNemen")){
+            
+            HttpSession Session = request.getSession();
+            String username = (String) Session.getAttribute("username");
+            vv1_Context.put("username", username);
+            
+            HttpSession feedbackVoorSession = request.getSession();
+            String feedbackVoorLeerling = (String) feedbackVoorSession.getAttribute("feedbackVoor");
+            vv1_Context.put("feedbackVoor", feedbackVoorLeerling);           
+                        
+            if(request.getParameter("vraag1") == null || request.getParameter("vraag2") == null || request.getParameter("vraag3") == null){
+                s_Template = "vAfleggen.vsl";    
+                vv1_Context.put("vraag3Error", "Niet alle antwoorden zijn ingevuld!");
+            } else {
+                int vraag1Antwoord = Integer.parseInt(request.getParameter("vraag1"));
+                int vraag2Antwoord = Integer.parseInt(request.getParameter("vraag2"));
+                int vraag3Antwoord = Integer.parseInt(request.getParameter("vraag3"));
+                int resultaatOnderdeel3 = vraag1Antwoord + vraag2Antwoord + vraag3Antwoord;
+                System.out.println(resultaatOnderdeel3);
+                HttpSession resultaatOnderdeel3Session = request.getSession();
+                resultaatOnderdeel3Session.setAttribute("resultaat3", resultaatOnderdeel3);
+                s_Template = "feedbackSuccesfull.vsl";
+                
+            }
         } else if(s_Request.equals("/PAD_IJBC/searchKlas")){
                 
                 String klas = request.getParameter("selecteerKlas");
