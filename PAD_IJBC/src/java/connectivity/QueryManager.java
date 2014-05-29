@@ -46,6 +46,8 @@ public class QueryManager {
         Date date = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
         String insert = "INSERT INTO pad.vraag VALUES('" + eigenNummer + "','" + targetNummer + "','" + sdf.format(date).toString() + "','" + onderdeel1 + "','" + onderdeel2 + "','" + onderdeel3 + "')";
+        String deleteUitnodiging = "DELETE FROM uitnodiging WHERE Leerling_Leerlingnr ='" + targetNummer + "' AND Targetted_Leerlingnr ='" + eigenNummer + "'";
+        db.doInsert(deleteUitnodiging);
         return db.doInsert(insert);
 
         
@@ -152,7 +154,6 @@ public class QueryManager {
             return "ROT OP";
         }
     }
-    
     
     public List<Leerling> getInviteList(VelocityContext vv1_Context, String leerlingnummer, HttpServletRequest request){
         List<Leerling> uitnodigingList = new ArrayList<Leerling>();

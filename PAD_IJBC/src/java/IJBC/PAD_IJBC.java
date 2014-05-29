@@ -240,8 +240,13 @@ public class PAD_IJBC extends HttpServlet {
             
             
             String feedbackVoor = qm.getFeedbackVoornaam(request.getParameter("userSelect"));
-            System.out.println(request.getParameter("userSelect"));
             vv1_Context.put("feedbackVoor", feedbackVoor);
+            
+            HttpSession targettedLeerlingNummer = request.getSession();
+            targettedLeerlingNummer.setAttribute("targettedNummer", request.getParameter("userSelect"));
+            
+            
+            
             
             HttpSession feedbackVoorSession = request.getSession();
             feedbackVoorSession.setAttribute("feedbackVoor", feedbackVoor);
@@ -342,7 +347,11 @@ public class PAD_IJBC extends HttpServlet {
                 String leerlingnr = (String) leerlingNummer.getAttribute("leerlingnummer");
                 vv1_Context.put("leerlingnummer", leerlingnr);
                 
-                if(qm.insertResultaat(leerlingnr, leerlingnr, resultaatOnderdeel1, resultaatOnderdeel2, resultaatOnderdeel3, vv1_Context) == 1){
+                //gets the number of the student you give feedback to
+                HttpSession targettedLeerlingNummer = request.getSession();
+                String llnummer = (String) targettedLeerlingNummer.getAttribute("targettedNummer");
+                
+                if(qm.insertResultaat(leerlingnr, llnummer, resultaatOnderdeel1, resultaatOnderdeel2, resultaatOnderdeel3, vv1_Context) == 1){
                     s_Template = "feedbackSuccesfull.vsl";
                 } else {
                     s_Template = "iNemen.vsl";
