@@ -463,9 +463,33 @@ public class PAD_IJBC extends HttpServlet {
         }
         
         else if(s_Request.equals("/PAD_IJBC/RequestResultaat")){
-            s_Template = "resultatenPagina.vsl";
+            
             HttpSession Session = request.getSession();
             String username = (String) Session.getAttribute("username");
+            HttpSession leerlingNummer = request.getSession();
+            String leerlingnr = (String) leerlingNummer.getAttribute("leerlingnummer");
+
+            //gets the average results
+            qm.feedbackGemiddelde(leerlingnr, vv1_Context);
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            s_Template = "resultatenPagina.vsl";
             vv1_Context.put("username", username);              
         }
         

@@ -5,6 +5,7 @@
 package connectivity;
 
 import Leerling.Leerling;
+import Vragen.Vragen;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -34,12 +35,77 @@ public class QueryManager {
     Statement st;
     DbManager db;
     
-    //creates a list of students
-    /*public void studentList(String klas){
-        //String searchStudents = "SELECT voornaam, klas FROM leerling WHERE klas = '" + klas + "'";
-        System.out.println(klas);
-        //return studentList;
-    }*/
+
+    public void feedbackGemiddelde(String leerlingnummer, VelocityContext vv1_Context ){
+        //ArrayList<Vragen> feedbackGemiddelde = new ArrayList<>();
+        double resultaat1 = -1;
+        double resultaat2 = -1;
+        double resultaat3 = -1;
+                
+        String feedbackResults = "SELECT Onderdeel1Punten, avg(Onderdeel2Punten), avg(Onderdeel3Punten) FROM vraag WHERE Leerling_Leerlingnr = '" + leerlingnummer + "'";
+        rs = db.doQuery(feedbackResults);
+        try{
+            if(rs.next()){
+                resultaat1 = rs.getDouble(1);
+                resultaat2 = rs.getDouble(2);
+                resultaat3 = rs.getDouble(3);
+                
+            } else {
+                System.out.println(".");
+            }
+        } catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+
+        Vragen result = new Vragen(resultaat1, resultaat2, resultaat3);
+        System.out.println(result.getOnderdeel1());
+        System.out.println(result.getOnderdeel2());
+        System.out.println(result.getOnderdeel3());
+        //result part1
+        if(result.getOnderdeel1() <= 20 && result.getOnderdeel1() >= 18){
+            System.out.println("1: ****");
+        } else if(result.getOnderdeel1() <= 17 && result.getOnderdeel1() >= 13){
+            System.out.println("1: ***");
+        }else if(result.getOnderdeel1() <= 12 && result.getOnderdeel1() >= 8){
+            System.out.println("1: **");
+        } else if(result.getOnderdeel1() <=7 && result.getOnderdeel1() >= 5){
+            System.out.println("1: *");
+        }else {
+            System.out.println("1: onder 0");
+        }
+        //result part2
+        if(result.getOnderdeel2() <= 12 && result.getOnderdeel2() >= 11){
+            System.out.println("1: ****");
+        } else if(result.getOnderdeel2() <= 10 && result.getOnderdeel2() >= 8){
+            System.out.println("1: ***");
+        }else if(result.getOnderdeel2() <= 7 && result.getOnderdeel2() >= 5){
+            System.out.println("1: **");
+        } else if(result.getOnderdeel2() <= 4 && result.getOnderdeel2() >= 3){
+            System.out.println("1: *");
+        }else {
+            System.out.println("1: onder 0");
+        }
+        //result part2
+        if(result.getOnderdeel3() <= 12 && result.getOnderdeel3() >= 11){
+            System.out.println("1: ****");
+        } else if(result.getOnderdeel3() <= 10 && result.getOnderdeel3() >= 8){
+            System.out.println("1: ***");
+        }else if(result.getOnderdeel3() <= 7 && result.getOnderdeel3() >= 5){
+            System.out.println("1: **");
+        } else if(result.getOnderdeel3() <= 4 && result.getOnderdeel3() >= 3){
+            System.out.println("1: *");
+        }else {
+            System.out.println("1: onder 0");
+        }
+        
+        
+        
+        
+        
+    }
+    
+    
+    
     
     public int insertResultaat(String eigenNummer, String targetNummer, int onderdeel1, int onderdeel2, int onderdeel3, VelocityContext context){
         System.out.println(eigenNummer);
