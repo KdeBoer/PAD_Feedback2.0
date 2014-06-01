@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Initiatief Nemen</title>
+        <link rel="stylesheet" type="text/css" href="/PAD_IJBC/CSS/pad.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <div class="header"><a class = "vraag"> Logged in as: $username</a>
+            <a href="/PAD_IJBC/PAD_IJBC/REQ_LOGIN" class="vraag" style="float:right">Uitloggen</a></div>
+                <div class="bodyFirstpage">
+                    <a style="font-size:30px">Score bij het onderdeel Initiatief nemen</a>
+                    </br>
+                    </br>
+                    <table class="center">
+                        <tr>
+                            <td> <a style="margin-right:60px"><img src="/PAD_IJBC/Images/4p.png"></a> </td>
+                            <td> Hier het resultaat van deze query: </br> AANTAL PUNTEN IN CATEGORIE3 / MAX PUNTEN CATEGORIE3 * 100</td>
+                            <td> Resultaat van query in velocity variabel, </br> if maken met 4 percentages (0-25, 25-50, 50-75, 75-100) </br> a.d.h.v % plaatje 1-4 tonen </br> En als extra voor deze pagina nog het percentage erbij </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div>
+                <div style="height:120px; width:100px; margin:auto">
+                    <a href="/PAD_IJBC/PAD_IJBC/RequestResultaat"><img src="/PAD_IJBC/Images/homeKnop.png"></a><br>
+                    <a>Terug naar Overzicht Resultaten</a>
+                </div>
+            </div>
+    </body>
+</html>

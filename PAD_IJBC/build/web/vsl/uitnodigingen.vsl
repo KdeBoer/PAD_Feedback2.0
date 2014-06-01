@@ -11,60 +11,60 @@
             <a href="/PAD_IJBC/PAD_IJBC/REQ_LOGIN" class="vraag" style="float:right">Uitloggen</a></div>
             <div style="width:900px; margin:auto">    
                 <table style="margin:auto;"> 
-                    <tr style="float:left;">
-                            <td>
-                                <form action="/PAD_IJBC/PAD_IJBC/searchKlas">
-                                    <a>Selecteer een klas: </a><br>
-                                    <select name="selecteerKlas">
-                                        <option value="Mavo 1">Mavo 1</option>
-                                        <option value="Mavo 2">Mavo 2</option>
-                                        <option value="Mavo 3">Mavo 3</option>
-                                        <option value="Mavo 4">Mavo 4</option>
-                                        <option value="Havo 1">Havo 1</option>
-                                        <option value="Havo 2">Havo 2</option>
-                                        <option value="Havo 3">Havo 3</option>
-                                        <option value="Havo 4">Havo 4</option>
-                                        <option value="Havo 5">Havo 5</option>
-                                        <option value="VWO 1">VWO 1</option>
-                                        <option value="VWO 2">VWO 2</option>
-                                        <option value="VWO 3">VWO 3</option>
-                                        <option value="VWO 4">VWO 4</option>
-                                        <option value="VWO 5">VWO 5</option>
-                                        <option value="VWO 6">VWO 6</option>
-                                    </select><br>
-                                    <input type ="submit" value=" " name ="/PAD_IJBC/PAD_IJBC/searchKlas" style="background:url(/PAD_IJBC/Images/Zoek.png) no-repeat; height:85px; width:155px; border:none;">
-                                </form>
-                            </td>
-                            <td>
-                                <form method="POST" action="requestInvite">
-                                    <a style="color:red">$errorSendInvite</a>
-                                    <a>$sendInviteSuccess</a><br>
-                                    <a>Leerlingen in jouw klas:</a><br>
-                                    <select style="width:250px" class="userSelectLeft" size="15" name="userSelect" multiple="no" > 
-                                        #foreach( $leerling in $leerlingList )
-                                            <option value="$leerling.getLeerlingnummer()">${leerling.getNaam()} ${leerling.getTussenvoegsel()} ${leerling.getAchternaam()}</option>
-                                        #end
-                                    </select><br>
-                                    <table>
-                                        <tr>
-                                            <td>
-                                                <input value=" " type="submit" style="background:url(/PAD_IJBC/Images/Versturen.jpg) no-repeat; height:85px; width:100px; border:none;">
-                                            </td>
-                                            <td>
-                                                <a href="/PAD_IJBC/PAD_IJBC/requestHomepage"><img class="buttonInvullen" src="/PAD_IJBC/Images/homeKnop.png"></a><br>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <a>Versturen</a>
-                                            </td>
-                                            <td>
-                                                <a style="margin-left:10px">Hoofdpagina</a>
-                                            </td>
-                                        </tr>
-                                </form>
-                            </td>
-                        </tr>
+                    <tr>
+                        <td>
+                            <form action="/PAD_IJBC/PAD_IJBC/searchKlas">
+                                <a>Selecteer een klas: </a><br>
+                                <select name="selecteerKlas">
+                                    <option value="Mavo 1">Mavo 1</option>
+                                    <option value="Mavo 2">Mavo 2</option>
+                                    <option value="Mavo 3">Mavo 3</option>
+                                    <option value="Mavo 4">Mavo 4</option>
+                                    <option value="Havo 1">Havo 1</option>
+                                    <option value="Havo 2">Havo 2</option>
+                                    <option value="Havo 3">Havo 3</option>
+                                    <option value="Havo 4">Havo 4</option>
+                                    <option value="Havo 5">Havo 5</option>
+                                    <option value="VWO 1">VWO 1</option>
+                                    <option value="VWO 2">VWO 2</option>
+                                    <option value="VWO 3">VWO 3</option>
+                                    <option value="VWO 4">VWO 4</option>
+                                    <option value="VWO 5">VWO 5</option>
+                                    <option value="VWO 6">VWO 6</option>
+                                </select><br>
+                                <input type ="submit" value=" " name ="/PAD_IJBC/PAD_IJBC/searchKlas" style="background:url(/PAD_IJBC/Images/Zoek.png) no-repeat; height:85px; width:155px; border:none;">
+                            </form>
+                        </td>
+                        <td>
+                            <form method="POST" action="requestInvite">
+                                <a style="color:red">$errorSendInvite</a>
+                                <a>$sendInviteSuccess</a><br>
+                                <a>Leerlingen in jouw klas:</a><br>
+                                <select style="width:250px" class="userSelectLeft" size="15" name="userSelect" multiple="no" > 
+                                    #foreach( $leerling in $leerlingList )
+                                        <option value="$leerling.getLeerlingnummer()">${leerling.getNaam()} ${leerling.getTussenvoegsel()} ${leerling.getAchternaam()}</option>
+                                    #end
+                                </select><br>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <input value=" " type="submit" style="background:url(/PAD_IJBC/Images/Versturen.jpg) no-repeat; height:85px; width:100px; border:none;">
+                                        </td>
+                                        <td>
+                                            <a href="/PAD_IJBC/PAD_IJBC/requestHomepage"><img class="buttonInvullen" src="/PAD_IJBC/Images/homeKnop.png"></a><br>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a>Versturen</a>
+                                        </td>
+                                        <td>
+                                            <a style="margin-left:10px">Hoofdpagina</a>
+                                        </td>
+                                    </tr>
+                            </form>
+                        </td>
+                    </tr>
                 </table>
             </div>
             <div style="height:120px; width:250px; margin:auto">
