@@ -112,6 +112,7 @@ public class PAD_IJBC extends HttpServlet {
         vv1_Context.put("errorSendInvite","");
         vv1_Context.put("sendInviteSuccess","");
         
+        
         //sets the initial register values to 0
         vv1_Context.put("voornaam", "");
         vv1_Context.put("tussenvoegsel", "");
@@ -122,6 +123,7 @@ public class PAD_IJBC extends HttpServlet {
         vv1_Context.put("vraag1Error", "");
         vv1_Context.put("vraag2Error", "");
         vv1_Context.put("vraag3Error", "");
+        vv1_Context.put("feedbackError", "");
         
         
         //sets the initial values 
@@ -468,28 +470,20 @@ public class PAD_IJBC extends HttpServlet {
             String username = (String) Session.getAttribute("username");
             HttpSession leerlingNummer = request.getSession();
             String leerlingnr = (String) leerlingNummer.getAttribute("leerlingnummer");
-
+            
+            //checks if someone already filled in a feedback form for the logged in user
+            if(qm.feedbackCheck(leerlingnr) == true) {
             //gets the average results
-            qm.feedbackGemiddelde(leerlingnr, vv1_Context);
+                qm.feedbackGemiddelde(leerlingnr, vv1_Context);
+                s_Template = "resultatenPagina.vsl";
+            } else {
+                System.out.println("No records found");
+                s_Template = "keuzePagina.vsl";
+                vv1_Context.put("feedbackError", "Niemand heeft je nog feedback gegeven!");
+            }
 
             
             
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            s_Template = "resultatenPagina.vsl";
             vv1_Context.put("username", username);              
         }
         

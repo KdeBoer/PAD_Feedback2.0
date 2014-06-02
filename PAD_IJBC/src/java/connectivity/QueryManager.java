@@ -35,7 +35,24 @@ public class QueryManager {
     Statement st;
     DbManager db;
     
-
+    //checks if someone already filled in a feedback form for the logged in user
+    public boolean feedbackCheck(String leerlingnummer){
+        String sql = "SELECT * from vraag WHERE Leerling_Leerlingnr = '" + leerlingnummer + "'";
+        rs = db.doQuery(sql);
+        try {
+            if(rs.next()){
+                return true;
+            } else {
+                return false;
+            }
+            
+        } catch (SQLException e){
+            return false;
+        }
+    }
+    
+    
+    //calculated the average results per feedback part
     public void feedbackGemiddelde(String leerlingnummer, VelocityContext vv1_Context ){
         double resultaat1 = 0;
         double resultaat2 = 0;
@@ -45,10 +62,10 @@ public class QueryManager {
         rs = db.doQuery(feedbackResults);
         try{
             while(rs.next()){
-                resultaat1 = rs.getDouble(1);
-                resultaat2 = rs.getDouble(2);
-                resultaat3 = rs.getDouble(3);
-                
+                resultaat1 = rs.getInt(1);
+                resultaat2 = rs.getInt(2);
+                resultaat3 = rs.getInt(3);
+                System.out.println(resultaat1);
             } 
         } catch (SQLException e){
             System.out.println(e.getMessage());
