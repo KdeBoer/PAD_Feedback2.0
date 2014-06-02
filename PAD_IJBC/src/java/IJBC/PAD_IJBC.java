@@ -523,20 +523,7 @@ public class PAD_IJBC extends HttpServlet {
             vv1_Context.put("leerlingnummer", leerlingnr);
         } 
         
-        //request to return to the home page
-        else if(s_Request.equals("/PAD_IJBC/requestInvite")){
-            //if the invite has been sent
-            s_Template = "";
-            HttpSession Session = request.getSession();
-            String username = (String) Session.getAttribute("username");
-            vv1_Context.put("username", username);
-            
-            HttpSession leerlingNummer = request.getSession();
-            String leerlingnr = (String) leerlingNummer.getAttribute("leerlingnummer");
-            vv1_Context.put("leerlingnummer", leerlingnr);
-            
-            //error if the invite has not been send
-        }
+
         //request to go to the register page
         else if(s_Request.equals("/PAD_IJBC/REGISTER")){
             s_Template = "register.vsl";
