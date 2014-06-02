@@ -455,8 +455,7 @@ public class PAD_IJBC extends HttpServlet {
             HttpSession leerlingNummer = request.getSession();
             String leerlingnr = (String) leerlingNummer.getAttribute("leerlingnummer");
             vv1_Context.put("leerlingnummer", leerlingnr);
-            
-        } else if(s_Request.equals("/PAD_IJBC/RequestResultaat")){
+        } else if(s_Request.equals("/PAD_IJBC/requestResultaat")){
             s_Template = "resultatenPagina.vsl";
             HttpSession Session = request.getSession();
             String username = (String) Session.getAttribute("username");

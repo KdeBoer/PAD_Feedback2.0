@@ -14,7 +14,7 @@ public class Vragen {
     double Onderdeel2;
     double Onderdeel3;
 
-    public Vragen(double Onderdeel1, double Onderdeel2, double Onderdeel3){
+    public Vragen(double Onderdeel1, double onderdeel2, double onderdeel3){
         this.Onderdeel1 = Onderdeel1;
         this.Onderdeel2 = Onderdeel2;
         this.Onderdeel3 = Onderdeel3;
