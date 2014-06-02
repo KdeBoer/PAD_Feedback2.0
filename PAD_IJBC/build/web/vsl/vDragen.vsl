@@ -90,13 +90,25 @@
                 </table>
             </div>
             <div class="footer">
-                <div style="width:150px; height:40px; margin:auto">
-                    <input type="submit" value = "submit"> 
-                    <input type="submit" value="&nbsp" name="commit" style="background:url(/PAD_IJBC/Images/Next.png) no-repeat; height:85px; width:90px; border:none;">
-                    <a>Volgende</a>
-
-                    
-                    <a>Hoofdpagina</a>
+                <div style="width:150px; margin:auto">
+                    <table>
+                        <tr>
+                            <td>
+                                <input type="submit" value="&nbsp" name="commit" style="background:url(/PAD_IJBC/Images/Next.png) no-repeat; height:40px; width:90px; border:none;">
+                            </td>
+                            <td>
+                                <a href="/PAD_IJBC/PAD_IJBC/requestHomepage"><img src="/PAD_IJBC/Images/homeKnop.png"></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a>Volgende</a>
+                            </td>
+                            <td>
+                                <a>Hoofdpagina</a>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </form>

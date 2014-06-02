@@ -15,11 +15,16 @@
                     </br>
                     <table class="center">
                         <tr>
-                            <td> <a style="margin-right:60px" href="categorie01"><img src="/PAD_IJBC/Images/1p.png"></a> </td>
-                            <td> <a style="margin-right:60px" href="categorie02"><img src="/PAD_IJBC/Images/2p.png"></a> </td>
-                            <td> <a style="margin-right:60px" href="categorie03"><img src="/PAD_IJBC/Images/4p.png"></a> </td>
-                            <td> Hier het resultaat van deze query: </br> AANTAL PUNTEN PER CATEGORIE / MAX PUNTEN CATEGORIE * 100</td>
-                            <td> Resultaat van query in velocity variabel, </br> if maken met 4 percentages (0-25, 25-50, 50-75, 75-100) </br> a.d.h.v % plaatje 1-4 tonen </br> 3 queries voor 3 categorieën, 3 losse ifs? </td>
+                            <td><a style="font-size:25px">Onderdeel 1:</a></td>
+                            <td><a style="font-size:25px">Onderdeel 2:</a></td>
+                            <td><a style="font-size:25px">Onderdeel 3:</a></td>
+                        </tr>
+                        <tr>
+                            <td> <a style="margin-right:60px" href="categorie01"><img src="/PAD_IJBC/Images/$onderdeel1"></a> </td>
+                            <td> <a style="margin-right:60px" href="categorie02"><img src="/PAD_IJBC/Images/$onderdeel2"></a> </td>
+                            <td> <a style="margin-right:60px" href="categorie03"><img src="/PAD_IJBC/Images/$onderdeel3"></a> </td>
+                            <!--<td> Hier het resultaat van deze query: </br> AANTAL PUNTEN PER CATEGORIE / MAX PUNTEN CATEGORIE * 100</td>
+                            <td> Resultaat van query in velocity variabel, </br> if maken met 4 percentages (0-25, 25-50, 50-75, 75-100) </br> a.d.h.v % plaatje 1-4 tonen </br> 3 queries voor 3 categorieën, 3 losse ifs? </td>-->
                         </tr>
                     </table>
                 </div>

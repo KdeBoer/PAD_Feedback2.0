@@ -31,16 +31,4 @@ public class Vragen {
     public double getOnderdeel3() {
         return Onderdeel3;
     }
-    public void setOnderdeel1(double Onderdeel1) {
-        this.Onderdeel1 = Onderdeel1;
-    }
-
-    public void setOnderdeel2(double Onderdeel2) {
-        this.Onderdeel2 = Onderdeel2;
-    }
-
-    public void setOnderdeel3(double Onderdeel3) {
-        this.Onderdeel3 = Onderdeel3;
-    }
-
 }
