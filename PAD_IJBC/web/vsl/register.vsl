@@ -95,7 +95,7 @@
             <tr>
                 <td>
                     <a style="color:red">$errorWachtwoord</a>
-                    <a>Wachtwoord:</a>
+                    <a>Wachtwoord*:</a>
                 </td>
                 <td>
                     <input type="password" class="rounded" name="wachtwoord" value="" placeholder="Wachtwoord">
@@ -103,14 +103,18 @@
             </tr>
             <tr>
                 <td>
-                    <a>Herhaal wachtwoord:</a>
+                    <a>Herhaal wachtwoord*:</a>
                 </td>
                 <td>
                     <input type="password" class="rounded" name="herhaalwachtwoord" value="" placeholder="Herhaal wachtwoord">
                 </td>
             </tr>
-
+            
         </table>
+<BR>
+<td><a>*: Minimaal 6 tekens</a></td>
+
+
         
         <div style="margin-top:15px;">
             <table>
