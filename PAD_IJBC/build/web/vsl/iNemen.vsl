@@ -71,7 +71,7 @@
                     <table>
                         <tr>
                             <td>
-                                <input type="submit" value="&nbsp" name="commit" style="background:url(/PAD_IJBC/Images/Next.png) no-repeat; height:40px; width:90px; border:none;">
+                                <input type="submit" value="&nbsp" name="commit" style="background:url(/PAD_IJBC/Images/Versturen.jpg) no-repeat; height:90px; width:90px; border:none;">
                             </td>
                             <td>
                                 <a href="/PAD_IJBC/PAD_IJBC/requestHomepage"><img src="/PAD_IJBC/Images/homeKnop.png"></a>
@@ -79,7 +79,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <a>Volgende</a>
+                                <a>Feedback versturen!</a>
                             </td>
                             <td>
                                 <a>Hoofdpagina</a>

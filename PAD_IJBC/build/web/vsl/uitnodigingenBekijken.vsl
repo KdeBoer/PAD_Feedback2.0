@@ -16,6 +16,7 @@
                     <tr>
                         <td>
                             <form method="POST" action="processInvite">
+                            <a style="color:red">$errorInvite</a><br>
                             <a>Uitnodigingen</a>
                             <select style="width:250px" class="userSelectLeft" size="15" name="userSelect" multiple="no" > 
                                 #foreach( $leerling in $uitnodigingList )

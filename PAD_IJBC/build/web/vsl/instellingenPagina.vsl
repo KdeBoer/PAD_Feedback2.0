@@ -1,41 +1,26 @@
 <!DOCTYPE html>
-<html>
+
     <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Instellingen</title>
         <link rel="stylesheet" type="text/css" href="/PAD_IJBC/CSS/pad.css">
+        <link rel="stylesheet" type="text/css" href="/PAD_IJBC/CSS/logincss.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
-    <div>
-            <div class="header"><a class = "vraag"> Logged in as: $username</a>
+        <div class="header"><a> Logged in as: $username</a>
             <a href="/PAD_IJBC/PAD_IJBC/REQ_LOGIN" class="vraag" style="float:right">Uitloggen</a></div>
-            <div class="mainContent">
-                <div style="float:right; width:175px; height:150px; margin-right:100px" class="bodyFirstpage">
-                    <table>
-                        <tr>
-                            <td>
-                            </td>
-                            <td class="feedbackAnswers"> 
-                                <tr>
-                                    
-                                </tr>
-                                <tr>
-                                    
-                                </tr>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
+            <div style="width:425px; margin:auto">
+
                 <table> 
-                    <tr><td><a>Naam:</a></td>  <td><input type="text"></td></tr>
-                    <tr><td><a>Email:</a></td>  <td><input type="text"></td> </tr>
-                    <tr><td><a>Wachtwoord:</a></td>  <td><input type="text"></td> </tr>
-                    <tr><td><a>Email Ouders/Verzorgers:</a></td>  <td><input type="text"></td> </tr>
-                    <tr><td><a>TEKSTFIELDOUDERS:</a></td> <td><input type="text"></td> </tr>
+                    <tr><td><a>Email:</a></td><td><input type="text" class="rounded" name="emailAdres"  placeholder="E-mail adres"></td> </tr>
+                    <tr><td><a>Huidig wachtwoord:</a></td><td><input type="password" class="rounded" name="huidigWachtwoord"  placeholder="Huidig wachtwoord"></td> </tr>
+                    <tr><td><a>Nieuw wachtwoord:</a></td><td><input type="password" class="rounded" name="nieuwWachtwoord"  placeholder="Nieuw wachtwoord"></td> </tr>
+                    <tr><td><a>Herhaal wachtwoord:</a></td><td><input type="password" class="rounded" name="herhaalWachtwoord"  placeholder="Herhaal wachtwoord"></td> </tr>
                     <tr><td><a href="editWWServlet"><img class="buttonInvullen" src="/PAD_IJBC/Images/wachtwoordVeranderen.png"></a></td>
                     <td><a href="editEmailServlet"><img class="buttonInvullen" src="/PAD_IJBC/Images/emailVeranderen.png"></a></td>
                     </tr>
-                    <br>
 
                 </table>
             </div>

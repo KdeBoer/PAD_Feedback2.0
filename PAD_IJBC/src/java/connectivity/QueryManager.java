@@ -150,51 +150,7 @@ public class QueryManager {
         
     }
     
-    public List<String> studentList(String klas, VelocityContext vv1_Context) {
-        String searchStudents = "SELECT Voornaam, Achternaam, Leerlingnr, Klas FROM leerling WHERE klas = '" + klas + "'";
-        List<String> studentList = new ArrayList<String>();
-        List<String> leerlingLijst = new ArrayList<String>();
-        
-        rs = db.doQuery(searchStudents);
-        
-        String leerling = "";
-        String leerlingNummers = "";
-        try{
-            while(rs.next()){
-                
-                leerling += rs.getString("Leerlingnr"); 
-                /*leerling += (" ");
-                leerling += rs.getString("voornaam");
-                leerling += (" ");
-                leerling += rs.getString("achternaam");*/
-            
-                studentList.add(leerling);
-                leerling = "";
-                
-                /*leerlingNummers += rs.getString("voornaam");
-                leerlingNummers += (" ");
-                leerlingNummers += rs.getString("achternaam");
-                leerlingNummers += (" ");
-                leerlingNummers += rs.getString("Leerlingnr");                
-                leerlingLijst.add(leerlingNummers);
-                leerlingNummers = "";
-                
-                leerling += rs.getString("Leerlingnr");
-                studentList.add(leerling);
-                leerling = "";*/
-                
-            } 
-        } catch (SQLException e){
-            System.out.println(e.getMessage());
-        }
-        
-        for(String e : studentList){
-            System.out.println(e);
-        }
-        
-        vv1_Context.put("leerlingLijst", studentList);
-        return studentList;
-    }
+   
     
     
     
@@ -203,7 +159,6 @@ public class QueryManager {
         Date date = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
         String targettedLeerlingnr = request.getParameter("userSelect");
-        System.out.println(targettedLeerlingnr);
         if(targettedLeerlingnr != null){
             //checks if the invitation already exists
             String inviteCheck = "SELECT * FROM uitnodiging WHERE Leerling_Leerlingnr = '" + Leerlingnummer + "' AND Targetted_Leerlingnr = '" + targettedLeerlingnr + "'";

@@ -124,7 +124,7 @@ public class PAD_IJBC extends HttpServlet {
         vv1_Context.put("vraag2Error", "");
         vv1_Context.put("vraag3Error", "");
         vv1_Context.put("feedbackError", "");
-        
+        vv1_Context.put("errorInvite", "");
         
         //sets the initial values 
         vv1_Context.put("targettedLeerling","");
@@ -239,19 +239,23 @@ public class PAD_IJBC extends HttpServlet {
             vv1_Context.put("leerlingnummer", leerlingnr);
             
 
+            //no user selected!
+            if(request.getParameter("userSelect") == null){
+                s_Template = "uitnodigingenBekijken.vsl";
+                qm.getInviteList(vv1_Context, leerlingnr, request); 
+                vv1_Context.put("errorInvite", "Geen leerling geselecteerd!");
+            } else {
+                String feedbackVoor = qm.getFeedbackVoornaam(request.getParameter("userSelect"));
+                vv1_Context.put("feedbackVoor", feedbackVoor);
+                HttpSession feedbackVoorSession = request.getSession();
+                feedbackVoorSession.setAttribute("feedbackVoor", feedbackVoor);
+            }
             
-            
-            String feedbackVoor = qm.getFeedbackVoornaam(request.getParameter("userSelect"));
-            vv1_Context.put("feedbackVoor", feedbackVoor);
             
             HttpSession targettedLeerlingNummer = request.getSession();
             targettedLeerlingNummer.setAttribute("targettedNummer", request.getParameter("userSelect"));
             
-            
-            
-            
-            HttpSession feedbackVoorSession = request.getSession();
-            feedbackVoorSession.setAttribute("feedbackVoor", feedbackVoor);
+
 
             
             
@@ -395,6 +399,8 @@ public class PAD_IJBC extends HttpServlet {
                 HttpSession leerlingNummer = request.getSession();
                 String leerlingnr = (String) leerlingNummer.getAttribute("leerlingnummer");
                 vv1_Context.put("leerlingnummer", leerlingnr);
+                
+                
         }  
        
         else if(s_Request.equals("/PAD_IJBC/requestFeedbackpage")){
