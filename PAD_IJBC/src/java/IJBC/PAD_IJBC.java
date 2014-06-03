@@ -476,6 +476,14 @@ public class PAD_IJBC extends HttpServlet {
             String username = (String) Session.getAttribute("username");
             HttpSession leerlingNummer = request.getSession();
             String leerlingnr = (String) leerlingNummer.getAttribute("leerlingnummer");
+            HttpSession onderdeel1Session = request.getSession();
+            String onderdeel1 = (String) onderdeel1Session.getAttribute("onderdeel1");
+            HttpSession onderdeel2Session = request.getSession();
+            String onderdeel2 = (String) onderdeel1Session.getAttribute("onderdeel2");
+            HttpSession onderdeel3Session = request.getSession();
+            String onderdeel3 = (String) onderdeel1Session.getAttribute("onderdeel3");
+            
+            
             
             //checks if someone already filled in a feedback form for the logged in user
             if(qm.feedbackCheck(leerlingnr) == true) {
@@ -488,6 +496,10 @@ public class PAD_IJBC extends HttpServlet {
                 s_Template = "keuzePagina.vsl";
                 vv1_Context.put("feedbackError", "Niemand heeft je nog feedback gegeven!");
             }
+            qm.feedbackGemiddelde(leerlingnr, vv1_Context);
+            //vv1_Context.put("onderdeel1", onderdeel1);
+                
+            
 
             
             
