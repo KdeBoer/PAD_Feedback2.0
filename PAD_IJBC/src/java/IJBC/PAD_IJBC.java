@@ -357,7 +357,7 @@ public class PAD_IJBC extends HttpServlet {
                 HttpSession targettedLeerlingNummer = request.getSession();
                 String llnummer = (String) targettedLeerlingNummer.getAttribute("targettedNummer");
                 
-                if(qm.insertResultaat(leerlingnr, llnummer, resultaatOnderdeel1, resultaatOnderdeel2, resultaatOnderdeel3, vv1_Context) == 1){
+                if(qm.insertResultaat(llnummer, leerlingnr, resultaatOnderdeel1, resultaatOnderdeel2, resultaatOnderdeel3, vv1_Context) == 1){
                     s_Template = "feedbackSuccesfull.vsl";
                 } else {
                     s_Template = "iNemen.vsl";
@@ -463,30 +463,31 @@ public class PAD_IJBC extends HttpServlet {
             HttpSession leerlingNummer = request.getSession();
             String leerlingnr = (String) leerlingNummer.getAttribute("leerlingnummer");
             vv1_Context.put("leerlingnummer", leerlingnr);
-        } else if(s_Request.equals("/PAD_IJBC/RequestResultaat")){
-            s_Template = "resultatenPagina.vsl";
-            HttpSession Session = request.getSession();
-            String username = (String) Session.getAttribute("username");
-            vv1_Context.put("username", username);  
-        }
+        } //else if(s_Request.equals("/PAD_IJBC/RequestResultaat")){
+           // s_Template = "resultatenPagina.vsl";
+           // HttpSession Session = request.getSession();
+           // String username = (String) Session.getAttribute("username");
+           // vv1_Context.put("username", username);  
+        //}
         
         else if(s_Request.equals("/PAD_IJBC/RequestResultaat")){
-            
+            s_Template = "resultatenPagina.vsl";
             HttpSession Session = request.getSession();
             String username = (String) Session.getAttribute("username");
             HttpSession leerlingNummer = request.getSession();
             String leerlingnr = (String) leerlingNummer.getAttribute("leerlingnummer");
             
             //checks if someone already filled in a feedback form for the logged in user
-            //if(qm.feedbackCheck(leerlingnr) == true) {
+            if(qm.feedbackCheck(leerlingnr) == true) {
             //gets the average results
                 qm.feedbackGemiddelde(leerlingnr, vv1_Context);
                 s_Template = "resultatenPagina.vsl";
-            /*} else {
+                System.out.println("Records found!");
+            } else {
                 System.out.println("No records found");
                 s_Template = "keuzePagina.vsl";
                 vv1_Context.put("feedbackError", "Niemand heeft je nog feedback gegeven!");
-            }*/
+            }
 
             
             
