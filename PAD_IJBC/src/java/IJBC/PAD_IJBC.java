@@ -463,7 +463,7 @@ public class PAD_IJBC extends HttpServlet {
             HttpSession leerlingNummer = request.getSession();
             String leerlingnr = (String) leerlingNummer.getAttribute("leerlingnummer");
             vv1_Context.put("leerlingnummer", leerlingnr);
-        } else if(s_Request.equals("/PAD_IJBC/requestResultaat")){
+        } else if(s_Request.equals("/PAD_IJBC/RequestResultaat")){
             s_Template = "resultatenPagina.vsl";
             HttpSession Session = request.getSession();
             String username = (String) Session.getAttribute("username");
@@ -478,15 +478,15 @@ public class PAD_IJBC extends HttpServlet {
             String leerlingnr = (String) leerlingNummer.getAttribute("leerlingnummer");
             
             //checks if someone already filled in a feedback form for the logged in user
-            if(qm.feedbackCheck(leerlingnr) == true) {
+            //if(qm.feedbackCheck(leerlingnr) == true) {
             //gets the average results
                 qm.feedbackGemiddelde(leerlingnr, vv1_Context);
                 s_Template = "resultatenPagina.vsl";
-            } else {
+            /*} else {
                 System.out.println("No records found");
                 s_Template = "keuzePagina.vsl";
                 vv1_Context.put("feedbackError", "Niemand heeft je nog feedback gegeven!");
-            }
+            }*/
 
             
             
