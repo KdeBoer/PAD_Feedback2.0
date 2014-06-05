@@ -187,8 +187,12 @@ public class PAD_IJBC extends HttpServlet {
             
             
         } 
+        
+        
+        
+        
         else if(s_Request.equals("/PAD_IJBC/requestFeedbackpageSelf")) {
-            s_Template = "feedbackVragenSelf.vsl";
+            s_Template = "vDragen.vsl";
             HttpSession Session = request.getSession();
             String username = (String) Session.getAttribute("username");
             vv1_Context.put("username", username);
@@ -198,9 +202,14 @@ public class PAD_IJBC extends HttpServlet {
             vv1_Context.put("leerlingnummer", leerlingnr);  
             
             
+            vv1_Context.put("feedbackVoor", "Jezelf!");
             
             
         }
+        
+        
+        
+        
         
         else if(s_Request.equals("/PAD_IJBC/requestInvite")){
                 s_Template = "uitnodigingen.vsl";
@@ -354,9 +363,10 @@ public class PAD_IJBC extends HttpServlet {
                 vv1_Context.put("leerlingnummer", leerlingnr);
                 
                 //gets the number of the student you give feedback to
+                
                 HttpSession targettedLeerlingNummer = request.getSession();
                 String llnummer = (String) targettedLeerlingNummer.getAttribute("targettedNummer");
-                
+
                 if(qm.insertResultaat(llnummer, leerlingnr, resultaatOnderdeel1, resultaatOnderdeel2, resultaatOnderdeel3, vv1_Context) == 1){
                     s_Template = "feedbackSuccesfull.vsl";
                 } else {
