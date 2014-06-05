@@ -32,7 +32,8 @@
                                     <option value="VWO 5">VWO 5</option>
                                     <option value="VWO 6">VWO 6</option>
                                 </select><br>
-                                <input type ="submit" value=" " name ="/PAD_IJBC/PAD_IJBC/searchKlas" style="background:url(/PAD_IJBC/Images/Zoek.png) no-repeat; height:85px; width:155px; border:none;">
+                                <input type ="submit" value=" " name ="/PAD_IJBC/PAD_IJBC/searchKlas" style="background:url(/PAD_IJBC/Images/Zoek.png) no-repeat; height:85px; width:155px; border:none;"><br>
+                                <a style="margin-left:5px">Zoeken</a>
                             </form>
                         </td>
                         <td>
