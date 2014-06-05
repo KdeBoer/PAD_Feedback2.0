@@ -159,7 +159,7 @@ public class PAD_IJBC extends HttpServlet {
                     String leerlingnr = qm.leerlingNummer(username, password);
                     HttpSession leerlingNummer = request.getSession();
                     leerlingNummer.setAttribute("leerlingnummer", leerlingnr);
-
+                    qm.uitnodigingMelding(leerlingnr, vv1_Context);
                 }
                 else{
                     s_Template = "Login.vsl";
@@ -499,6 +499,7 @@ public class PAD_IJBC extends HttpServlet {
             HttpSession leerlingNummer = request.getSession();
             String leerlingnr = (String) leerlingNummer.getAttribute("leerlingnummer");
             vv1_Context.put("leerlingnummer", leerlingnr);
+            qm.uitnodigingMelding(leerlingnr, vv1_Context);
         } //else if(s_Request.equals("/PAD_IJBC/RequestResultaat")){
            // s_Template = "resultatenPagina.vsl";
            // HttpSession Session = request.getSession();

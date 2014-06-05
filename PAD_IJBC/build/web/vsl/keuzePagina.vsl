@@ -15,8 +15,8 @@
                 <tr>
                     <form method="post" action="RequestResultaat">
                         <td> <a href="/PAD_IJBC/PAD_IJBC/RequestFeedback"><img src="/PAD_IJBC/Images/Feedbackvragen.jpg"><style="margin:5px></a> </td>
-                        <td> <a href="/PAD_IJBC/PAD_IJBC/RequestUitnodigingen"><img src="/PAD_IJBC/Images/Uitnodigingen.jpg"><style="margin:5px></a> </td>
-                        <td> <input type="submit" value="&nbsp" name="commit" style="background:url(/PAD_IJBC/Images/Feedbackbekijken.jpg) no-repeat; height:250px; width:210px; border:none;"></td>
+                        <td> <a href="/PAD_IJBC/PAD_IJBC/RequestUitnodigingen"><img src="$uitnodiging"><style="margin:5px></a> </td>
+                        <td> <input type="submit" value="&nbsp" name="commit" style="background:url(/PAD_IJBC/Images/Feedbackbekijken.jpg) no-repeat; height:260px; width:220px; border:none;"></td>
                         <td> <a href="/PAD_IJBC/PAD_IJBC/RequestInstellingen"><img src="/PAD_IJBC/Images/Instellingen.jpg"><style="margin:5px></a> </td>
                     </form>
                 </tr>

@@ -35,6 +35,32 @@ public class QueryManager {
     Statement st;
     DbManager db;
     
+    
+    
+    
+    public void uitnodigingMelding(String leerlingnummer, VelocityContext vv1_Context){
+        int uitnodigingen = 0;
+        String uitnodigingChecker = "SELECT COUNT(Targetted_Leerlingnr) FROM uitnodiging WHERE Targetted_Leerlingnr = '" + leerlingnummer + "'";
+        rs = db.doQuery(uitnodigingChecker);
+        try{
+            while(rs.next()){
+                uitnodigingen = rs.getInt(1);
+                System.out.println("Er zijn: "+uitnodigingen+ " uitnodiging(en");
+            } 
+        } catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+        if(uitnodigingen ==0){
+            vv1_Context.put("uitnodiging", "/PAD_IJBC/Images/Uitnodigingen.jpg");
+            System.out.println("Geen uitnodiging aanwezig!");
+        } else if(uitnodigingen != 0){
+            vv1_Context.put("uitnodiging", "/PAD_IJBC/Images/Uitnodiging_Er is een.png");
+            System.out.println("Er is een uitnodinging!!");
+        }
+    }
+    
+    
+    
     //checks if someone already filled in a feedback form for the logged in user
     public boolean feedbackCheck(String leerlingnummer){
         String sql = "SELECT * from vraag WHERE Leerling_Leerlingnr = '" + leerlingnummer + "'";
