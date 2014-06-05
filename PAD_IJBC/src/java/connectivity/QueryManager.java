@@ -140,6 +140,7 @@ public class QueryManager {
     
     public int insertResultaat(String eigenNummer, String targetNummer, int onderdeel1, int onderdeel2, int onderdeel3, VelocityContext context){
         System.out.println(eigenNummer);
+        System.out.println(targetNummer);
         Date date = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
         String insert = "INSERT INTO pad.vraag VALUES('" + eigenNummer + "','" + targetNummer + "','" + sdf.format(date).toString() + "','" + onderdeel1 + "','" + onderdeel2 + "','" + onderdeel3 + "')";

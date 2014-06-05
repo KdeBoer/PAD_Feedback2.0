@@ -236,8 +236,8 @@ public class PAD_IJBC extends HttpServlet {
             
             
         }  else if(s_Request.equals("/PAD_IJBC/processInvite")){
-            //checks if something is selected
-            s_Template = "vDragen.vsl";
+            
+            s_Template = "uitnodigingenBekijken.vsl";
             
             HttpSession Session = request.getSession();
             String username = (String) Session.getAttribute("username");
@@ -254,6 +254,7 @@ public class PAD_IJBC extends HttpServlet {
                 qm.getInviteList(vv1_Context, leerlingnr, request); 
                 vv1_Context.put("errorInvite", "Geen leerling geselecteerd!");
             } else {
+                s_Template = "vDragen.vsl";
                 String feedbackVoor = qm.getFeedbackVoornaam(request.getParameter("userSelect"));
                 vv1_Context.put("feedbackVoor", feedbackVoor);
                 HttpSession feedbackVoorSession = request.getSession();
@@ -268,9 +269,35 @@ public class PAD_IJBC extends HttpServlet {
 
             
             
+        //feedback for myself  
+        } else if(s_Request.equals("/PAD_IJBC/processInviteSelf")){
+            
+            s_Template = "vDragen.vsl";
+            
+            HttpSession Session = request.getSession();
+            String username = (String) Session.getAttribute("username");
+            vv1_Context.put("username", username);
+            
+            HttpSession leerlingNummer = request.getSession();
+            String leerlingnr = (String) leerlingNummer.getAttribute("leerlingnummer");
+            vv1_Context.put("leerlingnummer", leerlingnr);
+            
+
+            //sets your own name as the feedback
+            String feedbackVoor = qm.getFeedbackVoornaam(leerlingnr);
+            vv1_Context.put("feedbackVoor", feedbackVoor); 
+            HttpSession feedbackVoorSession = request.getSession();
+            feedbackVoorSession.setAttribute("feedbackVoor", feedbackVoor);
+           
+            
+            HttpSession targettedLeerlingNummer = request.getSession();
+            targettedLeerlingNummer.setAttribute("targettedNummer", leerlingnr);
+
+            
+            
             
         //resultaat onderdeel 1
-        } else if(s_Request.equals("/PAD_IJBC/vDragen1")){
+        }else if(s_Request.equals("/PAD_IJBC/vDragen1")){
             
             HttpSession Session = request.getSession();
             String username = (String) Session.getAttribute("username");
@@ -343,7 +370,6 @@ public class PAD_IJBC extends HttpServlet {
                 int vraag2Antwoord = Integer.parseInt(request.getParameter("vraag2"));
                 int vraag3Antwoord = Integer.parseInt(request.getParameter("vraag3"));
                 int resultaatOnderdeel3 = vraag1Antwoord + vraag2Antwoord + vraag3Antwoord;
-                System.out.println(resultaatOnderdeel3);
 
                 
                 
@@ -366,7 +392,7 @@ public class PAD_IJBC extends HttpServlet {
                 
                 HttpSession targettedLeerlingNummer = request.getSession();
                 String llnummer = (String) targettedLeerlingNummer.getAttribute("targettedNummer");
-
+                
                 if(qm.insertResultaat(llnummer, leerlingnr, resultaatOnderdeel1, resultaatOnderdeel2, resultaatOnderdeel3, vv1_Context) == 1){
                     s_Template = "feedbackSuccesfull.vsl";
                 } else {
