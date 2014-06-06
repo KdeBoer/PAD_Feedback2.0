@@ -536,6 +536,7 @@ public class PAD_IJBC extends HttpServlet {
                 System.out.println("No records found");
                 s_Template = "keuzePagina.vsl";
                 vv1_Context.put("feedbackError", "Niemand heeft je nog feedback gegeven!");
+                qm.uitnodigingMelding(leerlingnr, vv1_Context);
             }
             qm.feedbackGemiddelde(leerlingnr, vv1_Context);
             //vv1_Context.put("onderdeel1", onderdeel1);
