@@ -220,7 +220,11 @@ public class PAD_IJBC extends HttpServlet {
                 HttpSession leerlingNummer = request.getSession();
                 String leerlingnr = (String) leerlingNummer.getAttribute("leerlingnummer");
                 vv1_Context.put("leerlingnummer", leerlingnr);
-                qm.invitationList(leerlingnr, request, vv1_Context);
+                if(qm.invitationList2(leerlingnr, request) == 1){
+                    qm.invitationList(leerlingnr, request, vv1_Context);
+                } else {
+                    vv1_Context.put("errorSendInvite", "Je hebt al feedback voor deze leerling ingevuld!");
+                }
                 
         } else if(s_Request.equals("/PAD_IJBC/RequestUitnodigingen")){
             s_Template = "uitnodigingenBekijken.vsl";

@@ -179,8 +179,6 @@ public class QueryManager {
     
     
     public int insertResultaat(String eigenNummer, String targetNummer, int onderdeel1, int onderdeel2, int onderdeel3, VelocityContext context){
-        System.out.println(eigenNummer);
-        System.out.println(targetNummer);
         Date date = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
         String insert = "INSERT INTO pad.vraag VALUES('" + eigenNummer + "','" + targetNummer + "','" + sdf.format(date).toString() + "','" + onderdeel1 + "','" + onderdeel2 + "','" + onderdeel3 + "')";
@@ -210,7 +208,6 @@ public class QueryManager {
                     String sendInvite = "INSERT INTO uitnodiging VALUES('" + Leerlingnummer + "','" + targettedLeerlingnr + "','" + sdf.format(date).toString() + "')";
                     //record added
                     int result = db.doInsert(sendInvite);
-                    System.out.println(result);
                     if(result == 1){
                         vv1_Context.put("sendInviteSuccess", "Uitnodiging succesvol verstuurd!");
                         return result;
@@ -228,10 +225,30 @@ public class QueryManager {
                 return 0;
             }
         } else {
-            System.out.println("0");
             return 0;
         }
     }
+    //another check to see if the invite has already been processed
+    //and cannot be repeated until deleted
+    public int invitationList2(String Leerlingnummer, HttpServletRequest request) {
+        String targettedLeerlingnr = request.getParameter("userSelect");
+        System.out.println(Leerlingnummer);
+        System.out.println(targettedLeerlingnr);
+        String inviteCheck = "SELECT * FROM vraag WHERE Leerling_Leerlingnr = '" + Leerlingnummer + "' AND Targetted_Leerlingnr = '" + targettedLeerlingnr + "'";
+        rs = db.doQuery(inviteCheck);
+        try {
+            if(rs.next()){
+                return 0;
+            } else {
+                return 1;
+            }
+        } catch (SQLException e){
+            return 1;
+        }
+        
+    }
+    
+    
     //first name 
     public String getFeedbackVoornaam(String leerlingnummer){
         String getNaam = "SELECT voornaam, tussenvoegsel, achternaam FROM leerling where Leerlingnr = '" + leerlingnummer + "'";
