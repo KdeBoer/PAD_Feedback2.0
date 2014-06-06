@@ -177,7 +177,7 @@ public class QueryManager {
     
     
     
-    
+    //deletes the invite after the form has been filled in
     public int insertResultaat(String eigenNummer, String targetNummer, int onderdeel1, int onderdeel2, int onderdeel3, VelocityContext context){
         Date date = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");

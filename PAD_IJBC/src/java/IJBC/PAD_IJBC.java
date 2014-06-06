@@ -403,7 +403,7 @@ public class PAD_IJBC extends HttpServlet {
                 HttpSession targettedLeerlingNummer = request.getSession();
                 String llnummer = (String) targettedLeerlingNummer.getAttribute("targettedNummer");
                 
-                if(qm.insertResultaat(llnummer, leerlingnr, resultaatOnderdeel1, resultaatOnderdeel2, resultaatOnderdeel3, vv1_Context) == 1){
+                if(qm.insertResultaat(leerlingnr, llnummer, resultaatOnderdeel1, resultaatOnderdeel2, resultaatOnderdeel3, vv1_Context) == 1){
                     s_Template = "feedbackSuccesfull.vsl";
                 } else {
                     s_Template = "iNemen.vsl";
