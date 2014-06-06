@@ -111,6 +111,7 @@ public class PAD_IJBC extends HttpServlet {
         vv1_Context.put("errorLeerlingnummer", "");
         vv1_Context.put("errorSendInvite","");
         vv1_Context.put("sendInviteSuccess","");
+        vv1_Context.put("klas","");
         
         
         //sets the initial register values to 0

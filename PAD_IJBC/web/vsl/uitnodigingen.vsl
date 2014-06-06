@@ -40,7 +40,7 @@
                             <form method="POST" action="requestInvite">
                                 <a style="color:red">$errorSendInvite</a>
                                 <a>$sendInviteSuccess</a><br>
-                                <a>Leerlingen in jouw klas:</a><br>
+                                <a>$klas</a><br>
                                 <select style="width:250px" class="userSelectLeft" size="15" name="userSelect" multiple="no" > 
                                     #foreach( $leerling in $leerlingList )
                                         <option value="$leerling.getLeerlingnummer()">${leerling.getNaam()} ${leerling.getTussenvoegsel()} ${leerling.getAchternaam()}</option>

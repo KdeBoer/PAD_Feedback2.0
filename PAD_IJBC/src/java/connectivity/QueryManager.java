@@ -302,6 +302,7 @@ public class QueryManager {
     //
     public List<Leerling> getLeerlingList(String klas, VelocityContext vv1_Context) {
         List<Leerling> leerlingList = new ArrayList<Leerling>();
+        vv1_Context.put("klas", "Leerlingen in klas: " + klas);
         try {
             String sql = "SELECT Voornaam, tussenvoegsel, Achternaam, Leerlingnr, Klas FROM leerling WHERE klas = '" + klas + "'";
             rs = db.doQuery(sql);
