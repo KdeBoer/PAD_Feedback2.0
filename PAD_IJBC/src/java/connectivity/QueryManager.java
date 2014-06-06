@@ -59,7 +59,21 @@ public class QueryManager {
         }
     }
     
-    
+        //checks if someone already filled in a feedback form for the logged in user
+    public boolean feedbackCheck2(String leerlingnummer){
+        String sql = "SELECT * from vraag WHERE Targetted_Leerlingnr = '" + leerlingnummer + "'";
+        rs = db.doQuery(sql);
+        try {
+            if(rs.next()){
+                return true;
+            } else {
+                return false;
+            }
+            
+        } catch (SQLException e){
+            return false;
+        }
+    }
     
     //checks if someone already filled in a feedback form for the logged in user
     public boolean feedbackCheck(String leerlingnummer){
