@@ -188,6 +188,16 @@ public class PAD_IJBC extends HttpServlet {
             
             
         } 
+        else if(s_Request.equals("/PAD_IJBC/requestFeedbackpageTeacher")){
+            s_Template = "feedbackVragenLeraar.vsl";
+            HttpSession Session = request.getSession();
+            String username = (String) Session.getAttribute("username");
+            vv1_Context.put("username", username);
+            
+            HttpSession leerlingNummer = request.getSession();
+            String leerlingnr = (String) leerlingNummer.getAttribute("leerlingnummer");
+            vv1_Context.put("leerlingnummer", leerlingnr);  
+        }
         
         
         

@@ -255,9 +255,9 @@ public class QueryManager {
         rs = db.doQuery(getNaam);
         try {
             if(rs.next()){
-                String naam = rs.getString("voornaam") +
-                        rs.getString("tussenvoegsel") +
-                        rs.getString("achternaam");
+                String naam = rs.getString("voornaam");
+                       // rs.getString("tussenvoegsel") +
+                       // rs.getString("achternaam");
                 return naam;
                 
             } else {

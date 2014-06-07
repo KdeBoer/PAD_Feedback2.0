@@ -25,10 +25,10 @@
                    <tr>
                         <td><a style="margin:10px"></a></td>
                         <td>
-                            <a style="margin-left:10px">--</a>
+                            <FONT size="4"><a style="margin-left:10px">--</a>
                             <a style="margin-left:13px">-</a>
                             <a style="margin-left:13px">+</a>
-                            <a style="margin-left:13px">++</a>
+                            <a style="margin-left:13px">++</a></font>
                         </td>
                     </tr>
                     <tr>

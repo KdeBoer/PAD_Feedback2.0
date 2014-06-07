@@ -30,13 +30,14 @@ a{
  	margin-left:auto;
 	margin-right:auto;
 	text-align:center;
-    	width: 50em;
+    	width: 60em;
         font-family: Bolonewt;
 }
 
 table.center {
     margin-left:auto; 
     margin-right:auto;
+    text-align: center;
   }
 
 .test{
