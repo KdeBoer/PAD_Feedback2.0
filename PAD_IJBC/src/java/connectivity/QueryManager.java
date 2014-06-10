@@ -105,16 +105,12 @@ public class QueryManager {
                 resultaat1 = rs.getInt(1);
                 resultaat2 = rs.getInt(2);
                 resultaat3 = rs.getInt(3);
-                System.out.println(resultaat1);
             } 
         } catch (SQLException e){
             System.out.println(e.getMessage());
         }
 
         Vragen result = new Vragen(resultaat1, resultaat2, resultaat3);
-        System.out.println("1: " + result.getOnderdeel1());
-        System.out.println("2: " + result.getOnderdeel2());
-        System.out.println("3: " + result.getOnderdeel3());
         
         
         

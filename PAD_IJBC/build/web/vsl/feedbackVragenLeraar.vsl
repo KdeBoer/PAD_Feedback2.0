@@ -19,7 +19,7 @@
                             </form>
                         </td>
                         <td>
-                            <form method="POST" action="requestInvite">
+                            <form method="POST" action="requestInvite2">
                                 <a style="color:red">$errorSendInvite</a>
                                 <a>$sendInviteSuccess</a><br>
                                 <a>$klas</a><br>
@@ -27,6 +27,12 @@
                                     #foreach( $leerling in $leerlingList )
                                         <option value="$leerling.getLeerlingnummer()">${leerling.getNaam()} ${leerling.getTussenvoegsel()} ${leerling.getAchternaam()}</option>
                                     #end
+                                    <option>Beyonce Peperkoek</option>
+                                    <option>Klaas de Jong</option>
+                                    <option>Frederiek de Jong</option>
+                                    <option>Angelique de Jong</option>
+                                    <option>Thomalientje de Jong</option>
+                                    <option>Samanta Willemsen</option>
                                 </select><br>
                                 <table>
                                     <tr>
