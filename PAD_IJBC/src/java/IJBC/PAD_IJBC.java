@@ -556,7 +556,7 @@ public class PAD_IJBC extends HttpServlet {
             
             
             vv1_Context.put("username", username);              
-        }
+        } 
         
         else if(s_Request.equals("/PAD_IJBC/categorie01")){
             s_Template = "categorie1.vsl";
@@ -568,6 +568,8 @@ public class PAD_IJBC extends HttpServlet {
             HttpSession leerlingNummer = request.getSession();
             String leerlingnr = (String) leerlingNummer.getAttribute("leerlingnummer");
             vv1_Context.put("leerlingnummer", leerlingnr);
+            
+            qm.feedbackGemiddelde(leerlingnr, vv1_Context);
         } 
         
         else if(s_Request.equals("/PAD_IJBC/categorie02")){
@@ -580,6 +582,8 @@ public class PAD_IJBC extends HttpServlet {
             HttpSession leerlingNummer = request.getSession();
             String leerlingnr = (String) leerlingNummer.getAttribute("leerlingnummer");
             vv1_Context.put("leerlingnummer", leerlingnr);
+            
+            qm.feedbackGemiddelde(leerlingnr, vv1_Context);
         } 
         
         else if(s_Request.equals("/PAD_IJBC/categorie03")){
@@ -592,6 +596,8 @@ public class PAD_IJBC extends HttpServlet {
             HttpSession leerlingNummer = request.getSession();
             String leerlingnr = (String) leerlingNummer.getAttribute("leerlingnummer");
             vv1_Context.put("leerlingnummer", leerlingnr);
+            
+            qm.feedbackGemiddelde(leerlingnr, vv1_Context);
         } 
         
 

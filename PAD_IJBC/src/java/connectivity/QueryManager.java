@@ -122,48 +122,61 @@ public class QueryManager {
         
         //result part1
         if(result.getOnderdeel1() <= 20 && result.getOnderdeel1() >= 18){
-            vv1_Context.put("onderdeel1", "/PAD_IJBC/Images/4p.png");
+            vv1_Context.put("onderdeel1Text", "ONDERDEEL1TXT_4sterren");
+            vv1_Context.put("onderdeel1", "4p.png");
             System.out.println("1: ****");
         } else if(result.getOnderdeel1() <= 17 && result.getOnderdeel1() >= 13){
-            vv1_Context.put("onderdeel1", "/PAD_IJBC/Images/3p.png");
+            vv1_Context.put("onderdeel1", "3p.png");
+            vv1_Context.put("onderdeel1Text", "ONDERDEEL1TXT_3sterren");
             System.out.println("1: ***");
         }else if(result.getOnderdeel1() <= 12 && result.getOnderdeel1() >= 8){
-            vv1_Context.put("onderdeel1", "/PAD_IJBC/Images/2p.png");
+            vv1_Context.put("onderdeel1", "2p.png");
+            vv1_Context.put("onderdeel1Text", "ONDERDEEL1TXT_2sterren");
             System.out.println("1: **");
         } else if(result.getOnderdeel1() <= 7 && result.getOnderdeel1() >= 4){
-            vv1_Context.put("onderdeel1", "/PAD_IJBC/Images/1p.png");
+            vv1_Context.put("onderdeel1", "1p.png");
+            vv1_Context.put("onderdeel1Text", "ONDERDEEL1TXT_1ster");
             System.out.println("1: *");
         }else {
             System.out.println("1: onder 0");
         }
+        
         //result part2
         if(result.getOnderdeel2() <= 12 && result.getOnderdeel2() >= 11){
-            vv1_Context.put("onderdeel2", "/PAD_IJBC/Images/4p.png");
+            vv1_Context.put("onderdeel2", "4p.png");
+            vv1_Context.put("onderdeel2Text", "ONDERDEEL2TXT_4sterren");
             System.out.println("2: ****");
         } else if(result.getOnderdeel2() <= 10 && result.getOnderdeel2() >= 8){
-            vv1_Context.put("onderdeel2", "/PAD_IJBC/Images/3p.png");
+            vv1_Context.put("onderdeel2", "3p.png");
+            vv1_Context.put("onderdeel2Text", "ONDERDEEL2TXT_3sterren");
             System.out.println("2: ***");
         }else if(result.getOnderdeel2() <= 7 && result.getOnderdeel2() >= 5){
-            vv1_Context.put("onderdeel2", "/PAD_IJBC/Images/2p.png");
+            vv1_Context.put("onderdeel2", "2p.png");
+            vv1_Context.put("onderdeel2Text", "ONDERDEEL2TXT_2sterren");
             System.out.println("2: **");
         } else if(result.getOnderdeel2() <= 4 && result.getOnderdeel2() >= 3){
-            vv1_Context.put("onderdeel2", "/PAD_IJBC/Images/1p.png");
+            vv1_Context.put("onderdeel2", "1p.png");
+            vv1_Context.put("onderdeel2Text", "ONDERDEEL2TXT_1ster");
             System.out.println("2: *");
         }else {
             System.out.println("2: onder 0");
         }
         //result part3
         if(result.getOnderdeel3() <= 12 && result.getOnderdeel3() >= 11){
-            vv1_Context.put("onderdeel3", "/PAD_IJBC/Images/4p.png");
+            vv1_Context.put("onderdeel3", "4p.png");
+            vv1_Context.put("onderdeel3Text", "ONDERDEEL3TXT_4sterren");
             System.out.println("3: ****");
         } else if(result.getOnderdeel3() <= 10 && result.getOnderdeel3() >= 8){
-            vv1_Context.put("onderdeel3", "/PAD_IJBC/Images/3p.png");
+            vv1_Context.put("onderdeel3", "3p.png");
+            vv1_Context.put("onderdeel3Text", "ONDERDEEL3TXT_3sterren");
             System.out.println("3: ***");
         }else if(result.getOnderdeel3() <= 7 && result.getOnderdeel3() >= 5){
-            vv1_Context.put("onderdeel3", "/PAD_IJBC/Images/2p.png");
+            vv1_Context.put("onderdeel3", "2p.png");
+            vv1_Context.put("onderdeel3Text", "ONDERDEEL3TXT_2sterren");
             System.out.println("3: **");
         } else if(result.getOnderdeel3() <= 4 && result.getOnderdeel3() >= 3){
             vv1_Context.put("onderdeel3", "1p.png");
+            vv1_Context.put("onderdeel3Text", "ONDERDEEL3TXT_1ster");
             System.out.println("3: *");
         }else {
             System.out.println("3: onder 0");

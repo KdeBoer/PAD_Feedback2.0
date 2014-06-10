@@ -37,10 +37,10 @@
                             <td></td>
                         </tr>
                         <tr>
-                            <td style="margin-left:-200px;"> <img src="/PAD_IJBC/Images/4p.png"></td>
-                            <td style="padding-right:50px"> Resultaat van query in velocity variabel, </br> if maken met 4 percentages (0-25, 25-50, 50-75, 75-100) </br> a.d.h.v % plaatje 1-4 tonen </br> En als extra voor deze pagina nog het percentage erbij </td>
-                            <td> <a style="margin-right:60px"><img src="/PAD_IJBC/Images/4p.png"></a>  </td>
-                            <td> Hier het resultaat van deze query: </br> AANTAL PUNTEN IN CATEGORIE3 / MAX PUNTEN CATEGORIE3 * 100</td>
+                            <td style="margin-left:-200px;"> <img src="/PAD_IJBC/Images/$onderdeel3"></td>
+                            <td style="padding-right:50px"> $onderdeel3Text </td>
+                            <td> <a style="margin-right:60px"><img src="/PAD_IJBC/Images/$onderdeel3"></a>  </td>
+                            <td> $onderdeel3Text </td>
                         </tr>
                     </table>
                 </div>
