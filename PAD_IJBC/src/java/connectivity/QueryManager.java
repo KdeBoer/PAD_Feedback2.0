@@ -118,20 +118,20 @@ public class QueryManager {
         
         //result part1
         if(result.getOnderdeel1() <= 20 && result.getOnderdeel1() >= 18){
-            vv1_Context.put("onderdeel1Text", "ONDERDEEL1TXT_4sterren");
+            vv1_Context.put("onderdeel1Text", "Volgens de gegeven feedback ben jij erg goed in verantwoordelijkheid dragen. Je neemt altijd verantwoordelijkheid voor je eigen gedrag en voor de groep en komt (haast) nooit te laat. Je levert je werk altijd op tijd in. Verantwoordelijkheid dragen gaat je prima af! Ga zo door!");
             vv1_Context.put("onderdeel1", "4p.png");
             System.out.println("1: ****");
         } else if(result.getOnderdeel1() <= 17 && result.getOnderdeel1() >= 13){
             vv1_Context.put("onderdeel1", "3p.png");
-            vv1_Context.put("onderdeel1Text", "ONDERDEEL1TXT_3sterren");
+            vv1_Context.put("onderdeel1Text", "Volgens de gegeven feedback ben jij goed in verantwoordelijkheid dragen. Je neemt best wel veel verantwoordelijkheid voor je eigen acties en gedrag ook voor de groep  en je komt heel weinig te laat. Je levert je werk op tijd in. Verantwoordelijkheid dragen gaat je goed goed af! Alleen nog de puntjes op de i zetten en het zal prima worden.");
             System.out.println("1: ***");
         }else if(result.getOnderdeel1() <= 12 && result.getOnderdeel1() >= 8){
             vv1_Context.put("onderdeel1", "2p.png");
-            vv1_Context.put("onderdeel1Text", "ONDERDEEL1TXT_2sterren");
+            vv1_Context.put("onderdeel1Text", "Volgens de gegeven feedback neem jij af en toe verantwoordelijk op je. Je neemt weinig verantwoordelijkheid voor je eigen acties en gedrag en je komt soms tot vaak te laat. Je levert je werk soms op tijd in. Verantwoordelijkheid dragen gaat je niet zo goed af maar wel oké. Het is nog geen voldoende dus je moet er nog harder aan werken.");
             System.out.println("1: **");
         } else if(result.getOnderdeel1() <= 7 && result.getOnderdeel1() >= 4){
             vv1_Context.put("onderdeel1", "1p.png");
-            vv1_Context.put("onderdeel1Text", "ONDERDEEL1TXT_1ster");
+            vv1_Context.put("onderdeel1Text", "Volgens de gegeven feedback ben jij niet goed in verantwoordelijk dragen. Je neemt geen verantwoordelijkheid voor je eigen acties en gedrag en je komt veel te laat. Je levert je werk meestal niet op tijd in. Verantwoordelijkheid dragen gaat je moeilijk af. Het is niet voldoende dus je moet veel beter je best doen.");
             System.out.println("1: *");
         }else {
             System.out.println("1: onder 0");
@@ -140,19 +140,19 @@ public class QueryManager {
         //result part2
         if(result.getOnderdeel2() <= 12 && result.getOnderdeel2() >= 11){
             vv1_Context.put("onderdeel2", "4p.png");
-            vv1_Context.put("onderdeel2Text", "ONDERDEEL2TXT_4sterren");
+            vv1_Context.put("onderdeel2Text", "Volgens de gegeven feedback gaat verantwoordelijkheid afleggen je prima af, je komt je afspraken altijd na en houd je mentor, leraren en ouders goed op de hoogte van je behaalde resultaten en dagelijkse bezigheden op school. Dus met verantwoordelijkheid afleggen ben je prima bezig, ga zo door! ");
             System.out.println("2: ****");
         } else if(result.getOnderdeel2() <= 10 && result.getOnderdeel2() >= 8){
             vv1_Context.put("onderdeel2", "3p.png");
-            vv1_Context.put("onderdeel2Text", "ONDERDEEL2TXT_3sterren");
+            vv1_Context.put("onderdeel2Text", "Volgens de gegeven feedback gaat verantwoordelijkheid afleggen je goed af, je houdt je ouders, leraren en mentor voldoende op de hoogte van je behaalde resultaten en dagelijkse bezigheden op school. je komt je afspraken ook bijna altijd na. je bent dus goed bezig met het afleggen van je verantwoordelijkheden, je zou dit nog iets kunnen verbeteren maar het is zeker al voldoende.");
             System.out.println("2: ***");
         }else if(result.getOnderdeel2() <= 7 && result.getOnderdeel2() >= 5){
             vv1_Context.put("onderdeel2", "2p.png");
-            vv1_Context.put("onderdeel2Text", "ONDERDEEL2TXT_2sterren");
+            vv1_Context.put("onderdeel2Text", "Volgens de gegeven feedback gaat verantwoordelijkheid afleggen je niet goed tot normaal af, je komt je afspraken soms na en houd je mentor, leraren en ouders soms op de hoogte van je behaalde resultaten en dagelijkse bezigheden op school. Je bent dus af en toe bezig met verantwoordelijkheid afleggen maar het is nog geen voldoende. Dit is niet goed genoeg dus je moet er nog wat aan gaan werken.");
             System.out.println("2: **");
         } else if(result.getOnderdeel2() <= 4 && result.getOnderdeel2() >= 3){
             vv1_Context.put("onderdeel2", "1p.png");
-            vv1_Context.put("onderdeel2Text", "ONDERDEEL2TXT_1ster");
+            vv1_Context.put("onderdeel2Text", "Volgens de gegeven feedback gaat verantwoordelijkheid afleggen je slecht af, je komt je afspraken nooit na en houd je mentor,leraren en ouders nooit op de hoogte van je behaalde resultaten en dagelijkse bezigheden op school. Dus met verantwoordelijkheid afleggen ben je niet goed mee bezig en is het geen voldoende en dus moet je er harder aan gaan werken.");
             System.out.println("2: *");
         }else {
             System.out.println("2: onder 0");
@@ -160,19 +160,19 @@ public class QueryManager {
         //result part3
         if(result.getOnderdeel3() <= 12 && result.getOnderdeel3() >= 11){
             vv1_Context.put("onderdeel3", "4p.png");
-            vv1_Context.put("onderdeel3Text", "ONDERDEEL3TXT_4sterren");
+            vv1_Context.put("onderdeel3Text", "Volgens de gegeven feedback neem je heel veel initiatief. Je bent er erg goed in zelfstandig werken en pakt taken ook uit jezelf op. Vaak weet je ook precies wat er nodig is om een taak af te ronden. Kortom, met initiatief nemen ben jij uitstekend bezig! ga zo door!");
             System.out.println("3: ****");
         } else if(result.getOnderdeel3() <= 10 && result.getOnderdeel3() >= 8){
             vv1_Context.put("onderdeel3", "3p.png");
-            vv1_Context.put("onderdeel3Text", "ONDERDEEL3TXT_3sterren");
+            vv1_Context.put("onderdeel3Text", "Volgens de gegeven feedback neem je genoeg initiatief, Je kunt meestal goed zelfstandig werken en neemt taken soms ook al uit jezelf op je. je bent met initiatief nemen goed bezig, je kunt hier en daar nog wat verbeteren maar het is zeker niet slecht.");
             System.out.println("3: ***");
         }else if(result.getOnderdeel3() <= 7 && result.getOnderdeel3() >= 5){
             vv1_Context.put("onderdeel3", "2p.png");
-            vv1_Context.put("onderdeel3Text", "ONDERDEEL3TXT_2sterren");
+            vv1_Context.put("onderdeel3Text", "Volgens de gegeven feedback neem je af en toe initiatief. je zou dit kunnen verbeteren door vaker zelfstandig aan het werk te gaan en vaker taken op je te nemen in plaats van te wachten tot je een taak krijgt. Probeer iets meer initiatief te nemen voor de volgende feedback sessie.");
             System.out.println("3: **");
         } else if(result.getOnderdeel3() <= 4 && result.getOnderdeel3() >= 3){
             vv1_Context.put("onderdeel3", "1p.png");
-            vv1_Context.put("onderdeel3Text", "ONDERDEEL3TXT_1ster");
+            vv1_Context.put("onderdeel3Text", "Volgens de gegeven feedback toon je haast geen initiatief. Probeer dit voor het volgende feedback moment te verbeteren door zelfstandiger te werken en niet af te wachten tot je taken krijgt maar zelf taken op je neemt. Je zult dit punt echt moeten gaan verbeteren komende tijd.");
             System.out.println("3: *");
         }else {
             System.out.println("3: onder 0");
